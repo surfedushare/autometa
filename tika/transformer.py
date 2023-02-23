@@ -34,6 +34,8 @@ class TikaWebsiteContentTransformer(object):
             for common_tag in self.common_tags:
                 for tag in soup.find_all(common_tag):
                     text = tag.get_text(strip=True)
+                    if not text:
+                        continue
                     self.domain_common_tag_frequencies[domain][text] += 1
         # Express per domain the common tag frequency as a fraction of the total amount of documents
         for domain, counts in self.domain_common_tag_frequencies.items():
@@ -50,6 +52,8 @@ class TikaWebsiteContentTransformer(object):
         for descendant in soup.body.descendants:
             # First we see if we're dealing with content and we skip if it is not
             text = descendant.get_text(strip=True)
+            if not text:
+                continue
             if not is_content:
                 if descendant.name not in self.common_tags:
                     continue
