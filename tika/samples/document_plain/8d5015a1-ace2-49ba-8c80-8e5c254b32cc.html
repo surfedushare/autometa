@@ -1,0 +1,629 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="pdf:PDFVersion" content="1.5" />
+<meta name="xmp:CreatorTool" content="Microsoft® Word 2010" />
+<meta name="http-connection:target-ip-address" content="20.56.8.62" />
+<meta name="pdf:hasXFA" content="false" />
+<meta name="access_permission:modify_annotations" content="true" />
+<meta name="access_permission:can_print_degraded" content="true" />
+<meta name="dc:creator" content="Voorn, George van" />
+<meta name="dcterms:created" content="2021-02-15T14:05:55Z" />
+<meta name="dcterms:modified" content="2021-02-15T14:05:55Z" />
+<meta name="dc:format" content="application/pdf; version=1.5" />
+<meta name="http-connection:target-url" content="https://api.acc.surfsharekit.nl/api/v1/files/repoItemFiles/8d5015a1-ace2-49ba-8c80-8e5c254b32cc" />
+<meta name="pdf:docinfo:creator_tool" content="Microsoft® Word 2010" />
+<meta name="access_permission:fill_in_form" content="true" />
+<meta name="pdf:docinfo:modified" content="2021-02-15T14:05:55Z" />
+<meta name="pdf:hasCollection" content="false" />
+<meta name="pdf:encrypted" content="false" />
+<meta name="Content-Length" content="0" />
+<meta name="pdf:hasMarkedContent" content="true" />
+<meta name="http-header:content-type" content="application/pdf" />
+<meta name="Content-Type" content="application/pdf" />
+<meta name="pdf:docinfo:creator" content="Voorn, George van" />
+<meta name="dc:language" content="en-US" />
+<meta name="http-header:status-code" content="200" />
+<meta name="pdf:producer" content="Microsoft® Word 2010" />
+<meta name="access_permission:extract_for_accessibility" content="true" />
+<meta name="access_permission:assemble_document" content="true" />
+<meta name="xmpTPg:NPages" content="10" />
+<meta name="resourceName" content="/api/v1/files/repoItemFiles/8d5015a1-ace2-49ba-8c80-8e5c254b32cc" />
+<meta name="pdf:hasXMP" content="false" />
+<meta name="access_permission:extract_content" content="true" />
+<meta name="http-connection:num-redirects" content="1" />
+<meta name="access_permission:can_print" content="true" />
+<meta name="X-TIKA:Parsed-By" content="org.apache.tika.parser.DefaultParser" />
+<meta name="X-TIKA:Parsed-By" content="org.apache.tika.parser.pdf.PDFParser" />
+<meta name="access_permission:can_modify" content="true" />
+<meta name="pdf:docinfo:producer" content="Microsoft® Word 2010" />
+<meta name="pdf:docinfo:created" content="2021-02-15T14:05:55Z" />
+<title></title>
+</head>
+<body><div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 1/10 
+</p>
+<p>Tutorial: Resilience through 
+Adaptation 
+ 
+Author: George van Voorn (Wageningen University &amp; Research)  
+With: Guus ten Broeke (Wageningen University &amp; Research) 
+ 
+This is part 3 of the teaching module “Sensitivity Analysis for Agent Based Models”. For this module we 
+assume you (the student) are working on an Agent Based Model (ABM) built in NetLogo, for instance in 
+the context of studying the resilience of a Socio-Ecological System. We also assume you are familiar with 
+using R for statistical analysis and RNetLogo for the interface between R and NetLogo (developed by Jan 
+Thiele). If this is not the case, we kindly refer you to part 1 of this tutorial. We also assume to 
+understand the fundamentals of performing a Sensitivity Analysis to analyze the output of a model. If 
+this is not the case, we kindly refer you to part 2 of this tutorial. 
+ 
+</p>
+<p>ABMs can be used as simplified representations of real-world systems including the mechanisms that 
+may contribute to generating resilience. This module deals with means of converting the quantitative 
+effects of shocks in the ABM to metrics for quantifying resilience. Observe that there may be many more 
+ways of doing this, and this is just one example. Here we look at the model used in our publication  
+Ten Broeke, Guus, George Van Voorn, Arend Ligtenberg, Jaap Molenaar. "Resilience through adaptation." 
+PloS one, 12(2), e0171833 (2017). 
+ 
+The used model can be found on https://www.comses.net/codebases/5374/releases/1.1.0/ 
+ 
+</p>
+<p>Contents 
+1. The ABM and general results of the model .............................................................................. 2 
+</p>
+<p>2. Resilience mechanism: Trait inheritance ................................................................................. 4 
+</p>
+<p>3. Quantifying resilience .......................................................................................................... 5 
+</p>
+<p>4. The full experiment in one go: an R file to run it yourself .......................................................... 7 
+</p>
+<p> 
+</p>
+<p>  </p>
+<p />
+<div class="annotation"><a href="https://www.comses.net/codebases/5374/releases/1.1.0/">https://www.comses.net/codebases/5374/releases/1.1.0/</a></div>
+</div>
+<div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 2/10 
+</p>
+<p>1. The ABM and general results of the model 
+ 
+The model description is available in the paper mentioned in the introduction. In short, the model 
+explicitly describes agents (‘consumers’) living in a spatially heterogeneous world consisting of renewable 
+resources that generate energy (‘food’). Every iteration (i.e., model time-step) each agent spends a 
+small amount of energy, even when doing nothing (i.e., maintenance costs). Then, an internal energy 
+</p>
+<p>status check is performed, and the results are used in the stochastic decision-making processes. In 
+addition, the agents monitor their direct surroundings for resource availability and the presence of 
+competing agents. Based on the obtained information, agents may choose to either harvest from the 
+present location, move to a neighbouring site, or wait for a better opportunity. An agent is likely to 
+harvest if its internal energy is low and resource is available from the present location. It is likely to 
+move to neighbouring sites with more resources, and fewer competing agents. Furthermore, each agent 
+has individual trait values that modifies its tendency to move or harvest.  
+ 
+After taking its action, a higher energy status increases the probability an agent will split into a ‘parent’ 
+and a ‘child’ (i.e., ‘procreation’). A lower energy status increases the probability it will die. 
+ 
+When we open up the model it looks like this: 
+</p>
+<p> 
+</p>
+<p> 
+ 
+The variables and parameters are given in Table A2 of the ODD in the download from 
+https://www.comses.net/codebases/5374/releases/1.1.0/ 
+ 
+The traits 𝑤𝛼 are initialized in the setup function, while parameter 𝑧 gives the variation in offspring 
+</p>
+<p>inheritance. We will return to this inheritance of traits later in the tutorial.  
+ 
+Let’s generate a single run of the model with RNetLogo. The file ‘step01.r’ contains the following. First, 
+the usual lines of code to set the working directory and load the required packages: 
+</p>
+<p> ls(all = TRUE) 
+ rm(list = ls(all = TRUE))  
+</p>
+<p> ls() 
+ ls(all = TRUE) 
+ setwd("C:/0Werk/Onderwijs/Module SA for ABM - SURF-DeSIRE/Data_for_part3") 
+ getwd() 
+ .libPaths("library") 
+ install.packages("RNetLogo") 
+ library(RNetLogo) 
+</p>
+<p> 
+Then, we set the path for the ABM 
+</p>
+<p> nl.path &lt;- "C:/Program Files/NetLogo 6.0.4/app" 
+ nl.jarname &lt;- "netlogo-6.0.4.jar" 
+</p>
+<p> NLStart(nl.path = nl.path, gui = FALSE, nl.jarname = nl.jarname) 
+ NLLoadModel("C:/.../Data_for_part3/Models/RC_ABM2.nlogo") 
+</p>
+<p>(We assume you have placed the files into such a WD called Data_for_part3, with a subdirectory for the 
+NetLogo models.) </p>
+<p />
+<div class="annotation"><a href="https://www.comses.net/codebases/5374/releases/1.1.0/">https://www.comses.net/codebases/5374/releases/1.1.0/</a></div>
+</div>
+<div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 3/10 
+</p>
+<p> 
+</p>
+<p>We create some empty vectors to store the simulation data of each iteration: 
+ data.time &lt;- c() 
+ data.resource &lt;- c() 
+ data.agents &lt;- c() 
+</p>
+<p> 
+We set the number of iterations (in the follow examples the number of iterations will be 1000, but you 
+can set it to, e.g., 10 to first test the running of the model): 
+</p>
+<p> nticks &lt;- 1000 
+ 
+Now, we provide the commands for actually running the model: 
+</p>
+<p> NLCommand("setup") 
+ for(i in 1:(nticks+1)){ 
+</p>
+<p>     tick &lt;- NLReport("ticks") 
+  NLCommand("go") 
+  data.time[i] &lt;- i 
+  data.resource[i] &lt;- NLReport("sum [resource] of patches") 
+  data.agents[i] &lt;- NLReport("count turtles") 
+</p>
+<p> } 
+ NLQuit()  
+</p>
+<p> 
+The vector ‘data.time’ now contains the iteration numbers, the vector ‘data.resource’ the sum of all the 
+resources of all patches in the model at every iteration, and the vector ‘data.agents’ the total number of 
+turtles (agents) at every iteration. We finally put the vectors together in a dataframe to print to a file: 
+</p>
+<p> df.p &lt;- data.frame(data.time,data.resource) 
+</p>
+<p> df &lt;- data.frame(df.p,data.agents) 
+ write.table(df, "singlerunmodel.dat", sep = " ", row.names = FALSE, col.names = TRUE) 
+</p>
+<p> 
+After running, you should have a file ‘singlerunmodel.dat’. We read this back in with the file ‘step02.r’: 
+</p>
+<p> x &lt;- read.table("singlerunmodel.dat", header = TRUE, sep = " ") 
+ dim(x) 
+</p>
+<p> 
+Indeed, we have a 1001 by 3 datafile. It may be convenient to assign shorter names to the different 
+vectors: 
+</p>
+<p> x.t &lt;- x$data.time 
+ x.r &lt;- x$data.resource 
+</p>
+<p> x.a &lt;- x$data.agents 
+ 
+Now we plot the run: 
+</p>
+<p> png(filename="singlerun.png",width=1000,height=480) 
+ par(mfrow=c(1,2)) 
+ plot(x.t,x.r) 
+ plot(x.t,x.a) 
+ dev.off() 
+</p>
+<p> 
+</p>
+<p> 
+ 
+You can play around with different parameter settings of the model (either by directly changing 
+parameters in the ABM or indirectly via RNetLogo – the latter is recommended if you want to keep the 
+original parameter settings) to see what type of dynamics are generated. 
+ </p>
+<p />
+</div>
+<div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 4/10 
+</p>
+<p>The model contains different stochastic elements. For example, the decision-making of agents is 
+</p>
+<p>stochastic, but the probabilities for each decision are also determined by the agent traits, the current 
+state of the agent, and the observed state of its local surroundings. Let us now look at the distribution of 
+the end points of a set of simulations at the basic settings. The file ‘step03.dat’ opens up the datafile 
+‘replicates.csv’: 
+</p>
+<p> x &lt;- read.table("replicates.csv", header = TRUE, sep = ",") 
+ 
+The input looks something like this: 
+</p>
+<p>... 
+V1997 V1998 V1999 V2000 
+1    84    83    83    83 
+</p>
+<p>2    93    93    93    92 
+3    82    82    82    82 
+4    85    85    86    86 
+5    84    84    84    84 
+6    91    90    90    89 
+</p>
+<p> 
+A dimensional check tells you we have a 1000 iterations and 2000 replicate runs (plus the first column, 
+which indicates the iteration numbering): 
+</p>
+<p> dim(x) 
+[1] 1000 2001 
+</p>
+<p> 
+We want to make a histogram of the end points. We transpose the matrix and select the final point of 
+each of the 2000 runs: 
+</p>
+<p> x.t &lt;- t(x) 
+ x.end &lt;- x.t[2:2001, 1000] 
+ hist(x.end, breaks = 20) 
+</p>
+<p> 
+The resulting histogram looks like this: 
+ 
+</p>
+<p> 
+ 
+In the first part of the tutorial we discuss how to use a test like the Shapiro-Wilks test to check for 
+</p>
+<p>normality. Later in this tutorial we will also perform such a test. For now, let’s accept this distribution 
+looks rather like a normal distribution, and continue with looking at resilience in our ABM. 
+ 
+</p>
+<p>2. Resilience mechanism: Trait inheritance 
+ 
+</p>
+<p>Resilience refers to the ability of a system to cope with shocks, either by buffering them or by having 
+mechanisms for restoration after the shock has had its effect. Resilience is always evaluated in the 
+context “of what, to what?” (Carpenter et al., 2001), and possibly also “for whom?” (Cutter, 2016).*  
+ 
+</p>
+<p>* Carpenter, S., Walker, B., Anderies, J. M., &amp; Abel, N. (2001). From metaphor to measurement: resilience of 
+</p>
+<p>what to what?. Ecosystems, 4(8), 765-781. 
+Cutter, S. L. (2016). Resilience to what? Resilience for whom?. The Geographical Journal, 182(2), 110-113. 
+</p>
+<p> </p>
+<p />
+</div>
+<div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 5/10 
+</p>
+<p>An important mechanism for resilience in our ABM is the mechanism through which agents ‘procreate’. 
+</p>
+<p>Agents have several traits (randomly initialized by a distribution that is captured by model parameters) 
+associated with the decision-making processes involving stochasticity. These traits are inherited by the 
+‘offspring’. The model thus has two settings. In the first setting, which we name random traits, whenever 
+an agent ‘procreates’, a copy is made of the agent with new traits randomly drawn from uniform 
+distribution. In other words, the ‘offspring’ is in no way a copy of the ‘parent’, but just some random new 
+agent. This setting is the model we used to generate the above results. In the second setting, which we 
+will name inheritance, whenever an agent ‘procreates’, the copy receives trait values that are 
+comparable to those of the ‘parent’. There is some randomness in setting these new trait values, but 
+generally speaking the ‘offspring’ resembles the ‘parent’. 
+ 
+Shocks are not implemented explicitly in our model, but we vary the values of important parameters 
+related to the resource dynamics, resulting in resource shortage for the agent population. The general 
+</p>
+<p>result in the simulations from ‘resource shortage’ shocks is that in the random traits runs, the population 
+of agents tends to go extinct. In the inheritance runs, the agents that make ‘better decisions’ tend to 
+perform better, yielding more resources and thus a higher internal energy status, in turn leading to a 
+larger probability of procreating. The ‘offspring’ in turn inherits the better traits values, increasing their 
+chance for survival and procreation, and so on. Several runs go extinct, but in many runs the population 
+survives. After some ‘adaptation’ period, the population persists and consists of ‘better’ adapted 
+individuals that can better cope with the resource conditions. These results are summarized in Fig. 10(a) 
+of the paper by Ten Broeke et al., in which the number of surviving populations is depicted as function of 
+time. The mechanism of population adaptation through a combination of inheritance of traits and natural 
+selection may be a critical aspect of what we call resilience of a socio-ecological or socio-technical 
+system. Implicit in this is also the heterogeneity in the agent population, i.e., there must be agents with 
+different trait values performing differently relative to each other to have local ‘winners’ and ‘losers’. 
+</p>
+<p> 
+For the remainder of this tutorial we will look deeper into the quantification of resilience. 
+</p>
+<p>3. Quantifying resilience 
+ 
+</p>
+<p>Although there are many ways to quantify resilience, a dominant metric is the return time, i.e., the time 
+it takes for the system to return to the pre-shock state. This metric is heavily associated with the concept 
+of eigenvalues from linear algebra. Assume a matrix 𝐴 of which the elements are the partial derivatives 
+</p>
+<p>of the differential equations used to describe the dynamics of the system state variables, the so-called 
+Jacobian matrix. The eigenvalues are then found through the relation 
+ 
+</p>
+<p>𝐴𝑣 = 𝜌𝑣 
+ 
+Here 𝑣 are the eigenvectors, i.e., vectors which after multiplication by the Jacobian give exactly the same 
+</p>
+<p>vector except for a constant (the eigenvalues). An eigenvalue 𝜌 &lt; 0 indicates stability: after a 
+</p>
+<p>perturbation the system after some time decays back to the state before the shock. An eigenvalue 𝜌 &gt; 0 
+</p>
+<p>indicates instability, and after a perturbation the system state deviates further and further from the pre-
+shock state. 
+ 
+In our case, we are dealing with an ABM. There is no Jacobian, and no stable state in the sense as in the 
+case of differential equation models (as can be deduced from our single run time plot). We are looking 
+for an alternative way of quantifying resilience that suits stochastic, multi-agent simulations.  
+ 
+Above we displayed a histogram of the end point of multiple simulations of the model at the same 
+</p>
+<p>parameter setting. If we select other end points (e.g., after 500 or 5000 iterations), the resulting 
+histograms might be different compared to our baseline histogram. In the case of the model without the 
+trait inheritance and without shock, this is not the case: an ergodicity test confirms that the distribution 
+stabilizes after several time steps. In an ergodicity test, we compare the histogram of the output of a 
+number of replicate runs at a set time (e.g., t=1000) against the histogram of a single model run 
+measured at a number of time-steps. If both are equal, the model is said to be ergodic. In the case of 
+the model with trait inheritance, adaptation occurs also without shock. The resulting histogram starts to 
+deviate from the baseline histogram after some time, and this deviation becomes larger as ‘time’ (i.e., 
+the number of iterations) progresses. This is our basis for quantifying resilience. 
+ 
+A common means to compare two histograms, say 𝑃 and 𝑅, is by using the Kullback-Leibler divergence, 
+</p>
+<p>given as 
+ 
+</p>
+<p>𝐷𝐾𝐿(𝑃||𝑅) = −∑𝑃(𝑥)
+</p>
+<p>𝑥𝜖𝜒
+</p>
+<p>log (
+𝑅(𝑥)
+</p>
+<p>𝑃(𝑥)
+) 
+</p>
+<p> </p>
+<p />
+</div>
+<div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 6/10 
+</p>
+<p>This measure expresses in how far the two distributions overlap. It is of course possible that two 
+</p>
+<p>histograms generated from two different sets of model simulations do not overlap at all – and this is also 
+the case here when sufficient iterations have passed in the model with trait inheritance. In that case a 
+limitation of the Kullback-Leibler divergence becomes apparent: it does not say how far away two non-
+overlapping distributions are. Here we therefore make use of the Earth Mover Distance (EMD) to 
+compare how far away two distributions are. The EMD is explained in more detail in Appendix 3 of the 
+paper by Ten Broeke et al. (https://doi.org/10.1371/journal.pone.0171833.s003), and it is implemented 
+in the code we refer to in the next Section. In essence, the EMD computes the amount of ‘work’ that 
+would be needed to move a ‘pile of earth’ (i.e., a histogram) from one place to another (i.e., the second 
+histogram). 
+ 
+The first proposed metric to quantify resilience here is the EMD applied to the histogram of the model 
+without trait inheritance (i.e., random traits) compared to the histogram of the model with trait 
+</p>
+<p>inheritance: 
+ 
+</p>
+<p>𝑄(𝑡) = 𝑑𝑒(𝑃(𝑥, 𝑡), 𝑅(𝑥, 𝑡)) 
+</p>
+<p> 
+In other words, we run the random model 1000 or 10,000 times and generate the histogram at several 
+different time points. Then, we run the model with trait inheritance for the same number of times, and 
+also generate those histograms. We then compare the respective histograms and quantify their 
+difference by means of the EMD. This difference increases as the number of iterations increases. In a 
+way, we apply a time-dependent sensitivity measure to quantify the change in the system as a result of 
+the system input ‘trait inheritance’. 
+ 
+It is not sufficient to quantify the difference between the two model types. After all, the populations in 
+the simulations of both model settings could eventually go extinct. The critical thing here is that many 
+</p>
+<p>populations in the model with trait inheritance survive, i.e., they seemingly continue indefinitely. The 
+interpretation of resilience in this case is:  
+</p>
+<p>- Of what? The persistence of the agent population (indirectly also the resource, because without 
+resource the agents cannot persist, but this is implicit). Individual agents are of no concern, and 
+in fact individuals with lesser ‘fitness’ have to die in order for the population to continue to 
+adapt. Note, that expressing resilience at the level of the individual would probably be very 
+different; 
+</p>
+<p>- To what? Temporary resource shortages at population level (there is no targeted reduction in 
+resource availability at specific locations or for specific agents); 
+</p>
+<p>The ‘for whom?’-question is not relevant here, as this is a simulation model and no stakeholders are 
+involved here. We also need to quantify the persistence of the agent population in the model with trait 
+inheritance relative to the random inheritance model. In Fig. 11 of Ten Broeke et al. a picture is given 
+that plots 𝜆 as a function of 𝐸ℎ, the energy it costs for an agent to make a harvest. The variable 𝜆 is 
+calculated based on the following equation 
+</p>
+<p> 
+𝑁+(𝑡) = 𝑁0e
+</p>
+<p>−𝜆𝑡 
+</p>
+<p> 
+Here 𝑁0 is the total number of simulation runs, and 𝑁+ the number of runs remaining at time 𝑡 with a 
+persisting population (i.e., number of agents larger than zero). To estimate 𝜆, this equation is fitted on 
+</p>
+<p>model output from a number of replicate runs. It can be interpreted as an ‘extinction parameter’ not 
+</p>
+<p>unlike the dominant eigenvalue of a Jacobian matrix, i.e., it quantifies the rate at which populations go 
+extinct over time under changing 𝐸ℎ. For the random model, 𝜆 increases for decreasing 𝐸ℎ. In the 
+</p>
+<p>inheritance model, the probability of extinction remains near zero as a result of the adaptation of the 
+population. In particular in those runs the EMD will continue to grow as iterations progress. The value of 
+𝐸ℎ for which there is a transition from 𝜆 &gt; 0 to 𝜆 = 0 can be interpreted as a ‘tipping point’. And again, we 
+</p>
+<p>use a sensitivity analysis approach (OFAT) for quantifying resilience. 
+ 
+The below Section lets you run through the full numerical experiment of going from ABM single 
+simulation to generating the important pictures displaying resilience. Warning: The simulation time for 
+several steps may be considerable. We do not recommend running this as part of the actual live tutorial, 
+but the file(s) may be helpful for the students to browse and discover. 
+ 
+Also note, that you may need to change several lines with path assignments to the correct working 
+directories. 
+ 
+</p>
+<p> 
+ 
+ </p>
+<p />
+<div class="annotation"><a href="https://doi.org/10.1371/journal.pone.0171833.s003">https://doi.org/10.1371/journal.pone.0171833.s003</a></div>
+</div>
+<div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 7/10 
+</p>
+<p>4. The full experiment in one go: an R file to run it yourself 
+ 
+</p>
+<p>1. The enclosed R file ‘tutorial.r’ lets you take all the steps 
+</p>
+<p>going from single run to performing an OFAT analysis 
+</p>
+<p>involving the parameter ‘Eh’ (i.e., the amount of energy 
+</p>
+<p>it costs for an agent to make a harvest). Plot a figure of 
+</p>
+<p>the model output as function of time in the default 
+</p>
+<p>parameter setting (single model run).  
+</p>
+<p> 
+</p>
+<p> 
+</p>
+<p>2. Draw a histogram of the model output from ‘replicates.csv’, at t = 1000, after the model has 
+</p>
+<p>converged. 
+</p>
+<p>  
+</p>
+<p>3. Perform a stationarity test, between t = 1000 and t = 2000, to verify that the output has 
+</p>
+<p>converged before we look into ergodicity. To remove short-term fluctuations, we need to 
+</p>
+<p>average over time-windows. We do not know in advance what may be a suitable window length. 
+</p>
+<p>Therefore we try different lengths. For each length, we perform a runs test to verify stationarity. 
+</p>
+<p>We use a significance level of 0.05, and plot the percentage of model runs for which stationarity 
+</p>
+<p>is rejected. Around a window-length of 50, the proportion of rejected runs converges to the 
+</p>
+<p>significance level. This indicates that the output is stationary.  </p>
+<p />
+</div>
+<div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 8/10 
+</p>
+<p> 
+</p>
+<p>4. Run a single model run for a long time, until t = 100,000. This gives ‘timedep.csv’. Compare the 
+</p>
+<p>histogram over time to the histogram over replicate runs (like in the previous step, we average 
+</p>
+<p>over time-windows in both cases).  
+</p>
+<p> 
+</p>
+<p> 
+</p>
+<p>5. Run an ergodicity test. The outcome is that the null-hypothesis that the output is ergodic is not 
+</p>
+<p>rejected.  
+</p>
+<p>6. We repeat step 2-5, but now with adaptation added to the model. The output still appears 
+</p>
+<p>stationary on shorter time-scales in ‘replicates_adapt.csv’. But, the histograms show that on 
+</p>
+<p>longer time-scales (file ‘timedep_adapt.csv’), adaptation does affect the model output. The 
+</p>
+<p>ergodicity test now indicates that the output is not ergodic (i.e., the null-hypothesis of ergodicity 
+</p>
+<p>is rejected). This is also clear based on a visual comparison of the histograms.  
+</p>
+<p> 
+</p>
+<p> </p>
+<p />
+</div>
+<div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 9/10 
+</p>
+<p> 
+</p>
+<p> 
+</p>
+<p>7. The difference between both histograms can be measured by the earth-movers distance. This 
+</p>
+<p>distance can thus be used to measure the effect of adaptation on the model output. The 
+</p>
+<p>computation of this distance as a function of time shows that the effects of adaptation increases 
+</p>
+<p>over time (note: this computation will probably take a few minutes) 
+</p>
+<p> 
+</p>
+<p>8. We perform a OFAT sensitivity for one parameter Eh, which represents the energy cost needed 
+</p>
+<p>for an agent to harvest during a time-step. For each value of Eh, we use 100 replicate runs 
+</p>
+<p>(output ‘OFAT_Eh.csv’; note, that this takes a while to run). It turns out there is a tipping point; 
+</p>
+<p>for large values of Eh harvesting is prohibitively expensive, causing extinction of the population. 
+</p>
+<p>We investigate how this tipping point is influenced by adaptation. First, we plot for one value of 
+</p>
+<p>Eh close to the tipping point, how many of the 100 replicate runs maintain a population, as 
+</p>
+<p>function of time. This number decreases exponentially if adaptation is absent. With adaptation, 
+</p>
+<p>there is a small initial decrease, after which no further extinction occurs. Thus, it seems that 
+</p>
+<p>adaptation increases the survival of the population, i.e., its resilience against the types of shocks 
+</p>
+<p>in this study. Next, we perform the same analysis for the remaining values of Eh. We plot the 
+</p>
+<p>extinction coefficient, estimated using an exponential fit. The plot confirms that adaptation 
+</p>
+<p>decreases the rate of extinction.  </p>
+<p />
+</div>
+<div class="page"><p />
+<p>Tutorial SA for ABM – part 2: analyzing Agent Based Models  
+ 
+</p>
+<p>George van Voorn &amp; Guus ten Broeke October 2020 p. 10/10 
+</p>
+<p> 
+</p>
+<p>Thank you for following this tutorial. Please refer to our paper in case you use any of this in your own 
+work or education: 
+Ten Broeke, Guus, George Van Voorn, Arend Ligtenberg, Jaap Molenaar. "Resilience through adaptation." 
+PloS one, 12(2), e0171833 (2017). 
+The used model can be found on https://www.comses.net/codebases/5374/releases/1.1.0/ 
+ 
+</p>
+<p># </p>
+<p />
+<div class="annotation"><a href="https://www.comses.net/codebases/5374/releases/1.1.0/">https://www.comses.net/codebases/5374/releases/1.1.0/</a></div>
+</div>
+</body></html>
