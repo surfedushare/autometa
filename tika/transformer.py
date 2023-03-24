@@ -57,7 +57,8 @@ class TikaWebsiteContentTransformer(object):
             if not is_content:
                 if descendant.name not in self.common_tags:
                     continue
-                if descendant.name in self.common_tags and frequencies[text] <= self.content_threshold:
+                if descendant.name in self.common_tags and frequencies[text] <= self.content_threshold \
+                        and descendant.name != "a":
                     is_content = True
             if descendant.name in self.common_tags and frequencies[text] > self.content_threshold:
                 is_content = False

@@ -63,16 +63,5 @@
     "On some older GM and other applications, the heater blower circuit has a switch on the ground side of the blower circuit rather than the power supply side. The reason for this is that switching the ground side of the circuit rather than the power supply side reduces radio frequency interference. On these applications, the resistors run very hot and often fail. A fuse is often located on the resistor board. The fuse only protects the low and medium blower speeds. High speed will still work if the resistor fuse is blown.",
     "On 1996 GM FWD minivans, two blower relays are used (low and high speed). If a vehicle has only low or high blower speed, the cause is probably a failed low- or high-speed blower relay.\nOn the 1997 Pontiac Grand Prix, the blower circuit has one module with a relay and resistors mounted inside the plenum. This module is about the size of a credit card and runs very hot. It can explode if any water from outside the vehicle or an internal heater core leak comes into contact with the module.",
     "On GM applications that use a pulse width modulated blower speed control module inside the HVAC unit, the module often gets dirty, runs hot and fails. On these applications, you need a scan tool to check the module.",
-    "On late-model Cadillacs, the blower motor and power module are combined into one unit. If the blower isn't working, you can't use a jumper wire to bypass the relay to see if the fan motor spins. You have to replace the whole unit (which is very expensive). Again, using a scan tool here can help you diagnose the fault.",
-    "Finding & Fixing Coolant Leaks",
-    "Cooling System Electrolysis Corrosion",
-    "(causes & cures)",
-    "Servicing Your Cooling System",
-    "Radiator Repair & Replacement",
-    "Your Temperature Warning Lamp Is On.  What Should You Do?",
-    "Overheating: Causes & Cures",
-    "Troubleshooting Cooling Problems with Temperature",
-    "Belt & hose service",
-    "Coolant Checks & Changes More Complicated These Days",
-    "Universal Coolant"
+    "On late-model Cadillacs, the blower motor and power module are combined into one unit. If the blower isn't working, you can't use a jumper wire to bypass the relay to see if the fan motor spins. You have to replace the whole unit (which is very expensive). Again, using a scan tool here can help you diagnose the fault."
 ]
