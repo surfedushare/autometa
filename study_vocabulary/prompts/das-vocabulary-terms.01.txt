@@ -1,0 +1,228 @@
+============================================================ Test: https://edusources.nl/materials/d04b3b35-9fe8-45df-af18-7aad2627b21d/kennisclip-aantoonbaarheidsgrens
+
+Below between the <terms> tag you'll find a list of terms in JSON format that can be relevant for applied science study materials.
+Underneath the terms you'll find a piece of study material between <study-material> tags also in JSON format.
+Shortly summarize the study material and conclude with writing a JSON Array with all terms that are relevant for your summary inside of that Array.
+Be conservative with picking relevant terms. Only pick terms that are very likely applicable. It's expected that only a few terms apply. It's also ok to respond with an empty Array.
+
+<terms>
+["Data Visualization with SPSS", "Jupyter", "Database Management", "Experimental design and optimization", "R Markdown", "Data Visualization with GraphPad Prism", "Basecalling", "Metabolomics", "T-tests", "DNA Sequencing", "Statistical Reports", "Machine Learning with Python", "Comparative Genomics", "Data Cleaning", "R Basics", "Data Visualization with Excel", "Data Visualization with Python", "General", "SPSS Basics", "Data Cleaning with SPSS", "ANOVA", "Data visualization", "Galaxy Basics", "Macros", "Normality Tests", "Assembly", "SPSS", "NumPy", "Galaxy Administration", "Calibration methods", "Non-parametric statistics", "Robust statistics", "Statistics with Excel", "Calibration Curves", "Statistics of repeated measurement", "QTL Analysis", "The quality of analytical measurements", "Metametabolomics", "GWAS", "DevOps", "Design of Experiments", "Image Analysis", "Data Cleaning with Python", "Metagenomics", "Regression", "RStudio", "Cluster Analysis", "Correlation", "R Commander", "Statistics with R", "Image Analysis with ImageJ", "Sequence Analysis", "Python Basics", "NGS and TGS Platforms", "Statistics with Python", "Data Visualization with R", "Odds and Relative Risk", "Annotation", "Biological Databases", "Metaproteomics", "Biopython", "Excel Basics", "Statistics with GraphPad Prism", "Shiny", "Proteomics", "Pivot Tables", "Variant Calling", "Querying", "Machine Learning with R", "Basic Statistics", "VBA", "Machine Learning", "Data Cleaning with R", "Metataxonomics", "R", "Excel", "Data Stewardship", "Panel Sequencing", "Whole Genome Shotgun Sequencing", "SciPy", "Statistics with SPSS", "Unix Commands and Shell Scripting Basics", "Multivariate data analysis", "Pandas", "Bayesian Statistics", "Metatranscriptomics", "Image Analysis with Galaxy", "Transcriptomics", "PCA and MDS", "Matlab", "Chemical Databases", "Nonparametric Statistics", "Genome Browsers", "Significance tests", "Outliers", "Quality Control of Sequencing Data", "Building a Database", "Chi-squared Test", "Cluster Computing", "Whole Exome Sequencing"]
+</terms>
+
+<study-material>
+{
+    "doi": null,
+    "set": "sharekit:edusources",
+    "srn": "sharekit:edusources:d04b3b35-9fe8-45df-af18-7aad2627b21d",
+    "files": [
+        {
+            "srn": "sharekit:edusources:d04b3b35-9fe8-45df-af18-7aad2627b21d:6449541aa558957a10a12fb882fe2d1d9a0e8892",
+            "url": "https://www.youtube.com/watch?v=uOliT0dpDLs",
+            "hash": "6449541aa558957a10a12fb882fe2d1d9a0e8892",
+            "type": "website",
+            "state": "active",
+            "title": "URL 1",
+            "is_link": true,
+            "language": "nl",
+            "priority": 0,
+            "provider": {
+                "ror": null,
+                "name": "Domein Applied Science",
+                "slug": null,
+                "external_id": "3584f503-f130-4e76-bc55-86ffcc44f7aa"
+            },
+            "copyright": "cc-by-nc-40",
+            "mime_type": "text/html",
+            "access_rights": "OpenAccess",
+            "video": {
+                "license": "youtube",
+                "duration": "PT10M",
+                "previews": {
+                    "preview": "https://i.ytimg.com/vi/uOliT0dpDLs/hqdefault.jpg",
+                    "full_size": "https://i.ytimg.com/vi/uOliT0dpDLs/maxresdefault.jpg",
+                    "preview_small": "https://i.ytimg.com/vi/uOliT0dpDLs/mqdefault.jpg"
+                },
+                "embed_url": "https://www.youtube.com/embed/uOliT0dpDLs",
+                "definition": "hd",
+                "description": "Deze video behandeld wat de aantoonbaaheidsgrens is en waarom je deze bepaald en geeft je hiermee meer inzicht in deze statistiekterm.\n\n0:00 introductie\n0:35 kleine uitstap\n01:14 wat is een aantoonbaarheidsgrens\n03:51 waarom bepaal je een aantoonbaarheidsgrens\n04:24 hoe bepaal je een aantoonbaarheidsgrens\n09:23 samenvattend en afronden\n\nVoor meer informatie over de chemie opleiding. \nGa naar onze website: https://www.hsleiden.nl/chemie"
+            },
+            "previews": {
+                "preview": "https://surfpol-harvester-content-prod.s3.amazonaws.com/thumbnails/files/previews/youtube/uOliT0dpDLs-thumbnail-400x300-70.jpg",
+                "full_size": "https://surfpol-harvester-content-prod.s3.amazonaws.com/files/previews/youtube/uOliT0dpDLs.jpg",
+                "preview_small": "https://surfpol-harvester-content-prod.s3.amazonaws.com/thumbnails/files/previews/youtube/uOliT0dpDLs-thumbnail-200x150-70.jpg"
+            }
+        }
+    ],
+    "state": "active",
+    "title": "Kennisclip: Aantoonbaarheidsgrens",
+    "authors": [],
+    "keywords": [
+        "analytische chemie",
+        "dataverwerking",
+        "statistiek"
+    ],
+    "language": "nl",
+    "provider": {
+        "ror": null,
+        "name": "Domein Applied Science",
+        "slug": null,
+        "external_id": "3584f503-f130-4e76-bc55-86ffcc44f7aa"
+    },
+    "subtitle": null,
+    "copyright": "cc-by-nc-40",
+    "has_parts": [],
+    "is_part_of": [],
+    "publishers": [
+        "Domein Applied Science"
+    ],
+    "description": "Een kennisclip over de aantoonbaarheidsgrens. Het doel is inzicht te krijgen in de betekenis van dit prestatiekenmerk.\nLengte 10 min",
+    "external_id": "d04b3b35-9fe8-45df-af18-7aad2627b21d",
+    "modified_at": "2022-09-26T10:27:23Z",
+    "organizations": {
+        "root": {
+            "ror": null,
+            "name": "Domein Applied Science",
+            "slug": null,
+            "type": "unknown",
+            "external_id": "3584f503-f130-4e76-bc55-86ffcc44f7aa"
+        },
+        "associates": [],
+        "departments": []
+    },
+    "publisher_date": "2022-09-15",
+    "publisher_year": 2022,
+    "technical_type": "video",
+    "copyright_description": null,
+    "overwrite": null,
+    "disciplines_normalized": [
+        "techniek"
+    ],
+    "publisher_year_normalized": "2022",
+    "consortium": "Domein Applied Science",
+    "study_vocabulary": [],
+    "harvest_source": "edusources",
+    "url": "https://www.youtube.com/watch?v=uOliT0dpDLs",
+    "mime_type": "text/html",
+    "previews": {
+        "preview": "https://surfpol-harvester-content-prod.s3.amazonaws.com/thumbnails/files/previews/youtube/uOliT0dpDLs-thumbnail-400x300-70.jpg",
+        "full_size": "https://surfpol-harvester-content-prod.s3.amazonaws.com/files/previews/youtube/uOliT0dpDLs.jpg",
+        "preview_small": "https://surfpol-harvester-content-prod.s3.amazonaws.com/thumbnails/files/previews/youtube/uOliT0dpDLs-thumbnail-200x150-70.jpg"
+    },
+    "video": {
+        "license": "youtube",
+        "duration": "PT10M",
+        "previews": {
+            "preview": "https://i.ytimg.com/vi/uOliT0dpDLs/hqdefault.jpg",
+            "full_size": "https://i.ytimg.com/vi/uOliT0dpDLs/maxresdefault.jpg",
+            "preview_small": "https://i.ytimg.com/vi/uOliT0dpDLs/mqdefault.jpg"
+        },
+        "embed_url": "https://www.youtube.com/embed/uOliT0dpDLs",
+        "definition": "hd",
+        "description": "Deze video behandeld wat de aantoonbaaheidsgrens is en waarom je deze bepaald en geeft je hiermee meer inzicht in deze statistiekterm.\n\n0:00 introductie\n0:35 kleine uitstap\n01:14 wat is een aantoonbaarheidsgrens\n03:51 waarom bepaal je een aantoonbaarheidsgrens\n04:24 hoe bepaal je een aantoonbaarheidsgrens\n09:23 samenvattend en afronden\n\nVoor meer informatie over de chemie opleiding. \nGa naar onze website: https://www.hsleiden.nl/chemie"
+    },
+    "licenses": [
+        "cc-by-nc-40"
+    ],
+    "technical_types": [
+        "website"
+    ],
+    "studies": [],
+    "disciplines": [
+        "techniek"
+    ],
+    "material_types": [
+        "instructie"
+    ],
+    "aggregation_level": "2",
+    "lom_educational_levels": [
+        "HBO"
+    ],
+    "research_themes": [],
+    "research_object_type": null,
+    "learning_material_disciplines_normalized": [
+        "techniek"
+    ],
+    "study_vocabulary_terms": [],
+    "text": null,
+    "suggest_phrase": null,
+    "suggest_completion": [
+        "Kennisclip",
+        "Aantoonbaarheidsgrens"
+    ]
+}
+</study-material>
+
+
+============================================================ ChatGPT 4
+
+The study material is a 10-minute YouTube video titled "Kennisclip: Aantoonbaarheidsgrens," provided by the Domein Applied Science. It offers an introduction to the concept of the detection limit in analytical chemistry. The video explains what a detection limit is, why it is determined, and how to calculate it. This educational content is aimed at providing a deeper understanding of this statistical term in the context of chemistry education.
+
+Relevant terms from the provided list for this summary include:
+
+"Statistical Reports"
+"The quality of analytical measurements"
+"Calibration methods"
+
+["Statistical Reports", "The quality of analytical measurements", "Calibration methods"]
+
+
+============================================================ ChatGPT o1-preview
+
+Thought for 22 seconds
+
+Crafting the process
+I’m working through summarizing study material, identifying pertinent terms, and representing these in a JSON array, ensuring relevance and clarity throughout.
+
+Assessing the relevance
+
+OK, let me see. I’m picking terms that are clearly suited to the task, steering clear of any uncertainties.
+
+Organizing terms
+
+OK, let me see. I’m compiling a list of terms across various data science and genomics fields, including data visualization, machine learning, and statistical analysis, to see how they interconnect.
+
+Examining the video
+
+I’m eager to explore the content of the Dutch knowledge clip focused on the limit of detection. The video provides an overview, covers its significance, and explains how to determine it.
+
+Understanding detection limits
+
+OK, let me see. The video explains detection limits in analytical chemistry, their significance, and methods to determine them. It covers an introduction, a small digression, and provides practical examples.
+
+Unraveling key concepts
+
+I’m piecing together the educational video on the detection limit in analytical chemistry, understanding its relevance and computation. It’s intriguing to see how this statistical measure emphasizes overall alignment.
+
+Focusing on key areas
+
+I’m narrowing down the topics to calibration methods, non-parametric and robust statistics, and statistical significance. These are crucial for understanding detection limits, which are critical in analytical chemistry.
+
+Identifying key concepts
+
+I pinpointed Calibration methods, Calibration Curves, and The quality of analytical measurements as critical terms. Outliers and regression might also play roles in establishing the limit of detection.
+
+Choosing key terms
+
+I’m selecting "Calibration methods," "Calibration Curves," and "The quality of analytical measurements" as the essential terms for the JSON array.
+
+This educational video explains the concept of the limit of detection in analytical chemistry. It discusses what the limit of detection is, why it's important to determine it, and how to calculate it, providing insight into this statistical performance characteristic.
+
+["Calibration methods", "Calibration Curves", "The quality of analytical measurements"]
+
+
+============================================================ Claude 3.5 Sonnet
+
+This study material is a video titled "Kennisclip: Aantoonbaarheidsgrens" (Knowledge Clip: Detection Limit) that aims to provide insight into the concept of detection limits in analytical chemistry. The 10-minute video, produced by the Applied Science Domain, covers the following topics:
+
+Introduction to the detection limit concept
+Definition of detection limit
+Importance of determining detection limits
+Methods for determining detection limits
+Summary and conclusion
+
+The video is designed to help students understand this statistical term in the context of analytical chemistry and data processing. It is intended for higher education (HBO) level students in the field of technology, specifically chemistry.
+Relevant terms from the provided list:
+
+["Calibration methods", "The quality of analytical measurements", "Basic Statistics"]
+
+These terms are chosen because they directly relate to the concept of detection limits in analytical chemistry, which is the main focus of the study material.

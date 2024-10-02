@@ -1,0 +1,12 @@
+Below between the <terms> tag you'll find a list of terms in JSON format that can be relevant for ${field} study materials.
+Underneath the terms you'll find a piece of study material between <study-material> tags also in JSON format.
+Shortly summarize the study material and conclude with writing a JSON Array with all terms that are relevant for your summary inside of that Array.
+Be conservative with picking relevant terms. Only pick terms that are very likely applicable. It's expected that only a few terms apply. It's also ok to respond with an empty Array.
+
+<terms>
+${terms}
+</terms>
+
+<study-material>
+${study-material}
+</study-material>
