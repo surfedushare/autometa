@@ -756,7 +756,7 @@ $$ Caregiver
 -+ Conversational techniques
 -- Promoting healthy behaviors
 -+ Collaborative decision-making
-+- Self-management (phases)
+-+ Self-management (phases)
 $$ Strengthen self-management
 -- Health Skills
 $$ Nursing

@@ -1,0 +1,363 @@
+============================================================ Test: https://edusources.nl/materials/eb1774aa-7fe9-4b70-bf8f-978abe646403/responsible-use-of-generative-ai
+
+Below between the <terms> tag you'll find a tree of terms in JSON format that can be relevant for information literacy study materials.
+Underneath the terms you'll find a piece of study material between <study-material> tags also in JSON format.
+
+First shortly summarize the study material between <summary> tags.
+
+Then based on that summary propose term candidates that come from the tree. Write these between a <candidates> tag.
+
+The next step is to reflect on your current selection and pick the final terms.
+Be conservative with picking relevant terms. Only pick terms that are very likely applicable. It's expected that only a few nodes apply.
+Important: parent terms apply automatically. Based on this rule some child terms may be inappropriate even if they appear correct at first.
+Write your pick between a <picks> tag
+
+Conclude with writing a JSON Array with all terms that are relevant for your summary inside of that Array.
+It's also ok to respond with an empty Array. Include any parent terms from child terms that you've selected.
+
+<terms>
+<ul class="root">
+    <li>
+        Information Literacy
+        <ul class="children">
+            <li>
+                Critically evaluate
+                <ul class="children">
+                    <li>
+                        Assessing results (critical)
+                        <ul class="children">
+                            <li>Assessment criteria (relevance/reliability).</li>
+                            <li>Information processing (reading, listening, etc.)</li>
+                        </ul>
+                    </li>
+                    <li>Evaluating search process (critical)</li>
+                </ul>
+            </li>
+            <li>
+                Organizing and processing
+                <ul class="children">
+                    <li>Analyzing search results (information analysis)</li>
+                    <li>
+                        Using and processing information (ethical)
+                        <ul class="children">
+                            <li>Copyright</li>
+                            <li>Source</li>
+                            <li>Privacy-sensitive information</li>
+                        </ul>
+                    </li>
+                    <li>Manage process and search results</li>
+                    <li>Collaboration (in teams)</li>
+                    <li>Synthesizing or creating new information</li>
+                </ul>
+            </li>
+            <li>
+                Orienting and specifying
+                <ul class="children">
+                    <li>Formulating research question</li>
+                    <li>Identifying information needs</li>
+                    <li>
+                        Orienting to information landscape
+                        <ul class="children">
+                            <li>Nature and manifestations of information/data</li>
+                            <li>Individual in the information landscape</li>
+                            <li>Role and creation of networks</li>
+                            <li>Value of information/data</li>
+                            <li>Operation and structure of the Internet</li>
+                        </ul>
+                    </li>
+                    <li>Search for orientation</li>
+                </ul>
+            </li>
+            <li>
+                Planning and searching
+                <ul class="children">
+                    <li>Selecting information sources and search systems</li>
+                    <li>Selecting search terms</li>
+                    <li>Search for information</li>
+                </ul>
+            </li>
+            <li>
+                Publishing and communication
+                <ul class="children">
+                    <li>Communicating (from final product)</li>
+                    <li>Publishing (of finished product)</li>
+                    <li>Valorize findings (outreach)</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</terms>
+
+<study-material>
+{
+  "entity": "products",
+  "srn": "sharekit:edusources:e0a3d632-06f2-4d3c-9d19-5d5f906437f1",
+  "set": "sharekit:edusources",
+  "state": "active",
+  "external_id": "e0a3d632-06f2-4d3c-9d19-5d5f906437f1",
+  "score": 0,
+  "provider": "Information Literacy",
+  "published_at": "2023-02-01",
+  "modified_at": "2024-05-21",
+  "url": "https://www.youtube.com/watch?v=tX1tvGLG5cw",
+  "title": "Kennisclip Nexis Uni",
+  "description": "Doorzoek (inter)nationale en regionale krantenartikelen, zowel op papier als online, in Nexis Uni. De krant van vandaag staat er ook al in!  Deze clip (1.50 min.) helpt jou op weg!  \nEr zijn in totaal 5 kennisclips in deze serie verschenen te weten: Betrouwbaarheid, Theoretisch kader, Onderzoeksvraag, Privacygevoelige data, Nexis Uni",
+  "language": "nl",
+  "copyright": "cc-by-nc-sa-40",
+  "video": {
+    "embed_url": "https://www.youtube.com/embed/tX1tvGLG5cw",
+    "duration": "PT1M51S"
+  },
+  "harvest_source": "edusources",
+  "previews": {
+    "full_size": "https://surfpol-harvester-content-prod.s3.amazonaws.com/files/previews/youtube/tX1tvGLG5cw.webp",
+    "preview": "https://surfpol-harvester-content-prod.s3.amazonaws.com/thumbnails/files/previews/youtube/tX1tvGLG5cw-thumbnail-400x300-70.webp",
+    "preview_small": "https://surfpol-harvester-content-prod.s3.amazonaws.com/thumbnails/files/previews/youtube/tX1tvGLG5cw-thumbnail-200x150-70.webp"
+  },
+  "files": [
+    {
+      "srn": "sharekit:edusources:e0a3d632-06f2-4d3c-9d19-5d5f906437f1:b97ee6d5486a3e7bdfb8a8efdb7b1bb44d450b31",
+      "hash": "b97ee6d5486a3e7bdfb8a8efdb7b1bb44d450b31",
+      "access_rights": "OpenAccess",
+      "state": "active",
+      "is_link": true,
+      "url": "https://www.youtube.com/watch?v=tX1tvGLG5cw",
+      "type": "website",
+      "title": "URL 1",
+      "copyright": "cc-by-nc-sa-40",
+      "mime_type": "text/html",
+      "video": {
+        "embed_url": "https://www.youtube.com/embed/tX1tvGLG5cw",
+        "duration": "PT1M51S"
+      },
+      "previews": {
+        "full_size": "https://surfpol-harvester-content-prod.s3.amazonaws.com/files/previews/youtube/tX1tvGLG5cw.webp",
+        "preview": "https://surfpol-harvester-content-prod.s3.amazonaws.com/thumbnails/files/previews/youtube/tX1tvGLG5cw-thumbnail-400x300-70.webp",
+        "preview_small": "https://surfpol-harvester-content-prod.s3.amazonaws.com/thumbnails/files/previews/youtube/tX1tvGLG5cw-thumbnail-200x150-70.webp"
+      },
+      "priority": 0
+    }
+  ],
+  "authors": [
+    {
+      "name": "Studiecentrum Hogeschool Arnhem Nijmegen",
+      "email": "studiecentrum.R31@han.nl",
+      "external_id": "22129d16-416d-4fc1-a79b-ee5c0f89fb33",
+      "dai": null,
+      "isni": null,
+      "orcid": null,
+      "is_external": false
+    }
+  ],
+  "has_parts": [],
+  "is_part_of": [],
+  "keywords": [
+    "Nexis Uni",
+    "kennisclip",
+    "informatievaardigheden"
+  ],
+  "doi": null,
+  "lom_educational_levels": [
+    "HBO"
+  ],
+  "studies": [],
+  "disciplines": [
+    "techniek",
+    "gedrag_maatschappij",
+    "interdisciplinair",
+    "kunst_cultuur",
+    "onderwijs_opvoeding",
+    "gezondheid",
+    "aarde_milieu",
+    "recht_bestuur",
+    "taal_communicatie",
+    "economie_bedrijf",
+    "exact_informatica"
+  ],
+  "ideas": [],
+  "technical_type": "video",
+  "material_types": [
+    "informatiebron"
+  ],
+  "aggregation_level": "2",
+  "publishers": [
+    "HAN University of Applied Sciences"
+  ],
+  "consortium": "Information Literacy",
+  "subtitle": null
+}
+</study-material>
+
+============================================================ Claude Sonnet 3.5 New
+Let me help analyze this study material and identify relevant terms.
+<summary>
+This is a knowledge clip about Nexis Uni, which is part of a series of 5 clips about information literacy topics. The clip (1:51 minutes) demonstrates how to search through national and international newspaper articles, including both print and online sources, using Nexis Uni. It's an educational resource created by the Study Center of HAN University of Applied Sciences, aimed at HBO (higher professional education) level students across multiple disciplines.
+</summary>
+<candidates>
+Given the summary, these terms appear potentially relevant:
+- Planning and searching
+  - Selecting information sources and search systems
+  - Search for information
+- Orienting and specifying
+  - Orienting to information landscape
+    - Nature and manifestations of information/data
+</candidates>
+<picks>
+After careful consideration and applying the parent rule, I'll select:
+- Planning and searching
+  - Selecting information sources and search systems
+Rationale: This knowledge clip specifically focuses on teaching students about Nexis Uni as a search system for accessing newspaper articles. While "Search for information" might seem relevant, it's too specific given that the clip appears to focus on the tool itself rather than the actual search process. The orientation terms, while tempting, are too broad for what appears to be a practical tool demonstration.
+</picks>
+
+[
+    "Planning and searching",
+    "Selecting information sources and search systems"
+]
+
+------------------------------------------------------------ Claude Sonnet 3.5 New (eval)
+$$ Planning and searching
+-+ Search for information
++- Information Literacy
+?+ Selecting information sources and search systems  # isn't this applicable?
+
+============================================================ ChatGPT o1-preview
+
+
+Thought for 46 seconds
+
+Breaking down the task
+
+I’m pulling together a process to summarize a study material, identify term candidates, reflect on and select final terms, and provide a JSON Array of all relevant terms, including parent terms.
+
+Reviewing the study material
+
+I’m analyzing the user's study material, presented in JSON format. The objective is to summarize, propose term candidates, and finalize the most appropriate terms for inclusion in a JSON array.
+
+Examining the content
+I’m pulling together product details: entity, SRN, set, state, external ID, score, provider, publication dates, URL, title, and description. These elements are key to understanding the full context.
+
+Pulling together key details
+
+I’m gathering information on a 1.50-minute Dutch video titled "Kennisclip Nexis Uni," featuring a preview embedded on YouTube with open access. The video is part of the Educational & Research Resources category.
+
+Navigating Nexis Uni
+
+I’m piecing together a 1.50-minute video to simplify searching national and regional newspapers in Nexis Uni, both print and online, and highlighting key knowledge clips.
+
+Crafting instructional guidance
+
+I'm creating a concise summary for a 1.5-minute video, "Kennisclip Nexis Uni," which teaches users how to search for international and regional newspaper articles using Nexis Uni, covering topics like Reliability, Theoretical Framework, Research Question, Privacy-sensitive data, and Nexis Uni.
+
+Choosing candidate terms
+
+I’m digging into the existing term tree to pick the best term candidates for the section. This involves careful crafting and a thoughtful selection process.
+
+Mapping out the components
+
+I’m charting the essentials of Information Literacy, including critical evaluation, organizing and processing information, orienting and specifying needs, planning and searching, and publishing and communication. Each section outlines various skills and tasks necessary for mastering information literacy.
+
+Breaking down the process
+
+I’m thinking through the video’s elements, noting Nexis Uni usage, key terms like Information Literacy and Planning and Searching, and possibly Organizing and Processing along with Orienting and Specifying.
+
+Organizing information
+
+Candidates in our study are mapping out steps such as planning, organizing, processing, orienting, specifying, and critically evaluating search results. Interestingly, the video focuses on using Nexis Uni to find articles, with minimal critical evaluation.
+
+Crafting an introduction
+
+I'm focusing on key skills like selecting sources and search systems, along with information retrieval. These will ensure a thorough and effective introduction to using Nexis Uni.
+
+We've identified the key focus
+
+We’re thinking through the video’s specific aims, including selecting Nexis Uni, finding articles, and considering search terms and result analysis. This ensures a focused approach to planning and searching.
+
+Focusing my strategy
+
+I’m thinking through the process, pinpointing "Planning and searching" as the core strategy. Selecting information sources, search systems, and detailed searches align with this strategy.
+
+Creating the JSON array
+
+I’m compiling a JSON array that includes keywords like "Information Literacy" and "Planning and searching," which are crucial for effective data retrieval.
+
+Tracking progress
+
+I’m gathering info on the series of knowledge clips, focusing on "Planning and searching," including selecting sources and conducting searches. Analyzing results seems less relevant.
+
+<summary>
+This is a 1.5-minute instructional video titled "Kennisclip Nexis Uni" that guides users on how to search for international and regional newspaper articles, both in print and online, using Nexis Uni. It highlights that even today's newspaper is available in the database. This video helps users get started with using Nexis Uni effectively. It is part of a series of five knowledge clips on topics including Reliability, Theoretical Framework, Research Question, Privacy-sensitive data, and Nexis Uni.
+</summary>
+<candidates>
+- Planning and searching
+- Selecting information sources and search systems
+- Search for information
+- Organizing and processing
+- Analyzing search results (information analysis)
+</candidates>
+<picks>
+- Planning and searching
+- Selecting information sources and search systems
+- Search for information
+</picks>
+
+[
+  "Information Literacy",
+  "Planning and searching",
+  "Selecting information sources and search systems",
+  "Search for information"
+]
+
+
+------------------------------------------------------------ ChatGPT o1-preview (eval)
+$$ Planning and searching
+$$ Search for information
+$$ Information Literacy
+?+ Selecting information sources and search systems  # isn't this applicable?
+
+============================================================ ChatGPT 4o
+
+<summary>
+This study material is a brief informational video (knowledge clip) designed to help users navigate and search for international and regional newspaper articles, both online and in print, through Nexis Uni. The video, part of a series, introduces essential aspects of information literacy such as reliability, theoretical framework, research questions, privacy-sensitive data, and Nexis Uni usage. This 1 minute and 51 seconds clip is provided by HAN University of Applied Sciences.
+</summary>
+<candidates>
+- Information Literacy
+- Critically evaluate
+- Assessing results (critical)
+- Assessment criteria (relevance/reliability)
+- Organizing and processing
+- Using and processing information (ethical)
+- Privacy-sensitive information
+- Orienting and specifying
+- Formulating research question
+- Planning and searching
+- Selecting information sources and search systems
+</candidates>
+<picks>
+- Information Literacy
+- Critically evaluate
+- Assessment criteria (relevance/reliability)
+- Privacy-sensitive information
+- Planning and searching
+- Selecting information sources and search systems
+</picks>
+
+
+[
+    "Information Literacy",
+    "Critically evaluate",
+    "Assessment criteria (relevance/reliability)",
+    "Privacy-sensitive information",
+    "Planning and searching",
+    "Selecting information sources and search systems"
+]
+
+
+---------------------------------------------------------- ChatGPT 4o (eval)
+$$ Planning and searching
+-- Search for information
+$$ Information Literacy
+?+ Selecting information sources and search systems  # isn't this applicable?
+++ Privacy-sensitive information
+++ Assessment criteria (relevance/reliability)
+++ Critically evaluate
