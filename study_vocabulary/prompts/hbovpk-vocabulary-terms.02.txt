@@ -1,0 +1,807 @@
+============================================================ Test: https://edusources.nl/materials/WikiwijsDelen:urn:uuid:45380b2e-3203-4389-948b-c152a8a7e436/kennisclip-zelfmanagement-wat-is-jouw-rol-als-verpleegkundige
+
+Below between the <terms> tag you'll find a tree of terms in JSON format that can be relevant for nursing study materials.
+Underneath the terms you'll find a piece of study material between <study-material> tags also in JSON format.
+
+First shortly summarize the study material between <summary> tags.
+
+Then based on that summary propose term candidates that come from the tree. Write these between a <candidates> tag.
+
+The next step is to reflect on your current selection and pick the final terms.
+Be conservative with picking relevant terms. Only pick terms that are very likely applicable. It's expected that only a few nodes apply.
+Important: parent terms apply automatically. Based on this rule some child terms may be inappropriate even if they appear correct at first.
+Write your pick between a <picks> tag
+
+Conclude with writing a JSON Array with all terms that are relevant for your summary inside of that Array.
+It's also ok to respond with an empty Array. Include any parent terms from child terms that you've selected.
+
+<terms>
+<ul class="root">
+    <li>
+        Nursing
+        <ul class="children">
+            <li>
+                Communicator
+                <ul class="children">
+                    <li>
+                        Deployment of information and communication technology (ICT)
+                        <ul class="children">
+                            <li>Matching media to person</li>
+                            <li>Reliability of nursing information</li>
+                            <li>Communication through various media</li>
+                            <li>Computer literacy</li>
+                            <li>ICT in communications</li>
+                            <li>Knowledge/techniques ICT</li>
+                            <li>New developments ICT</li>
+                            <li>Privacy and confidentiality (legislation)</li>
+                            <li>Reporting and electronic transfer</li>
+                            <li>Social media/internet as a communication tool</li>
+                            <li>Security and privacy (nursing information)</li>
+                            <li>Pros and cons of media used (psychology)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Person-centered communication
+                        <ul class="children">
+                            <li>Agism and stereotyping</li>
+                            <li>Command of Dutch language</li>
+                            <li>Limitations in communication</li>
+                            <li>Monitor quality of communication</li>
+                            <li>Communication of non-native speakers</li>
+                            <li>Communication levels</li>
+                            <li>Communication Disorders</li>
+                            <li>Emotions</li>
+                            <li>Empathy</li>
+                            <li>Group Dynamics</li>
+                            <li>Tools for communicating</li>
+                            <li>Supported conversation</li>
+                            <li>Develop communication</li>
+                            <li>Person-centered intercultural communication</li>
+                            <li>Person-centered care</li>
+                            <li>Psychological communication course</li>
+                            <li>Psychological forms of communication</li>
+                            <li>Psychological Interaction Patterns</li>
+                            <li>Theories and models person-centered communication</li>
+                            <li>Nursing principles personal communication</li>
+                            <li>Nursing theories</li>
+                            <li>Processing information</li>
+                            <li>Vision of the older person</li>
+                            <li>Vision of care for the elderly</li>
+                            <li>Resistance</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Health Promoter
+                <ul class="children">
+                    <li>
+                        Promoting healthy behaviors
+                        <ul class="children">
+                            <li>Autonomy</li>
+                            <li>Guidance methods</li>
+                            <li>Government policy cycle (local and national)</li>
+                            <li>Collective preventive activities</li>
+                            <li>Communication vulnerable target groups (social marketing and active approach)</li>
+                            <li>Communication vulnerable target groups (recruitment, outreach and approach)</li>
+                            <li>Culture-related health problems</li>
+                            <li>Thinking processes</li>
+                            <li>Behavioral influencing</li>
+                            <li>Behavioral Determinants</li>
+                            <li>Behavior change (social cognition models).</li>
+                            <li>Behavior change (stages of change model)</li>
+                            <li>Behavior change (theoretical models)</li>
+                            <li>Behavior change (theory of planned behavior)</li>
+                            <li>Indicated and care-related care</li>
+                            <li>Habit formation and addiction</li>
+                            <li>Health</li>
+                            <li>Health promotion interventions and guidelines</li>
+                            <li>Health Skills</li>
+                            <li>Health education through E-health programs</li>
+                            <li>Limits to/of prevention</li>
+                            <li>Healthcounseling</li>
+                            <li>Integral health policy</li>
+                            <li>Knowledge about vulnerable groups</li>
+                            <li>Learning and conditioning</li>
+                            <li>Motivation</li>
+                            <li>Motivational interviewing</li>
+                            <li>Nudging</li>
+                            <li>Support and guidance for change</li>
+                            <li>Views of health</li>
+                            <li>Outreach work</li>
+                            <li>Paternalism</li>
+                            <li>Planned education (behavior change)</li>
+                            <li>Planned education (health education)</li>
+                            <li>Plan-based education (PRECEDE-PROCEED).</li>
+                            <li>Plan-based education (Preffi, Refka, Intervention Mapping)</li>
+                            <li>Prevention (social system)</li>
+                            <li>Prevention: facilities, legislation and health education</li>
+                            <li>Education and outreach strategies</li>
+                            <li>Succession experience (promote healthy behaviors)</li>
+                            <li>Universal and selective health prevention</li>
+                            <li>Nursing lifestyle counseling</li>
+                            <li>Education individual and groups</li>
+                            <li>Information tools</li>
+                            <li>Neighborhood-oriented health approach (community approach, foster care)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Prevention-oriented analysis
+                        <ul class="children">
+                            <li>Health analysis</li>
+                            <li>Epidemiology</li>
+                            <li>Healthy aging</li>
+                            <li>Knowledge Centers</li>
+                            <li>Research need target group</li>
+                            <li>Research behavioral determinants target group</li>
+                            <li>Prevalence, incidence</li>
+                            <li>Prevention of elder abuse</li>
+                            <li>Prevention toolkit for the elderly</li>
+                            <li>Common health problems</li>
+                            <li>Nursing health determinants</li>
+                            <li>Nursing analytic models (lifestyle and health)</li>
+                            <li>Nursing participatory methods</li>
+                            <li>Nursing screening methods</li>
+                            <li>Nursing social determinants</li>
+                            <li>Nursing district analysis</li>
+                            <li>Early detection and risk assessment</li>
+                            <li>Legislation (Preventions)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Organizer
+                <ul class="children">
+                    <li>
+                        Coordination of care
+                        <ul class="children">
+                            <li>Funding of care</li>
+                            <li>Policy on the elderly</li>
+                            <li>Financing care seniors</li>
+                            <li>Chain care, care programs</li>
+                            <li>Clinical pathways</li>
+                            <li>Political/social policy (coord. of care)</li>
+                            <li>Transitions in healthcare</li>
+                            <li>Transmural care (coordination of care).</li>
+                            <li>Legislation (Coordination of care)</li>
+                            <li>Legislation (Curatorship)</li>
+                            <li>Legislation (making available)</li>
+                            <li>Legislation (Health care packages).</li>
+                            <li>Residential facilities for the elderly</li>
+                            <li>Care models</li>
+                            <li>Healthcare systems, healthcare organizations and health insurance</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Promoting safety
+                        <ul class="children">
+                            <li>Patient safety competencies</li>
+                            <li>Working ergonomically</li>
+                            <li>Promoting infection prevention</li>
+                            <li>Prevention and de-escalation</li>
+                            <li>Security Policy</li>
+                            <li>Safety Management Systems</li>
+                            <li>Legislation (duty to report)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Nursing leadership
+                        <ul class="children">
+                            <li>Financial management</li>
+                            <li>Job Buildings</li>
+                            <li>Implementation phases and strategies</li>
+                            <li>Innovate</li>
+                            <li>Interaction models</li>
+                            <li>Organizing, directing and monitoring activities</li>
+                            <li>Organizational structures</li>
+                            <li>Organizing work</li>
+                            <li>Professional and personal leadership</li>
+                            <li>Profiling (leadership)</li>
+                            <li>Project Management</li>
+                            <li>Talent Development</li>
+                            <li>Change Management</li>
+                            <li>Forms of leadership</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Nursing entrepreneurship
+                        <ul class="children">
+                            <li>Argument</li>
+                            <li>Proprietary practices</li>
+                            <li>Attitude of independence</li>
+                            <li>Guts and authenticity</li>
+                            <li>Developing new ideas</li>
+                            <li>Independent own opinion</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Professional and Quality Promoter
+                <ul class="children">
+                    <li>
+                        Delivering quality care
+                        <ul class="children">
+                            <li>Current quality frameworks</li>
+                            <li>Quality of care</li>
+                            <li>Visions of quality</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Participating in quality assurance
+                        <ul class="children">
+                            <li>Quality patient safety</li>
+                            <li>Incident reports</li>
+                            <li>Methods and models quality assurance niaZ, hkZ</li>
+                            <li>Methods and models quality assurance screening</li>
+                            <li>Guideline development (quality assurance)</li>
+                            <li>Legislation (quality assurance)</li>
+                            <li>Care Innovation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Professional behavior
+                        <ul class="children">
+                            <li>Delimitation of own domain</li>
+                            <li>Professional code of professional conduct</li>
+                            <li>Professional Association</li>
+                            <li>Sustainability</li>
+                            <li>History of nursing</li>
+                            <li>(re-)registration</li>
+                            <li>Internationalization</li>
+                            <li>Nursing quality register</li>
+                            <li>Social and political developments</li>
+                            <li>Participation</li>
+                            <li>Human Rights</li>
+                            <li>Professionalizing behavior</li>
+                            <li>Visions of nursing</li>
+                            <li>Legislation (professional conduct)</li>
+                            <li>World Health Organization</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Reflective EBP professional
+                <ul class="children">
+                    <li>
+                        Expertise promotion
+                        <ul class="children">
+                            <li>Coaching (psychology)</li>
+                            <li>Coaching and mentoring in the workplace</li>
+                            <li>Didactic material</li>
+                            <li>Knowledge assurance and knowledge sharing</li>
+                            <li>Knowledge Transfer</li>
+                            <li>Learning Psychology</li>
+                            <li>Lesson Design</li>
+                            <li>Social media (expertise promotion)</li>
+                            <li>Nursing professional networks</li>
+                            <li>Nursing work supervision</li>
+                            <li>Nursing quality registry</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Deployment of EBP
+                        <ul class="children">
+                            <li>Critical appraisal of a topic</li>
+                            <li>Nursing principles (EBP).</li>
+                            <li>Nursing Standards</li>
+                            <li>Nursing professional groups and professional literature</li>
+                            <li>Nursing scientific research</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Moral sensitivity
+                        <ul class="children">
+                            <li>Professional code of moral sensitivity</li>
+                            <li>Code of ethics (moral sensitivity)</li>
+                            <li>Moral-ethical context (moral sensitivity)</li>
+                            <li>Moral and ethical values sensitivity</li>
+                            <li>Demand-driven vs. supply-driven care (ethical)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Investigative ability
+                        <ul class="children">
+                            <li>Action Research</li>
+                            <li>Descriptive statistics</li>
+                            <li>Qualitative research</li>
+                            <li>Quantitative research</li>
+                            <li>Literature survey</li>
+                            <li>Practice-oriented research</li>
+                            <li>Nursing argumentation</li>
+                            <li>Nursing research quality</li>
+                            <li>Nursing research cycle</li>
+                            <li>Nursing reporting of (practice) research</li>
+                            <li>Legislation (investigative ability)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Professional reflection
+                        <ul class="children">
+                            <li>Nursing professional codes (national and international)</li>
+                            <li>Nursing reflection skills</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Collaboration partner
+                <ul class="children">
+                    <li>
+                        Continuity of care
+                        <ul class="children">
+                            <li>Intra- and interdisciplinary transfer</li>
+                            <li>Nursing reporting guideline</li>
+                            <li>Nursing chain processes</li>
+                            <li>Nursing Regional Care Map</li>
+                            <li>Healthcare logistics nurse</li>
+                            <li>Warm transfer (communication)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Collaborative decision-making
+                        <ul class="children">
+                            <li>Interests</li>
+                            <li>Decision-making processes</li>
+                            <li>Case Management</li>
+                            <li>Cultural backgrounds</li>
+                            <li>Diversity</li>
+                            <li>Patient self-direction</li>
+                            <li>Empowerment (decision-making)</li>
+                            <li>Ethnicity</li>
+                            <li>Conversational techniques</li>
+                            <li>Collaborative decision-making (communication)</li>
+                            <li>Philosophical/ideological beliefs</li>
+                            <li>Power and influence</li>
+                            <li>Moral deliberation</li>
+                            <li>Patient Role</li>
+                            <li>Politics/government and healthcare (joint decision-making)</li>
+                            <li>Positions (decision-making)</li>
+                            <li>Nursing decision-making process (decision aid)</li>
+                            <li>Nursing dialogue (managed care)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Multidisciplinary collaboration
+                        <ul class="children">
+                            <li>Conflict Management</li>
+                            <li>Feedback</li>
+                            <li>Initiation collaboration</li>
+                            <li>Bargaining models</li>
+                            <li>Profiling (multidisciplinary collaboration)</li>
+                            <li>Collaborative processes</li>
+                            <li>Transmural nursing care</li>
+                            <li>Meeting techniques</li>
+                            <li>Nursing disease management</li>
+                            <li>Nursing chain care/processes (collaboration)</li>
+                            <li>Nursing Networks (mapping).</li>
+                            <li>Nursing positioning in collaboration</li>
+                            <li>Nursing collaboration (conclusion)</li>
+                            <li>Nursing collaboration (Ethical aspects)</li>
+                            <li>Nursing collaboration (filling own role)</li>
+                            <li>Nursing collaboration partners</li>
+                            <li>Nursing collaborations</li>
+                            <li>Nursing collaboration (volunteers and family caregivers)</li>
+                            <li>Nursing collaboration (residential-living environment)</li>
+                            <li>Nursing care programming</li>
+                            <li>Legislation (domestic violence reporting code)</li>
+                            <li>Legislation (cooperation)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Professional relationship
+                        <ul class="children">
+                            <li>Professional relationship code of ethics</li>
+                            <li>Code of ethics (professional relationship)</li>
+                            <li>Ethical theories</li>
+                            <li>Feeling Reflections</li>
+                            <li>Intercultural communication (professional relationship)</li>
+                            <li>Listening, summarizing, questioning</li>
+                            <li>Moral-ethical context (professional relationship)</li>
+                            <li>Moral and ethical values professional relationship</li>
+                            <li>Paraphrasing and mirroring</li>
+                            <li>Verbal and nonverbal communication</li>
+                            <li>Demand-driven vs supply-driven care (professional relationship)</li>
+                            <li>Legislation (professional relations)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Caregiver
+                <ul class="children">
+                    <li>
+                        Indicating care
+                        <ul class="children">
+                            <li>Data collection (methodology).</li>
+                            <li>Integrated care (living, welfare, care and meaning)</li>
+                            <li>V&amp;VN standards framework</li>
+                            <li>Personal budget</li>
+                            <li>Triage (principles)</li>
+                            <li>Nursing care ((re)indications).</li>
+                            <li>WMO</li>
+                            <li>Care (complexity)</li>
+                            <li>Care (measurement and screening instruments)</li>
+                            <li>Care reporting systems</li>
+                            <li>Care (scarcity and scarcity distribution)</li>
+                            <li>Care allocation</li>
+                            <li>Health Insurance Act</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Clinical reasoning
+                        <ul class="children">
+                            <li>Respiration</li>
+                            <li>Motion</li>
+                            <li>Cell and tissue science</li>
+                            <li>Central nervous system</li>
+                            <li>Demographic characteristics</li>
+                            <li>DSM-V (classification system).</li>
+                            <li>Pharmaceutical policy</li>
+                            <li>Medicines (main groups)</li>
+                            <li>Drugs (prescription)</li>
+                            <li>Drugs (action, effect and interaction)</li>
+                            <li>Geriatric problems</li>
+                            <li>Life Stages</li>
+                            <li>Medication Safety</li>
+                            <li>Multimorbidity</li>
+                            <li>Neuropsychology</li>
+                            <li>Developmental Psychology</li>
+                            <li>Orthopedagogy</li>
+                            <li>Personality Studies</li>
+                            <li>Polypharmacy</li>
+                            <li>Psychological disorders</li>
+                            <li>Metabolism</li>
+                            <li>Transport</li>
+                            <li>UF: Pathology</li>
+                            <li>Excretion</li>
+                            <li>Aging and life course</li>
+                            <li>Nursing diagnosis</li>
+                            <li>Nursing classification systems</li>
+                            <li>Nursing methodology</li>
+                            <li>Mental disabilities</li>
+                            <li>Propagation</li>
+                            <li>Heat management</li>
+                            <li>Diseases and complications (in the elderly)</li>
+                            <li>Senses</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Performing care
+                        <ul class="children">
+                            <li>ADL tools</li>
+                            <li>Barrier Nursing</li>
+                            <li>Limited resources and physical conditions</li>
+                            <li>Complementary care</li>
+                            <li>Dietetics</li>
+                            <li>Home automation, e-health, robotics</li>
+                            <li>FIRST AID</li>
+                            <li>Occupational Therapy</li>
+                            <li>Physiotherapy</li>
+                            <li>Medicines (registration)</li>
+                            <li>Medicines (provide)</li>
+                            <li>Haptonomic moving</li>
+                            <li>Infection Prevention</li>
+                            <li>Personal care</li>
+                            <li>Primary healthcare</li>
+                            <li>CPR</li>
+                            <li>Theoretical models (validated care).</li>
+                            <li>Nursing interventions</li>
+                            <li>Nursing practice (sources)</li>
+                            <li>Nursing practice (guidelines and protocols)</li>
+                            <li>Nursing practice (standards)</li>
+                            <li>Nursing math</li>
+                            <li>Nursing skills</li>
+                            <li>Reserved actions</li>
+                            <li>BIG Act</li>
+                            <li>WGBO</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Strengthen self-management
+                        <ul class="children">
+                            <li>Limitations (dealing with)</li>
+                            <li>Coping styles</li>
+                            <li>Carrying load and carrying capacity</li>
+                            <li>Empowerment</li>
+                            <li>Experience expertise</li>
+                            <li>Ethics and culture (characteristics and customs)</li>
+                            <li>Collaborative decision-making</li>
+                            <li>Interculturalization</li>
+                            <li>Vulnerable groups</li>
+                            <li>Philosophy of life and religion</li>
+                            <li>Mantel Care</li>
+                            <li>Patient system</li>
+                            <li>Psychological aspects of illness and health</li>
+                            <li>Social map</li>
+                            <li>Social environment</li>
+                            <li>Systems theory</li>
+                            <li>Therapy adherence</li>
+                            <li>Nursing visions and theories</li>
+                            <li>Legislation (Strengthen self-management)</li>
+                            <li>Self-management (phases)</li>
+                            <li>Self-management caregiver (principles)</li>
+                            <li>Disease Understanding</li>
+                            <li>Care approach</li>
+                            <li>Care and welfare services (funding)</li>
+                            <li>Care theories</li>
+                            <li>Care organization</li>
+                            <li>Care System</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</terms>
+
+<study-material>
+{
+  "entity": "products",
+  "srn": "edurep:WikiwijsDelen:WikiwijsDelen:urn:uuid:45380b2e-3203-4389-948b-c152a8a7e436",
+  "set": "edurep:WikiwijsDelen",
+  "state": "active",
+  "external_id": "WikiwijsDelen:urn:uuid:45380b2e-3203-4389-948b-c152a8a7e436",
+  "score": 0,
+  "provider": "Hogeschool Utrecht",
+  "published_at": "2024-07-25",
+  "modified_at": "2024-08-31",
+  "url": "https://stream.hu.nl/players/quyjzvh3-wtzy1Zaa.html",
+  "title": "Kennisclip Zelfmanagement: Wat is jouw rol als verpleegkundige?",
+  "description": "De Hogeschool Utrecht, opleiding bachelor Verpleegkunde, heeft een reeks van 3 kennisclips ontwikkeld over Zelfmanagement. In de kennisclip 'Zelfmanagement: wat is jouw rol als verpleegkundige?' wordt ingegaan op de rol van de verpleegkundige in het ondersteunen van zelfmanagement. Wat is belangrijk in de basishouding van een verpleegkundige en wat en wat kun je oefenen in een gesprek? De kennisclip is bedoeld voor zowel studenten als docenten van de bachelor Verpleegkunde.",
+  "language": "nl",
+  "copyright": "cc-by-sa-40",
+  "video": null,
+  "harvest_source": "WikiwijsDelen",
+  "previews": null,
+  "files": [
+    {
+      "srn": "edurep:WikiwijsDelen:WikiwijsDelen:urn:uuid:45380b2e-3203-4389-948b-c152a8a7e436:762623d97839ed348fd1a6f35390f432cf9fc635",
+      "hash": "762623d97839ed348fd1a6f35390f432cf9fc635",
+      "access_rights": "RestrictedAccess",
+      "state": "active",
+      "is_link": true,
+      "url": "https://stream.hu.nl/players/quyjzvh3-wtzy1Zaa.html",
+      "type": "website",
+      "title": "URL 1",
+      "copyright": "cc-by-sa-40",
+      "mime_type": "text/html",
+      "video": null,
+      "previews": null,
+      "priority": 0
+    }
+  ],
+  "authors": [],
+  "has_parts": [],
+  "is_part_of": [],
+  "keywords": [
+    "#hbovpk",
+    "#HU",
+    "zelfmanagement",
+    "kennisclip"
+  ],
+  "metrics": null,
+  "doi": null,
+  "lom_educational_levels": [
+    "HBO",
+    "HBO - Bachelor"
+  ],
+  "studies": [],
+  "disciplines": [
+    "gezondheid"
+  ],
+  "ideas": [],
+  "technical_type": "website",
+  "material_types": [
+    "informatiebron"
+  ],
+  "aggregation_level": "2",
+  "publishers": [
+    "Hogeschool Utrecht"
+  ],
+  "consortium": "HBO Verpleegkunde",
+  "subtitle": null
+}
+</study-material>
+
+============================================================ Claude Sonnet 3.5 New
+
+<summary>
+This is a knowledge clip about self-management in nursing, specifically focusing on the role of nurses in supporting patient self-management. Created by Utrecht University of Applied Sciences for nursing bachelor students and teachers, it explores the basic attitude nurses should have and discusses conversation techniques for supporting self-management. The clip is part of a series of three knowledge clips about self-management in nursing.
+</summary>
+<candidates>
+Based on the summary, these terms appear relevant:
+- Strengthening self-management (main category)
+- Self-management (phases)
+- Self-management caregiver (principles)
+- Conversational techniques
+- Nursing visions and theories
+- Professional relationship (as it involves communication and attitude)
+</candidates>
+<picks>
+After careful consideration, I'll select:
+1. "Strengthen self-management" (main category)
+2. "Self-management (phases)"
+3. "Self-management caregiver (principles)"
+I'm excluding:
+
+Conversational techniques: while relevant, it's too specific given that the clip focuses on the broader self-management support role
+Nursing visions and theories: too broad for this specific content
+Professional relationship: while communication is involved, the focus is specifically on self-management support
+</picks>
+
+
+[
+"Nursing",
+"Caregiver",
+"Strengthen self-management",
+"Self-management (phases)",
+"Self-management caregiver (principles)"
+]
+------------------------------------------------------------ Claude Sonnet 3.5 New (eval)
+-+ Collaboration partner
+-- Motivational interviewing
+$$ Self-management caregiver (principles)
+-- Collaborative decision-making (communication)
+-- Health Promoter
+-- Limitations (dealing with)
+-+ Collaborative decision-making
+$$ Caregiver
+-- Succession experience (promote healthy behaviors)
+-+ Conversational techniques
+-- Promoting healthy behaviors
+-- Collaborative decision-making
+$$ Self-management (phases)
+$$ Strengthen self-management
+-- Health Skills
+$$ Nursing
+++ Self-management caregiver (principles)
+
+
+============================================================ ChatGPT o1-preview
+
+Thought for 48 seconds
+
+Summarizing and selecting terms
+
+I’m summarizing the study material and identifying relevant term candidates. Then, I’m reflecting on and finalizing the most pertinent terms, ensuring a conservative selection of applicable terms.
+
+Organizing key details
+
+I’m gathering relevant terms and organizing the study material. Focusing on titles, descriptions, and metadata fields, I extract essential information, ensuring coherence and clarity throughout the summary process.
+
+Understanding the nursing role
+
+I'm thinking about the nurse's critical role in self-management, focusing on their supportive function and the fundamental attitude required, as presented in a knowledge clip for nursing bachelor's students and educators.
+
+Understanding nurses' roles
+
+This video outlines nurses' essential role in self-management support for patients, focusing on their fundamental attitude and communication skills. Ideal for Nursing Bachelor's students and educators.
+
+Mapping out key concepts
+
+I’m pulling together the central ideas of self-management, the nurse's supportive role, and communication skills. This is for nursing students and educators. Next, I’ll pinpoint related terms.
+
+Pinpointing relevant terms
+
+OK, let's highlight key terms from the self-management and person-centered communication sections, including empowerment, collaboration, and psychological communication.
+
+Ensuring relevance
+
+I'm mapping out terms from health promotion and expertise promotion sections, emphasizing support, motivation, and workplace coaching.
+
+Highlighting key strategies
+
+I’m noting the addition of "Communication skills" to the list of strategies for enhancing self-management, self-management caregiver, empowerment, nursing visions and theories, personal communication, person-centered communication, empathy, support and guidance for change, coaching and mentoring in the workplace, collaborative decision-making, and psychological forms of communication.
+
+Mapping concepts
+
+Weighing options
+
+Considering terms like 'Strengthen self-management' and 'Empowerment' for their direct relevance to nursing and patient care. Noting that 'Coaching and mentoring in the workplace' seems less aligned with the current focus.
+
+Mapping the hierarchy
+
+I’m tasked with outlining a JSON array using chosen terms and their parent terms. This involves listing terms like 'Self-management' and including their broader terms like 'Strengthen self-management'.
+
+Mapping out essential terms
+
+I’m noting the importance of including both parent and child terms like 'Strengthen self-management' and 'Empathy' to ensure comprehensive coverage across different thematic levels.
+
+Organizing thoughts
+
+I’m gathering details for a JSON array, focusing on key aspects like communication and patient care. Finalizing the array with parent terms for a comprehensive understanding.
+
+Pulling together terms
+
+I'm gathering terms relevant to nursing, such as 'Strengthen self-management' and 'Person-centered communication'. These fit the criteria well, while others don't quite meet the standard.
+
+<summary>
+    The study material is a knowledge clip titled "Self-management: What is your role as a nurse?" It focuses on the nurse's role in supporting patient self-management, highlighting the importance of the nurse's basic attitude and communication skills. The clip is intended for nursing students and teachers.
+</summary>
+<candidates>
+- Strengthen self-management
+- Self-management (phases)
+- Self-management caregiver (principles)
+- Empowerment
+- Person-centered communication
+- Empathy
+- Nursing principles personal communication
+- Collaborative decision-making
+</candidates>
+<picks>
+- Strengthen self-management
+- Person-centered communication
+</picks>
+
+[
+    "Caregiver",
+    "Strengthen self-management",
+    "Communicator",
+    "Person-centered communication"
+]
+------------------------------------------------------------ ChatGPT o1-preview (eval)
+-- Collaboration partner
+-- Motivational interviewing
+-+ Self-management caregiver (principles)
+-- Collaborative decision-making (communication)
+-- Health Promoter
+-- Limitations (dealing with)
+-+ Collaborative decision-making
+$$ Caregiver
+-- Succession experience (promote healthy behaviors)
+-+ Conversational techniques
+-- Promoting healthy behaviors
+-+ Collaborative decision-making
++- Self-management (phases)
+$$ Strengthen self-management
+-- Health Skills
+$$ Nursing
+++ Communicator
+++ Person-centered communication
+
+============================================================ ChatGPT 4o
+<summary>
+This study material, a knowledge clip developed by Hogeschool Utrecht, is part of a series for bachelor-level nursing students on the topic of self-management. Specifically, it covers the role of the nurse in supporting patient self-management, focusing on essential aspects of a nurse's approach and communication skills needed for effective self-management support.
+</summary>
+<candidates>
+- Nursing
+- Caregiver
+- Strengthen self-management
+- Self-management (phases)
+- Empowerment
+- Nursing visions and theories
+- Nursing skills
+</candidates>
+<picks>
+- Nursing
+- Caregiver
+- Strengthen self-management
+</picks>
+
+[
+    "Nursing",
+    "Caregiver",
+    "Strengthen self-management"
+]
+
+---------------------------------------------------------- ChatGPT 40 (eval)
+-- Collaboration partner
+-- Motivational interviewing
+-- Self-management caregiver (principles)
+-- Collaborative decision-making (communication)
+-- Health Promoter
+-- Limitations (dealing with)
+-- Collaborative decision-making
+$$ Caregiver
+-- Succession experience (promote healthy behaviors)
+-- Conversational techniques
+-- Promoting healthy behaviors
+-- Collaborative decision-making
+-+ Self-management (phases)
+$$ Strengthen self-management
+-- Health Skills
+$$ Nursing
