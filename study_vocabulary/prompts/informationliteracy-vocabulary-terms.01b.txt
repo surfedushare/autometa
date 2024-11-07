@@ -1,0 +1,193 @@
+============================================================ Test: https://edusources.nl/materials/eb1774aa-7fe9-4b70-bf8f-978abe646403/responsible-use-of-generative-ai
+
+Below between the <terms> tag you'll find a tree of terms in JSON format that can be relevant for information literacy study materials.
+Underneath the terms you'll find a piece of study material between <study-material> tags also in JSON format.
+
+First shortly summarize the study material between <summary> tags.
+
+Then based on that summary propose term candidates that come from the tree. Write these between a <candidates> tag.
+
+The next step is to reflect on your current selection and pick the final terms.
+Be conservative with picking relevant terms. Only pick terms that are very likely applicable. It's expected that only a few nodes apply.
+Important: parent terms apply automatically. Based on this rule some child terms may be inappropriate even if they appear correct at first.
+Write your pick between a <picks> tag
+
+Conclude with writing a JSON Array with all terms that are relevant for your summary inside of that Array.
+It's also ok to respond with an empty Array. Include any parent terms from child terms that you've selected.
+
+<terms>
+<ul class="root">
+    <li>
+        Information Literacy
+        <ul class="children">
+            <li>
+                Critically evaluate
+                <ul class="children">
+                    <li>
+                        Assessing results (critical)
+                        <ul class="children">
+                            <li>Assessment criteria (relevance/reliability).</li>
+                            <li>Information processing (reading, listening, etc.)</li>
+                        </ul>
+                    </li>
+                    <li>Evaluating search process (critical)</li>
+                </ul>
+            </li>
+            <li>
+                Organizing and processing
+                <ul class="children">
+                    <li>Analyzing search results (information analysis)</li>
+                    <li>
+                        Using and processing information (ethical)
+                        <ul class="children">
+                            <li>Copyright</li>
+                            <li>Source</li>
+                            <li>Privacy-sensitive information</li>
+                        </ul>
+                    </li>
+                    <li>Manage process and search results</li>
+                    <li>Collaboration (in teams)</li>
+                    <li>Synthesizing or creating new information</li>
+                </ul>
+            </li>
+            <li>
+                Orienting and specifying
+                <ul class="children">
+                    <li>Formulating research question</li>
+                    <li>Identifying information needs</li>
+                    <li>
+                        Orienting to information landscape
+                        <ul class="children">
+                            <li>Nature and manifestations of information/data</li>
+                            <li>Individual in the information landscape</li>
+                            <li>Role and creation of networks</li>
+                            <li>Value of information/data</li>
+                            <li>Operation and structure of the Internet</li>
+                        </ul>
+                    </li>
+                    <li>Search for orientation</li>
+                </ul>
+            </li>
+            <li>
+                Planning and searching
+                <ul class="children">
+                    <li>Selecting information sources and search systems</li>
+                    <li>Selecting search terms</li>
+                    <li>Search for information</li>
+                </ul>
+            </li>
+            <li>
+                Publishing and communication
+                <ul class="children">
+                    <li>Communicating (from final product)</li>
+                    <li>Publishing (of finished product)</li>
+                    <li>Valorize findings (outreach)</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</terms>
+
+<study-material>
+{
+  "entity": "products",
+  "srn": "sharekit:edusources:eb1774aa-7fe9-4b70-bf8f-978abe646403",
+  "set": "sharekit:edusources",
+  "state": "active",
+  "external_id": "eb1774aa-7fe9-4b70-bf8f-978abe646403",
+  "score": 0,
+  "provider": "Information Literacy",
+  "published_at": "2024-07-15",
+  "modified_at": "2024-09-12",
+  "url": "https://umlib.nl/resp-genai_dl",
+  "title": "Responsible use of Generative AI",
+  "description": "In this module you will learn to understand what Generative AI is, recognise the opportunities and limitations of Generative AI, and familiarise yourself with the do’s and don’ts when using Generative AI.",
+  "language": "en",
+  "copyright": "cc-by-sa-40",
+  "video": null,
+  "harvest_source": "edusources",
+  "previews": null,
+  "files": [
+    {
+      "srn": "sharekit:edusources:eb1774aa-7fe9-4b70-bf8f-978abe646403:405e5b098586d5e07d5e94f9b31017400edd86e2",
+      "hash": "405e5b098586d5e07d5e94f9b31017400edd86e2",
+      "access_rights": "OpenAccess",
+      "state": "active",
+      "is_link": true,
+      "url": "https://umlib.nl/resp-genai_dl",
+      "type": "website",
+      "title": "Responsible use of Generative AI",
+      "copyright": "cc-by-sa-40",
+      "mime_type": "text/html",
+      "video": null,
+      "previews": null,
+      "priority": 0
+    }
+  ],
+  "authors": [
+    {
+      "name": "Maastricht University Library",
+      "email": "courses-ub@maastrichtuniversity.nl",
+      "external_id": "51a5b48e-d161-4cd4-87f4-44628f4adbbf",
+      "dai": null,
+      "isni": null,
+      "orcid": null,
+      "is_external": false
+    }
+  ],
+  "has_parts": [],
+  "is_part_of": [],
+  "keywords": [
+    "Generative AI",
+    "Large Language Models",
+    "LLM",
+    "Artificial Intelligence",
+    "AI",
+    "Deep Learning",
+    "Machine Learning",
+    "neural network",
+    "responsible",
+    "academic integrity",
+    "transparent",
+    "copyright",
+    "privacy",
+    "plagiarism",
+    "bias",
+    "referencing",
+    "citing"
+  ],
+  "doi": null,
+  "lom_educational_levels": [
+    "WO"
+  ],
+  "studies": [],
+  "disciplines": [
+    "interdisciplinair"
+  ],
+  "ideas": [],
+  "technical_type": "website",
+  "material_types": [
+    "unknown"
+  ],
+  "aggregation_level": "2",
+  "publishers": [
+    "Maastricht University"
+  ],
+  "consortium": "Information Literacy",
+  "subtitle": null
+}
+</study-material>
+
+============================================================ Claude Sonnet 3.5 New
+
+No reason to try again. This module depends on JS and isn't scraped correctly.
+https://umlib.nl/resp-genai_dl
+
+------------------------------------------------------------ Claude Sonnet 3.5 New (eval)
+-+ Orienting and specifying
+-+ Orienting to information landscape
+$$ Information Literacy
+++ Critically evaluate
+++ Organizing and processing",
+++ Using and processing information (ethical)

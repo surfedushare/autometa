@@ -185,7 +185,8 @@ It's also ok to respond with an empty Array. Include any parent terms from child
     "HAN University of Applied Sciences"
   ],
   "consortium": "Information Literacy",
-  "subtitle": null
+  "subtitle": null,
+  "text": ""
 }
 </study-material>
 
@@ -215,149 +216,13 @@ Rationale: This knowledge clip specifically focuses on teaching students about N
     "Selecting information sources and search systems"
 ]
 
------------------------------------------------------------- Claude Sonnet 3.5 New (eval)
+B----------------------------------------------------------- Claude Sonnet 3.5 New (eval)
+
+This Youtube video without captions is not expected to do better than the original prompt.
+
+
+A----------------------------------------------------------- Claude Sonnet 3.5 New (eval)
 $$ Planning and searching
 -+ Search for information
 +- Information Literacy
 ?+ Selecting information sources and search systems  # isn't this applicable?
-
-============================================================ ChatGPT o1-preview
-
-
-Thought for 46 seconds
-
-Breaking down the task
-
-I’m pulling together a process to summarize a study material, identify term candidates, reflect on and select final terms, and provide a JSON Array of all relevant terms, including parent terms.
-
-Reviewing the study material
-
-I’m analyzing the user's study material, presented in JSON format. The objective is to summarize, propose term candidates, and finalize the most appropriate terms for inclusion in a JSON array.
-
-Examining the content
-I’m pulling together product details: entity, SRN, set, state, external ID, score, provider, publication dates, URL, title, and description. These elements are key to understanding the full context.
-
-Pulling together key details
-
-I’m gathering information on a 1.50-minute Dutch video titled "Kennisclip Nexis Uni," featuring a preview embedded on YouTube with open access. The video is part of the Educational & Research Resources category.
-
-Navigating Nexis Uni
-
-I’m piecing together a 1.50-minute video to simplify searching national and regional newspapers in Nexis Uni, both print and online, and highlighting key knowledge clips.
-
-Crafting instructional guidance
-
-I'm creating a concise summary for a 1.5-minute video, "Kennisclip Nexis Uni," which teaches users how to search for international and regional newspaper articles using Nexis Uni, covering topics like Reliability, Theoretical Framework, Research Question, Privacy-sensitive data, and Nexis Uni.
-
-Choosing candidate terms
-
-I’m digging into the existing term tree to pick the best term candidates for the section. This involves careful crafting and a thoughtful selection process.
-
-Mapping out the components
-
-I’m charting the essentials of Information Literacy, including critical evaluation, organizing and processing information, orienting and specifying needs, planning and searching, and publishing and communication. Each section outlines various skills and tasks necessary for mastering information literacy.
-
-Breaking down the process
-
-I’m thinking through the video’s elements, noting Nexis Uni usage, key terms like Information Literacy and Planning and Searching, and possibly Organizing and Processing along with Orienting and Specifying.
-
-Organizing information
-
-Candidates in our study are mapping out steps such as planning, organizing, processing, orienting, specifying, and critically evaluating search results. Interestingly, the video focuses on using Nexis Uni to find articles, with minimal critical evaluation.
-
-Crafting an introduction
-
-I'm focusing on key skills like selecting sources and search systems, along with information retrieval. These will ensure a thorough and effective introduction to using Nexis Uni.
-
-We've identified the key focus
-
-We’re thinking through the video’s specific aims, including selecting Nexis Uni, finding articles, and considering search terms and result analysis. This ensures a focused approach to planning and searching.
-
-Focusing my strategy
-
-I’m thinking through the process, pinpointing "Planning and searching" as the core strategy. Selecting information sources, search systems, and detailed searches align with this strategy.
-
-Creating the JSON array
-
-I’m compiling a JSON array that includes keywords like "Information Literacy" and "Planning and searching," which are crucial for effective data retrieval.
-
-Tracking progress
-
-I’m gathering info on the series of knowledge clips, focusing on "Planning and searching," including selecting sources and conducting searches. Analyzing results seems less relevant.
-
-<summary>
-This is a 1.5-minute instructional video titled "Kennisclip Nexis Uni" that guides users on how to search for international and regional newspaper articles, both in print and online, using Nexis Uni. It highlights that even today's newspaper is available in the database. This video helps users get started with using Nexis Uni effectively. It is part of a series of five knowledge clips on topics including Reliability, Theoretical Framework, Research Question, Privacy-sensitive data, and Nexis Uni.
-</summary>
-<candidates>
-- Planning and searching
-- Selecting information sources and search systems
-- Search for information
-- Organizing and processing
-- Analyzing search results (information analysis)
-</candidates>
-<picks>
-- Planning and searching
-- Selecting information sources and search systems
-- Search for information
-</picks>
-
-[
-  "Information Literacy",
-  "Planning and searching",
-  "Selecting information sources and search systems",
-  "Search for information"
-]
-
-
------------------------------------------------------------- ChatGPT o1-preview (eval)
-$$ Planning and searching
-$$ Search for information
-$$ Information Literacy
-?+ Selecting information sources and search systems  # isn't this applicable?
-
-============================================================ ChatGPT 4o
-
-<summary>
-This study material is a brief informational video (knowledge clip) designed to help users navigate and search for international and regional newspaper articles, both online and in print, through Nexis Uni. The video, part of a series, introduces essential aspects of information literacy such as reliability, theoretical framework, research questions, privacy-sensitive data, and Nexis Uni usage. This 1 minute and 51 seconds clip is provided by HAN University of Applied Sciences.
-</summary>
-<candidates>
-- Information Literacy
-- Critically evaluate
-- Assessing results (critical)
-- Assessment criteria (relevance/reliability)
-- Organizing and processing
-- Using and processing information (ethical)
-- Privacy-sensitive information
-- Orienting and specifying
-- Formulating research question
-- Planning and searching
-- Selecting information sources and search systems
-</candidates>
-<picks>
-- Information Literacy
-- Critically evaluate
-- Assessment criteria (relevance/reliability)
-- Privacy-sensitive information
-- Planning and searching
-- Selecting information sources and search systems
-</picks>
-
-
-[
-    "Information Literacy",
-    "Critically evaluate",
-    "Assessment criteria (relevance/reliability)",
-    "Privacy-sensitive information",
-    "Planning and searching",
-    "Selecting information sources and search systems"
-]
-
-
----------------------------------------------------------- ChatGPT 4o (eval)
-$$ Planning and searching
--- Search for information
-$$ Information Literacy
-?+ Selecting information sources and search systems  # isn't this applicable?
-++ Privacy-sensitive information
-++ Assessment criteria (relevance/reliability)
-++ Critically evaluate
