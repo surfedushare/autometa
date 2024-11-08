@@ -1,0 +1,667 @@
+============================================================ Test: https://edusources.nl/materials/WikiwijsDelen:urn:uuid:ea4df802-e901-4ce1-b9fc-c1aefed9e2bf/ggz-inspiratiesessie-wat-bepaalt-het-succes-van-jouw-behandeling-als-ggz-profess
+
+Below between the <terms> tag you'll find a tree of terms in JSON format that can be relevant for nursing study materials.
+Underneath the terms you'll find a piece of study material between <study-material> tags also in JSON format.
+
+First shortly summarize the study material between <summary> tags.
+
+Then based on that summary propose term candidates that come from the tree. Write these between a <candidates> tag.
+
+The next step is to reflect on your current selection and pick the final terms.
+Be conservative with picking relevant terms. Only pick terms that are very likely applicable. It's expected that only a few nodes apply.
+Important: parent terms apply automatically. Based on this rule some child terms may be inappropriate even if they appear correct at first.
+Write your pick between a <picks> tag
+
+Conclude with writing a JSON Array with all terms that are relevant for your summary inside of that Array.
+It's also ok to respond with an empty Array. Include any parent terms from child terms that you've selected.
+
+<terms>
+<ul class="root">
+    <li>
+        Nursing
+        <ul class="children">
+            <li>
+                Communicator
+                <ul class="children">
+                    <li>
+                        Deployment of information and communication technology (ICT)
+                        <ul class="children">
+                            <li>Matching media to person</li>
+                            <li>Reliability of nursing information</li>
+                            <li>Communication through various media</li>
+                            <li>Computer literacy</li>
+                            <li>ICT in communications</li>
+                            <li>Knowledge/techniques ICT</li>
+                            <li>New developments ICT</li>
+                            <li>Privacy and confidentiality (legislation)</li>
+                            <li>Reporting and electronic transfer</li>
+                            <li>Social media/internet as a communication tool</li>
+                            <li>Security and privacy (nursing information)</li>
+                            <li>Pros and cons of media used (psychology)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Person-centered communication
+                        <ul class="children">
+                            <li>Agism and stereotyping</li>
+                            <li>Command of Dutch language</li>
+                            <li>Limitations in communication</li>
+                            <li>Monitor quality of communication</li>
+                            <li>Communication of non-native speakers</li>
+                            <li>Communication levels</li>
+                            <li>Communication Disorders</li>
+                            <li>Emotions</li>
+                            <li>Empathy</li>
+                            <li>Group Dynamics</li>
+                            <li>Tools for communicating</li>
+                            <li>Supported conversation</li>
+                            <li>Develop communication</li>
+                            <li>Person-centered intercultural communication</li>
+                            <li>Person-centered care</li>
+                            <li>Psychological communication course</li>
+                            <li>Psychological forms of communication</li>
+                            <li>Psychological Interaction Patterns</li>
+                            <li>Theories and models person-centered communication</li>
+                            <li>Nursing principles personal communication</li>
+                            <li>Nursing theories</li>
+                            <li>Processing information</li>
+                            <li>Vision of the older person</li>
+                            <li>Vision of care for the elderly</li>
+                            <li>Resistance</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Health Promoter
+                <ul class="children">
+                    <li>
+                        Promoting healthy behaviors
+                        <ul class="children">
+                            <li>Autonomy</li>
+                            <li>Guidance methods</li>
+                            <li>Government policy cycle (local and national)</li>
+                            <li>Collective preventive activities</li>
+                            <li>Communication vulnerable target groups (social marketing and active approach)</li>
+                            <li>Communication vulnerable target groups (recruitment, outreach and approach)</li>
+                            <li>Culture-related health problems</li>
+                            <li>Thinking processes</li>
+                            <li>Behavioral influencing</li>
+                            <li>Behavioral Determinants</li>
+                            <li>Behavior change (social cognition models).</li>
+                            <li>Behavior change (stages of change model)</li>
+                            <li>Behavior change (theoretical models)</li>
+                            <li>Behavior change (theory of planned behavior)</li>
+                            <li>Indicated and care-related care</li>
+                            <li>Habit formation and addiction</li>
+                            <li>Health</li>
+                            <li>Health promotion interventions and guidelines</li>
+                            <li>Health Skills</li>
+                            <li>Health education through E-health programs</li>
+                            <li>Limits to/of prevention</li>
+                            <li>Healthcounseling</li>
+                            <li>Integral health policy</li>
+                            <li>Knowledge about vulnerable groups</li>
+                            <li>Learning and conditioning</li>
+                            <li>Motivation</li>
+                            <li>Motivational interviewing</li>
+                            <li>Nudging</li>
+                            <li>Support and guidance for change</li>
+                            <li>Views of health</li>
+                            <li>Outreach work</li>
+                            <li>Paternalism</li>
+                            <li>Planned education (behavior change)</li>
+                            <li>Planned education (health education)</li>
+                            <li>Plan-based education (PRECEDE-PROCEED).</li>
+                            <li>Plan-based education (Preffi, Refka, Intervention Mapping)</li>
+                            <li>Prevention (social system)</li>
+                            <li>Prevention: facilities, legislation and health education</li>
+                            <li>Education and outreach strategies</li>
+                            <li>Succession experience (promote healthy behaviors)</li>
+                            <li>Universal and selective health prevention</li>
+                            <li>Nursing lifestyle counseling</li>
+                            <li>Education individual and groups</li>
+                            <li>Information tools</li>
+                            <li>Neighborhood-oriented health approach (community approach, foster care)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Prevention-oriented analysis
+                        <ul class="children">
+                            <li>Health analysis</li>
+                            <li>Epidemiology</li>
+                            <li>Healthy aging</li>
+                            <li>Knowledge Centers</li>
+                            <li>Research need target group</li>
+                            <li>Research behavioral determinants target group</li>
+                            <li>Prevalence, incidence</li>
+                            <li>Prevention of elder abuse</li>
+                            <li>Prevention toolkit for the elderly</li>
+                            <li>Common health problems</li>
+                            <li>Nursing health determinants</li>
+                            <li>Nursing analytic models (lifestyle and health)</li>
+                            <li>Nursing participatory methods</li>
+                            <li>Nursing screening methods</li>
+                            <li>Nursing social determinants</li>
+                            <li>Nursing district analysis</li>
+                            <li>Early detection and risk assessment</li>
+                            <li>Legislation (Preventions)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Organizer
+                <ul class="children">
+                    <li>
+                        Coordination of care
+                        <ul class="children">
+                            <li>Funding of care</li>
+                            <li>Policy on the elderly</li>
+                            <li>Financing care seniors</li>
+                            <li>Chain care, care programs</li>
+                            <li>Clinical pathways</li>
+                            <li>Political/social policy (coord. of care)</li>
+                            <li>Transitions in healthcare</li>
+                            <li>Transmural care (coordination of care).</li>
+                            <li>Legislation (Coordination of care)</li>
+                            <li>Legislation (Curatorship)</li>
+                            <li>Legislation (making available)</li>
+                            <li>Legislation (Health care packages).</li>
+                            <li>Residential facilities for the elderly</li>
+                            <li>Care models</li>
+                            <li>Healthcare systems, healthcare organizations and health insurance</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Promoting safety
+                        <ul class="children">
+                            <li>Patient safety competencies</li>
+                            <li>Working ergonomically</li>
+                            <li>Promoting infection prevention</li>
+                            <li>Prevention and de-escalation</li>
+                            <li>Security Policy</li>
+                            <li>Safety Management Systems</li>
+                            <li>Legislation (duty to report)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Nursing leadership
+                        <ul class="children">
+                            <li>Financial management</li>
+                            <li>Job Buildings</li>
+                            <li>Implementation phases and strategies</li>
+                            <li>Innovate</li>
+                            <li>Interaction models</li>
+                            <li>Organizing, directing and monitoring activities</li>
+                            <li>Organizational structures</li>
+                            <li>Organizing work</li>
+                            <li>Professional and personal leadership</li>
+                            <li>Profiling (leadership)</li>
+                            <li>Project Management</li>
+                            <li>Talent Development</li>
+                            <li>Change Management</li>
+                            <li>Forms of leadership</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Nursing entrepreneurship
+                        <ul class="children">
+                            <li>Argument</li>
+                            <li>Proprietary practices</li>
+                            <li>Attitude of independence</li>
+                            <li>Guts and authenticity</li>
+                            <li>Developing new ideas</li>
+                            <li>Independent own opinion</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Professional and Quality Promoter
+                <ul class="children">
+                    <li>
+                        Delivering quality care
+                        <ul class="children">
+                            <li>Current quality frameworks</li>
+                            <li>Quality of care</li>
+                            <li>Visions of quality</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Participating in quality assurance
+                        <ul class="children">
+                            <li>Quality patient safety</li>
+                            <li>Incident reports</li>
+                            <li>Methods and models quality assurance niaZ, hkZ</li>
+                            <li>Methods and models quality assurance screening</li>
+                            <li>Guideline development (quality assurance)</li>
+                            <li>Legislation (quality assurance)</li>
+                            <li>Care Innovation</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Professional behavior
+                        <ul class="children">
+                            <li>Delimitation of own domain</li>
+                            <li>Professional code of professional conduct</li>
+                            <li>Professional Association</li>
+                            <li>Sustainability</li>
+                            <li>History of nursing</li>
+                            <li>(re-)registration</li>
+                            <li>Internationalization</li>
+                            <li>Nursing quality register</li>
+                            <li>Social and political developments</li>
+                            <li>Participation</li>
+                            <li>Human Rights</li>
+                            <li>Professionalizing behavior</li>
+                            <li>Visions of nursing</li>
+                            <li>Legislation (professional conduct)</li>
+                            <li>World Health Organization</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Reflective EBP professional
+                <ul class="children">
+                    <li>
+                        Expertise promotion
+                        <ul class="children">
+                            <li>Coaching (psychology)</li>
+                            <li>Coaching and mentoring in the workplace</li>
+                            <li>Didactic material</li>
+                            <li>Knowledge assurance and knowledge sharing</li>
+                            <li>Knowledge Transfer</li>
+                            <li>Learning Psychology</li>
+                            <li>Lesson Design</li>
+                            <li>Social media (expertise promotion)</li>
+                            <li>Nursing professional networks</li>
+                            <li>Nursing work supervision</li>
+                            <li>Nursing quality registry</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Deployment of EBP
+                        <ul class="children">
+                            <li>Critical appraisal of a topic</li>
+                            <li>Nursing principles (EBP).</li>
+                            <li>Nursing Standards</li>
+                            <li>Nursing professional groups and professional literature</li>
+                            <li>Nursing scientific research</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Moral sensitivity
+                        <ul class="children">
+                            <li>Professional code of moral sensitivity</li>
+                            <li>Code of ethics (moral sensitivity)</li>
+                            <li>Moral-ethical context (moral sensitivity)</li>
+                            <li>Moral and ethical values sensitivity</li>
+                            <li>Demand-driven vs. supply-driven care (ethical)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Investigative ability
+                        <ul class="children">
+                            <li>Action Research</li>
+                            <li>Descriptive statistics</li>
+                            <li>Qualitative research</li>
+                            <li>Quantitative research</li>
+                            <li>Literature survey</li>
+                            <li>Practice-oriented research</li>
+                            <li>Nursing argumentation</li>
+                            <li>Nursing research quality</li>
+                            <li>Nursing research cycle</li>
+                            <li>Nursing reporting of (practice) research</li>
+                            <li>Legislation (investigative ability)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Professional reflection
+                        <ul class="children">
+                            <li>Nursing professional codes (national and international)</li>
+                            <li>Nursing reflection skills</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Collaboration partner
+                <ul class="children">
+                    <li>
+                        Continuity of care
+                        <ul class="children">
+                            <li>Intra- and interdisciplinary transfer</li>
+                            <li>Nursing reporting guideline</li>
+                            <li>Nursing chain processes</li>
+                            <li>Nursing Regional Care Map</li>
+                            <li>Healthcare logistics nurse</li>
+                            <li>Warm transfer (communication)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Collaborative decision-making
+                        <ul class="children">
+                            <li>Interests</li>
+                            <li>Decision-making processes</li>
+                            <li>Case Management</li>
+                            <li>Cultural backgrounds</li>
+                            <li>Diversity</li>
+                            <li>Patient self-direction</li>
+                            <li>Empowerment (decision-making)</li>
+                            <li>Ethnicity</li>
+                            <li>Conversational techniques</li>
+                            <li>Collaborative decision-making (communication)</li>
+                            <li>Philosophical/ideological beliefs</li>
+                            <li>Power and influence</li>
+                            <li>Moral deliberation</li>
+                            <li>Patient Role</li>
+                            <li>Politics/government and healthcare (joint decision-making)</li>
+                            <li>Positions (decision-making)</li>
+                            <li>Nursing decision-making process (decision aid)</li>
+                            <li>Nursing dialogue (managed care)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Multidisciplinary collaboration
+                        <ul class="children">
+                            <li>Conflict Management</li>
+                            <li>Feedback</li>
+                            <li>Initiation collaboration</li>
+                            <li>Bargaining models</li>
+                            <li>Profiling (multidisciplinary collaboration)</li>
+                            <li>Collaborative processes</li>
+                            <li>Transmural nursing care</li>
+                            <li>Meeting techniques</li>
+                            <li>Nursing disease management</li>
+                            <li>Nursing chain care/processes (collaboration)</li>
+                            <li>Nursing Networks (mapping).</li>
+                            <li>Nursing positioning in collaboration</li>
+                            <li>Nursing collaboration (conclusion)</li>
+                            <li>Nursing collaboration (Ethical aspects)</li>
+                            <li>Nursing collaboration (filling own role)</li>
+                            <li>Nursing collaboration partners</li>
+                            <li>Nursing collaborations</li>
+                            <li>Nursing collaboration (volunteers and family caregivers)</li>
+                            <li>Nursing collaboration (residential-living environment)</li>
+                            <li>Nursing care programming</li>
+                            <li>Legislation (domestic violence reporting code)</li>
+                            <li>Legislation (cooperation)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Professional relationship
+                        <ul class="children">
+                            <li>Professional relationship code of ethics</li>
+                            <li>Code of ethics (professional relationship)</li>
+                            <li>Ethical theories</li>
+                            <li>Feeling Reflections</li>
+                            <li>Intercultural communication (professional relationship)</li>
+                            <li>Listening, summarizing, questioning</li>
+                            <li>Moral-ethical context (professional relationship)</li>
+                            <li>Moral and ethical values professional relationship</li>
+                            <li>Paraphrasing and mirroring</li>
+                            <li>Verbal and nonverbal communication</li>
+                            <li>Demand-driven vs supply-driven care (professional relationship)</li>
+                            <li>Legislation (professional relations)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Caregiver
+                <ul class="children">
+                    <li>
+                        Indicating care
+                        <ul class="children">
+                            <li>Data collection (methodology).</li>
+                            <li>Integrated care (living, welfare, care and meaning)</li>
+                            <li>V&amp;VN standards framework</li>
+                            <li>Personal budget</li>
+                            <li>Triage (principles)</li>
+                            <li>Nursing care ((re)indications).</li>
+                            <li>WMO</li>
+                            <li>Care (complexity)</li>
+                            <li>Care (measurement and screening instruments)</li>
+                            <li>Care reporting systems</li>
+                            <li>Care (scarcity and scarcity distribution)</li>
+                            <li>Care allocation</li>
+                            <li>Health Insurance Act</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Clinical reasoning
+                        <ul class="children">
+                            <li>Respiration</li>
+                            <li>Motion</li>
+                            <li>Cell and tissue science</li>
+                            <li>Central nervous system</li>
+                            <li>Demographic characteristics</li>
+                            <li>DSM-V (classification system).</li>
+                            <li>Pharmaceutical policy</li>
+                            <li>Medicines (main groups)</li>
+                            <li>Drugs (prescription)</li>
+                            <li>Drugs (action, effect and interaction)</li>
+                            <li>Geriatric problems</li>
+                            <li>Life Stages</li>
+                            <li>Medication Safety</li>
+                            <li>Multimorbidity</li>
+                            <li>Neuropsychology</li>
+                            <li>Developmental Psychology</li>
+                            <li>Orthopedagogy</li>
+                            <li>Personality Studies</li>
+                            <li>Polypharmacy</li>
+                            <li>Psychological disorders</li>
+                            <li>Metabolism</li>
+                            <li>Transport</li>
+                            <li>UF: Pathology</li>
+                            <li>Excretion</li>
+                            <li>Aging and life course</li>
+                            <li>Nursing diagnosis</li>
+                            <li>Nursing classification systems</li>
+                            <li>Nursing methodology</li>
+                            <li>Mental disabilities</li>
+                            <li>Propagation</li>
+                            <li>Heat management</li>
+                            <li>Diseases and complications (in the elderly)</li>
+                            <li>Senses</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Performing care
+                        <ul class="children">
+                            <li>ADL tools</li>
+                            <li>Barrier Nursing</li>
+                            <li>Limited resources and physical conditions</li>
+                            <li>Complementary care</li>
+                            <li>Dietetics</li>
+                            <li>Home automation, e-health, robotics</li>
+                            <li>FIRST AID</li>
+                            <li>Occupational Therapy</li>
+                            <li>Physiotherapy</li>
+                            <li>Medicines (registration)</li>
+                            <li>Medicines (provide)</li>
+                            <li>Haptonomic moving</li>
+                            <li>Infection Prevention</li>
+                            <li>Personal care</li>
+                            <li>Primary healthcare</li>
+                            <li>CPR</li>
+                            <li>Theoretical models (validated care).</li>
+                            <li>Nursing interventions</li>
+                            <li>Nursing practice (sources)</li>
+                            <li>Nursing practice (guidelines and protocols)</li>
+                            <li>Nursing practice (standards)</li>
+                            <li>Nursing math</li>
+                            <li>Nursing skills</li>
+                            <li>Reserved actions</li>
+                            <li>BIG Act</li>
+                            <li>WGBO</li>
+                        </ul>
+                    </li>
+                    <li>
+                        Strengthen self-management
+                        <ul class="children">
+                            <li>Limitations (dealing with)</li>
+                            <li>Coping styles</li>
+                            <li>Carrying load and carrying capacity</li>
+                            <li>Empowerment</li>
+                            <li>Experience expertise</li>
+                            <li>Ethics and culture (characteristics and customs)</li>
+                            <li>Collaborative decision-making</li>
+                            <li>Interculturalization</li>
+                            <li>Vulnerable groups</li>
+                            <li>Philosophy of life and religion</li>
+                            <li>Mantel Care</li>
+                            <li>Patient system</li>
+                            <li>Psychological aspects of illness and health</li>
+                            <li>Social map</li>
+                            <li>Social environment</li>
+                            <li>Systems theory</li>
+                            <li>Therapy adherence</li>
+                            <li>Nursing visions and theories</li>
+                            <li>Legislation (Strengthen self-management)</li>
+                            <li>Self-management (phases)</li>
+                            <li>Self-management caregiver (principles)</li>
+                            <li>Disease Understanding</li>
+                            <li>Care approach</li>
+                            <li>Care and welfare services (funding)</li>
+                            <li>Care theories</li>
+                            <li>Care organization</li>
+                            <li>Care System</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</terms>
+
+<study-material>
+{
+  "entity": "products",
+  "srn": "edurep:WikiwijsDelen:WikiwijsDelen:urn:uuid:ea4df802-e901-4ce1-b9fc-c1aefed9e2bf",
+  "set": "edurep:WikiwijsDelen",
+  "state": "active",
+  "external_id": "WikiwijsDelen:urn:uuid:ea4df802-e901-4ce1-b9fc-c1aefed9e2bf",
+  "score": 0,
+  "provider": "GGZ-ecademy",
+  "published_at": "2021-07-15",
+  "modified_at": "2023-07-11",
+  "url": "https://ggzecademy.nl/inspiratie/wat-bepaalt-het-succes-van-jouw-behandeling-als-ggz-professional/",
+  "title": "GGZ-inspiratiesessie - Wat bepaalt het succes van jouw behandeling als ggz-professional?",
+  "description": "Omschrijving:\r\nUit onderzoek naar de effectiviteit van psychotherapeutische behandelingen blijkt dat specifieke factoren zoals de theorie en specifieke interventies klein is vergeleken met de zogenoemde ‘a-specifieke factoren’, zoals de kwaliteit van de relatie en cliëntfactoren zoals motivatie. Het bewijs voor de specifieke factoren is mager, hulpverleners moeten daarom ook andere kennisbronnen aanboren.\r\n\r\nInspiratietraject ‘Wat bepaalt het succes van jouw behandeling als ggz-professional?’\r\n\r\nWerk of studeer je bij een van de leden van GGZ Ecademy? Dan kun je rond dit onderwerp een geaccrediteerd leertraject volgen, waarmee je je kennis verdiept en reflecteert op wat dit onderwerp voor jou als zorgprofessional betekent.",
+  "language": "nl",
+  "copyright": "yes",
+  "video": null,
+  "harvest_source": "WikiwijsDelen",
+  "previews": null,
+  "files": [
+    {
+      "srn": "edurep:WikiwijsDelen:WikiwijsDelen:urn:uuid:ea4df802-e901-4ce1-b9fc-c1aefed9e2bf:7e0835de2fa6bafc5eafced73c8d03c6caceb528",
+      "hash": "7e0835de2fa6bafc5eafced73c8d03c6caceb528",
+      "access_rights": "OpenAccess",
+      "state": "active",
+      "is_link": true,
+      "url": "https://ggzecademy.nl/inspiratie/wat-bepaalt-het-succes-van-jouw-behandeling-als-ggz-professional/",
+      "type": "website",
+      "title": "URL 1",
+      "copyright": "yes",
+      "mime_type": "text/html",
+      "video": null,
+      "previews": null,
+      "priority": 0
+    }
+  ],
+  "authors": [],
+  "has_parts": [],
+  "is_part_of": [],
+  "keywords": [
+    "#hbovpk",
+    "#Saxion",
+    "#GGZ",
+    "#Professional"
+  ],
+  "doi": null,
+  "lom_educational_levels": [
+    "HBO",
+    "HBO - Bachelor"
+  ],
+  "studies": [],
+  "disciplines": [
+    "gezondheid"
+  ],
+  "ideas": [],
+  "technical_type": "website",
+  "material_types": [
+    "informatiebron"
+  ],
+  "aggregation_level": "2",
+  "publishers": [
+    "GGZ-ecademy"
+  ],
+  "consortium": "HBO Verpleegkunde",
+  "subtitle": null,
+  "text": "Wat bepaalt het succes van jouw behandeling als ggz-professional? - GGZ Ecademy\nProductcatalogus\nGeneesmiddelen en somatiek\nHerstel\nPsychopathologie\nSuïcidepreventie\nSamen leren in de ggz\nHome\nContact\nSupport\nInlog Portaal (CLP)\nHome\nContact\nSupport\nInlog Portaal (CLP)\nProductcatalogus\nAgenda\nNieuws\nLidmaatschap\nOver GGZ Ecademy\nWie we zijn\nOns verhaal\nLeden\nPartners\nVacatures\nWat we doen\nDiensten\nGGZ Inspiratie\nGratis leren\nRedactieraden\nCases\nProductcatalogus\nAgenda\nNieuws\nLidmaatschap\nOver GGZ Ecademy\nWie we zijn\nOns verhaal\nLeden\nPartners\nVacatures\nWat we doen\nDiensten\nGGZ Inspiratie\nGratis leren\nRedactieraden\nCases\nPopulaire zoekopdrachten\nHome\nInspiratie\nWat bepaalt het succes van jouw behandeling als ggz-professional?\nLaden...\nWat bepaalt het succes van jouw behandeling als ggz-professional?\nUit onderzoek naar de effectiviteit van psychotherapeutische behandelingen blijkt dat specifieke factoren zoals de theorie en specifieke interventies klein is vergeleken met de zogenoemde ‘a-specifieke factoren’, zoals de kwaliteit van de relatie en cliëntfactoren zoals motivatie. Het bewijs voor de specifieke factoren is mager, hulpverleners moeten daarom ook andere kennisbronnen aanboren.\nInspiratietraject ‘Wat bepaalt het succes van jouw behandeling als ggz-professional?’\nWerk of studeer je bij een van de leden van GGZ Ecademy? Dan kun je rond dit onderwerp een geaccrediteerd leertraject volgen, waarmee je je kennis verdiept en reflecteert op wat dit onderwerp voor jou als zorgprofessional betekent.\nOntdek meer Inspiraties\nNieuwsbrief GGZ Inspiratie\nSchrijf je nu in\nNieuwsbrief\nSchrijf je in om op de hoogte te blijven van alle ontwikkeling en activiteiten\nMet het invullen van mijn persoonsgegevens geef ik toestemming aan GGZ Ecademy voor het verwerken hiervan t.b.v. het versturen van de nieuwsbrief. Op deze verwerking is onze privacybeleid van toepassing.\nProductcatalogus\nAgenda\nLidmaatschap\nNieuws\nGGZ Ecademy\nProductcatalogus\nGeneesmiddelen en somatiek\nHerstel\nPsychopathologie\nSuïcidepreventie\nContact\nAgenda\nLidmaatschap\nNieuws\nSupport\nInlog Portaal (CLP)\nGGZ Ecademy\nOns verhaal\nLeden\nPartners\nVacatures\nDiensten\nRedactieraden\nGGZ Inspiratie\nCases\nNieuwsbrief\nSchrijf je in om op de hoogte te blijven van alle ontwikkelingen en activiteiten\nMet het invullen van mijn persoonsgegevens geef ik toestemming aan GGZ Ecademy voor het verwerken hiervan t.b.v. het versturen van de nieuwsbrief. Op deze verwerking is de privacyverklaring van GGZ Ecademy van toepassing.\nDisclaimer\nAlgemene voorwaarden\nPrivacyverklaring\nCookieverklaring\n© GGZ Ecademy 2024\n© GGZ Ecademy 2024\nDisclaimer\nAlgemene voorwaarden\nPrivacyverklaring\nCookieverklaring"
+}
+</study-material>
+
+============================================================ Claude Sonnet 3.5 New
+Let me help you analyze this study material and identify relevant terms.
+<summary>
+The study material discusses research findings about the effectiveness of psychotherapeutic treatments. It highlights that non-specific factors like relationship quality and client motivation have a greater impact on treatment success than specific factors such as theory and interventions. The material is part of an accredited learning trajectory for mental healthcare professionals, focusing on what determines successful treatment outcomes.
+</summary>
+<candidates>
+Based on the summary, these terms seem potentially relevant:
+1. Professional relationship (under Collaboration partner)
+2. Professional reflection (under Reflective EBP professional)
+3. Moral sensitivity (under Reflective EBP professional)
+4. Person-centered communication (under Communicator)
+   - Empathy
+   - Communication levels
+   - Person-centered care
+   - Psychological interaction patterns
+5. Clinical reasoning (under Caregiver)
+</candidates>
+<picks>
+After careful consideration, I'll select only the most directly relevant terms:
+1. Professional relationship
+   - This is highly relevant as the material emphasizes the importance of relationship quality in treatment effectiveness
+2. Person-centered communication
+   - The focus on non-specific factors and client interaction makes this relevant
+Note: While clinical reasoning, moral sensitivity, and professional reflection might seem applicable, they're not explicitly central to the material's focus on relationship factors and treatment effectiveness.
+</picks>
+
+[
+    "Nursing",
+    "Communicator",
+    "Person-centered communication",
+    "Collaboration partner",
+    "Professional relationship"
+]
+
+B----------------------------------------------------------- Claude Sonnet 3.5 New (eval)
+$$ Nursing
++$ Communicator
++$ Person-centered communication
++$ Collaboration partner
+++ Professional relationship
+
+
+C----------------------------------------------------------- Claude Sonnet 3.5 New (eval)
+
+DSM-V is echt heel ver te zoeken in dit materiaal:
+https://ggzecademy.nl/inspiratie/wat-bepaalt-het-succes-van-jouw-behandeling-als-ggz-professional/
+
+Het gaat veel meer over de relatie tussen zorgverlener en patient. Daar past "Collaboration partner" veel beter bij.
+
+A----------------------------------------------------------- Claude Sonnet 3.5 New (eval)
+-- DSM-V (classification system)
+-+ Caregiver
+-+ Clinical reasoning
+$$ Nursing
+++ Collaboration partner
+++ Professional relationship
+++ Reflective EBP professional
+++ Professional reflection

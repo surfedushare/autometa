@@ -1,0 +1,269 @@
+============================================================ Test: https://edusources.nl/materials/de3f0fc7-c835-4d2d-a09a-d700829aa490/research-data-management
+
+Below between the <terms> tag you'll find a tree of terms in JSON format that can be relevant for information literacy study materials.
+Underneath the terms you'll find a piece of study material between <study-material> tags also in JSON format.
+
+First shortly summarize the study material between <summary> tags.
+
+Then based on that summary propose term candidates that come from the tree. Write these between a <candidates> tag.
+
+The next step is to reflect on your current selection and pick the final terms.
+Be conservative with picking relevant terms. Only pick terms that are very likely applicable. It's expected that only a few nodes apply.
+Important: parent terms apply automatically. Based on this rule some child terms may be inappropriate even if they appear correct at first.
+Write your pick between a <picks> tag
+
+Conclude with writing a JSON Array with all terms that are relevant for your summary inside of that Array.
+It's also ok to respond with an empty Array. Include any parent terms from child terms that you've selected.
+
+<terms>
+<ul class="root">
+    <li>
+        Information Literacy
+        <ul class="children">
+            <li>
+                Critically evaluate
+                <ul class="children">
+                    <li>
+                        Assessing results (critical)
+                        <ul class="children">
+                            <li>Assessment criteria (relevance/reliability).</li>
+                            <li>Information processing (reading, listening, etc.)</li>
+                        </ul>
+                    </li>
+                    <li>Evaluating search process (critical)</li>
+                </ul>
+            </li>
+            <li>
+                Organizing and processing
+                <ul class="children">
+                    <li>Analyzing search results (information analysis)</li>
+                    <li>
+                        Using and processing information (ethical)
+                        <ul class="children">
+                            <li>Copyright</li>
+                            <li>Source</li>
+                            <li>Privacy-sensitive information</li>
+                        </ul>
+                    </li>
+                    <li>Manage process and search results</li>
+                    <li>Collaboration (in teams)</li>
+                    <li>Synthesizing or creating new information</li>
+                </ul>
+            </li>
+            <li>
+                Orienting and specifying
+                <ul class="children">
+                    <li>Formulating research question</li>
+                    <li>Identifying information needs</li>
+                    <li>
+                        Orienting to information landscape
+                        <ul class="children">
+                            <li>Nature and manifestations of information/data</li>
+                            <li>Individual in the information landscape</li>
+                            <li>Role and creation of networks</li>
+                            <li>Value of information/data</li>
+                            <li>Operation and structure of the Internet</li>
+                        </ul>
+                    </li>
+                    <li>Search for orientation</li>
+                </ul>
+            </li>
+            <li>
+                Planning and searching
+                <ul class="children">
+                    <li>Selecting information sources and search systems</li>
+                    <li>Selecting search terms</li>
+                    <li>Search for information</li>
+                </ul>
+            </li>
+            <li>
+                Publishing and communication
+                <ul class="children">
+                    <li>Communicating (from final product)</li>
+                    <li>Publishing (of finished product)</li>
+                    <li>Valorize findings (outreach)</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+</terms>
+
+<study-material>
+{
+  "entity": "products",
+  "srn": "sharekit:edusources:de3f0fc7-c835-4d2d-a09a-d700829aa490",
+  "set": "sharekit:edusources",
+  "state": "active",
+  "external_id": "de3f0fc7-c835-4d2d-a09a-d700829aa490",
+  "score": 0,
+  "provider": "Information Literacy",
+  "published_at": "2020-01-01",
+  "modified_at": "2020-11-27",
+  "url": "http://libguides.vu.nl/researchdata",
+  "title": "Research Data Management",
+  "description": "This LibGuide provides guidance on research data management planning, creating data management plans (DMPs) and other resources",
+  "language": "en",
+  "copyright": "cc-by-nc-sa-40",
+  "video": null,
+  "harvest_source": "edusources",
+  "previews": null,
+  "files": [
+    {
+      "srn": "sharekit:edusources:de3f0fc7-c835-4d2d-a09a-d700829aa490:6e6bf9809462ac7a9d49ee6a4e56a05479a1fb60",
+      "hash": "6e6bf9809462ac7a9d49ee6a4e56a05479a1fb60",
+      "access_rights": "OpenAccess",
+      "state": "active",
+      "is_link": true,
+      "url": "http://libguides.vu.nl/researchdata",
+      "type": "website",
+      "title": "URL 1",
+      "copyright": "cc-by-nc-sa-40",
+      "mime_type": "text/html",
+      "video": null,
+      "previews": null,
+      "priority": 0
+    }
+  ],
+  "authors": [
+    {
+      "name": "Universiteitsbibliotheek van de Vrije Universiteit",
+      "email": null,
+      "external_id": "a09615a2-0963-450b-96cb-12ef452eee7b",
+      "dai": null,
+      "isni": null,
+      "orcid": null,
+      "is_external": false
+    }
+  ],
+  "has_parts": [],
+  "is_part_of": [],
+  "keywords": [
+    "RDM",
+    "Research Data Management",
+    "DPM",
+    "data",
+    "data collection",
+    "Data analysis",
+    "data archiving",
+    "data set registration",
+    "law",
+    "regulation",
+    "costs",
+    "data protection",
+    "data classification"
+  ],
+  "doi": null,
+  "lom_educational_levels": [
+    "WO"
+  ],
+  "studies": [],
+  "disciplines": [
+    "taal_communicatie"
+  ],
+  "ideas": [],
+  "technical_type": "website",
+  "material_types": [
+    "instructie"
+  ],
+  "aggregation_level": "3",
+  "publishers": [
+    "Vrije Universiteit Amsterdam"
+  ],
+  "consortium": "Information Literacy",
+  "subtitle": null,
+  "text": "Overview - Research Data Management - LibGuides at VU Amsterdam\nSkip to Main Content\nVU Amsterdam\nLibGuides\nEnglish\nResearch Data Management\nOverview\nSearch this GuideSearch\nResearch Data Management\nMake informed choices for research data. RDM, policy, practical guidelines, software and tools at VU Amsterdam. FAIR data, archiving, storage, publication\nOverview\nDiscover &amp; InitiateToggle Dropdown\tFinding Existing Data\nData Citation\nPlan &amp; DesignToggle Dropdown\tResearch Proposal\nRDM Costs\nRDM Requirements\nCollaboration\nData Security\nGDPR &amp; Privacy\nData Management Plan\nPolicies &amp; Regulations\nCollect &amp; StoreToggle Dropdown\tData Collection\nData Storage\nData Protection\nProcess &amp; AnalyseToggle Dropdown\tData Provenance\nData Processing\nData Analysis\nHigh Performance Computing\nDocument &amp; PreserveToggle Dropdown\tSelecting Data\nData Documentation\nMetadata\nPublish &amp; ShareToggle Dropdown\tSelecting an Archive\nData Publication\nDataset Registration\nSupport\nWorkshops\nWhat is Research Data Management?\nResearch data management (RDM) concerns the organisation, documentation, storage, archiving and sharing of digital and analogue data. Data management applies throughout the entire research data life cycle, which is visualised in the circle above. RDM aims to ensure reliable verification of results, and permits new and innovative research built on existing information. RDM is also part of the research process and is intended to make the research process as efficient as possible. This LibGuide provides guidance on research data management planning, data storage and protection, data archiving, and other resources. The Data Management Plan provides information on how these activities will be carried out during the research project.\nGood data management will heighten the quality of your own research (data) as well as your institution’s scientific output, and it contributes significantly to your field as a whole.\nGood data management:\nPromotes the integrity of your research,\nIncreases the impact of your research,\nImproves the quality of your data,\nSupports future use of your research data, and\nComplies with internal and external regulations.\nFAIR principles\nThe purpose of good data documentation is to facilitate knowledge exchange. The FAIR principles are the guidelines for every form of research output, and in making data available to others.\nEvery research group should apply these principles when structuring and preserving their data or other research outputs. Making data FAIR involves many aspects of data collection, organization, availability and storage. FAIR does not mean open or public, it means that there is documentation about how access to the data can be achieved.\nMore information:\nWilkinson, M. D., M. Dumontier, I. J. Aalbersberg, G. Appleton, M. Axton, A. Baak, N. Blomberg, et al. 2016. The FAIR Guiding Principles for scientific data management and stewardship; Scientific Data 3 (1): 160018. http://dx.doi.org/10.1038/sdata.2016.18\nNext: Discover &amp; Initiate &gt;&gt;\nLast Updated: Aug 26, 2024 4:56 PM\nURL: https://libguides.vu.nl/rdm\nPrint Page\nStaff login\nSubjects: Research Support"
+}
+</study-material>
+
+============================================================ Claude Sonnet 3.5 New
+
+<summary>
+The study material describes a Research Data Management (RDM) LibGuide from VU Amsterdam. It explains that RDM involves organizing, documenting, storing, archiving, and sharing both digital and analog data throughout the research data lifecycle. The guide emphasizes the importance of good data management for research quality, integrity, and impact. It introduces the FAIR principles as guidelines for making research output accessible and reusable, noting that FAIR doesn't necessarily mean open access but rather proper documentation of access methods. The guide provides information on various aspects including data management planning, storage, protection, and archiving.
+</summary>
+<candidates>
+Based on the summary, these terms appear potentially relevant:
+- Information Literacy
+- Organizing and processing
+- Using and processing information (ethical)
+- Copyright
+- Source
+- Orienting and specifying
+- Orienting to information landscape
+- Nature and manifestations of information/data
+- Value of information/data
+</candidates>
+<picks>
+After careful consideration and applying the parent-child rule, I'll select:
+- Information Literacy
+- Organizing and processing
+  - Using and processing information (ethical)
+Rationale: The material is fundamentally about managing and processing research data in an ethical and structured way. While terms like "Nature and manifestations of information/data" might seem applicable, they're more about understanding information landscape rather than the practical management focus of this material. The parent term "Organizing and processing" and its child "Using and processing information (ethical)" best capture the core focus on proper data management practices and ethical considerations in research data handling.
+</picks>
+
+[
+"Information Literacy",
+"Organizing and processing",
+"Using and processing information (ethical)"
+]
+
+B----------------------------------------------------------- Claude Sonnet 3.5 New (eval)
+
+$$ Information Literacy
+$$ Organizing and processing
+++ Using and processing information (ethical)
+
+
+C----------------------------------------------------------- Claude Sonnet 3.5 New (eval)
+
+FAIR werd alleen beschreven in een afbeelding. Ik voeg de informatie toe.
+
+FAIR stands for: Findable, Accessible, Interoperable, Reusable. With that piece of information. Do you stand by your conclusions?
+
+Ah, this additional context about FAIR principles is significant and makes me reconsider my analysis.
+<summary>
+[Previous summary remains valid, but with emphasized understanding that FAIR principles (Findable, Accessible, Interoperable, Reusable) are central to the material's message about research data management. These principles directly relate to how information should be structured, shared, and made accessible in the research data lifecycle.]
+</summary>
+<candidates>
+With FAIR principles in mind, these terms become relevant:
+- Information Literacy
+- Organizing and processing
+- Using and processing information (ethical)
+- Analyzing search results (information analysis)
+- Critically evaluate
+- Assessing results (critical)
+- Publishing and communication
+- Publishing (of finished product)
+</candidates>
+<picks>
+After careful consideration and applying the parent-child rule:
+- Information Literacy
+- Organizing and processing
+  - Using and processing information (ethical)
+  - Analyzing search results (information analysis)
+- Publishing and communication
+  - Publishing (of finished product)
+Rationale: Understanding FAIR principles expands the scope of the material significantly. It's not just about managing data, but about making it findable (which relates to analysis), accessible and interoperable (which relates to organizing and ethical use), and reusable (which relates to publishing). The material clearly addresses how to properly analyze, process, and publish research data in ways that make it FAIR-compliant.
+</picks>
+
+[
+    "Information Literacy",
+    "Organizing and processing",
+    "Using and processing information (ethical)",
+    "Analyzing search results (information analysis)",
+    "Publishing and communication",
+    "Publishing (of finished product)"
+]
+
+$$ Information Literacy
+$$ Organizing and processing
+?+ Using and processing information (ethical)
+++ Analyzing search results (information analysis)
+++ Publishing and communication
+++ Publishing (of finished product
+
+A----------------------------------------------------------- Claude Sonnet 3.5 New (eval)
+$$ Organizing and processing
+$$ Information Literacy
+++ Orienting to information landscape
+++ Orienting and specifying
