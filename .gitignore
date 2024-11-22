@@ -3,8 +3,10 @@
 .ipynb_checkpoints
 __pycache__
 /logs
+.env
 
 # Data sources
 disciplines/*.json
 tika/*.json
 rag/data
+chroma_db

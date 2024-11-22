@@ -136,6 +136,7 @@ dependencies:
       - cycler==0.12.1
       - dataclasses-json==0.6.7
       - deprecated==1.2.14
+      - devtools==0.12.2
       - durationpy==0.9
       - effdet==0.4.1
       - emoji==2.14.0
@@ -172,6 +173,7 @@ dependencies:
       - langchain-chroma==0.1.4
       - langchain-community==0.3.7
       - langchain-core==0.3.18
+      - langchain-openai==0.2.9
       - langchain-text-splitters==0.3.2
       - langdetect==1.0.9
       - langsmith==0.1.143
