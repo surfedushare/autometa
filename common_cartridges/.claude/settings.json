@@ -7,6 +7,7 @@
       "Bash(cp:*)",
       "Bash(zip:*)",
       "Bash(find:*)",
+      "Bash(ls:*)",
 
       "Read(/tmp)",
       "Write(/tmp)",
