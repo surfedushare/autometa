@@ -6,6 +6,7 @@
       "Bash(mkdir:*)",
       "Bash(cp:*)",
       "Bash(zip:*)",
+      "Bash(find:*)",
 
       "Read(/tmp)",
       "Write(/tmp)",
