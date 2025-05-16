@@ -11,5 +11,9 @@ Execute the following workflow:
 3. Create the imsmanifest.xml file
 4. Package everything into a .imscc file by zipping the content
 
-Return a summary of what you've created and any recommendations for improvements.
 You can check the examples/simple/ directory to see how the structure of the .imscc should look.
+However you are free to diverge from this example especially regarding the amount of pages and names of files.
+For instance the "original.pdf" file should be named after the original PDF name and not this example name.
+Also create an index.html
+
+Return a summary of what you've created and any recommendations for improvements.
