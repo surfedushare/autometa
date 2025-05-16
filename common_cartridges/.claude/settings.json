@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pdfinfo:*)",
+      "Bash(pdftotext:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(zip:*)",
+
+      "Read(/tmp)",
+      "Write(/tmp)",
+
+      "Read(./workspace/source/*)",
+      "Read(./workspace/output/*)",
+      "Write(./workspace/output/*)"
+    ],
+    "deny": []
+  }
+}
