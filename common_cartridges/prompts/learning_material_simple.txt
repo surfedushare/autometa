@@ -13,10 +13,10 @@ Execute the following workflow:
 
 You can check the examples/simple/ directory to see how the structure of the .imscc should look.
 However you are free to diverge from the example regarding the amount of pages and names of files.
-For instance the "original.pdf" file should be named after the original PDF name and not this example name.
-You should copy the index.html mostly as-is, but adjust the file that it redirects to the first item of the package.
-
-Do not modify the contents of the PDF. The contents of the PDF should be copied as verbatim as possible to the Common Cartridge package.
-So keep titles and paragraphs intact and only wrap them on HTML pages to work in the context of Common Cartridges.
-
-Return a summary of what you've created and any recommendations for improvements.
+When deciding on the amount of pages and names in the package keep the following in mind:
+* It is important to keep related information together even when it covers multiple pages in the PDF.
+  In that case create a single page with all related content on that page.
+* Do not modify the contents of the PDF. The contents of the PDF should be copied as verbatim as possible to the Common Cartridge package.
+  So keep titles and paragraphs intact and only wrap them on HTML pages to work in the context of Common Cartridges.
+* The "original.pdf" file in the example should be named after the original PDF name and not this example name.
+* You should copy the index.html mostly as-is, but adjust the file that it redirects to the first item of the package.
