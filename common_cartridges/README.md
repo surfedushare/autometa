@@ -19,5 +19,5 @@ Usage
 Then you can start the agent and its prompt with:
 
 ```bash
-cat prompts/learning_material.txt | claude
+cat prompts/learning_material_simple.txt | claude
 ```
