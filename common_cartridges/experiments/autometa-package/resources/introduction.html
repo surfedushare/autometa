@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction: Automatisch Nakijken Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- MANIFEST definition from imsmanifest.xml -->
+  <script>
+    const MANIFEST = {
+      identifier: "MANIFEST-AUTOMATISCH-NAKIJKEN-EXPERIMENT",
+      metadata: {
+        schema: "IMS Common Cartridge",
+        schemaVersion: "1.1.0",
+        title: "Automatisch Nakijken Experiment",
+        description: "A Common Cartridge created from the Automatisch Nakijken Experiment PDF document"
+      },
+      organizations: [
+        {
+          identifier: "ORG_1",
+          structure: "rooted-hierarchy",
+          items: [
+            {
+              identifier: "ITEM_1",
+              resourceRef: "RESOURCE_1",
+              title: "Introduction",
+              href: "resources/introduction.html",
+              children: [
+                {
+                  identifier: "ITEM_2",
+                  resourceRef: "RESOURCE_2",
+                  title: "Methods",
+                  href: "resources/methods.html",
+                  children: []
+                },
+                {
+                  identifier: "ITEM_3", 
+                  resourceRef: "RESOURCE_3",
+                  title: "Results",
+                  href: "resources/results.html",
+                  children: []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      resources: {
+        "RESOURCE_1": {
+          identifier: "RESOURCE_1",
+          type: "webcontent",
+          href: "resources/introduction.html",
+          files: [
+            "resources/introduction.html",
+            "resources/styles.css",
+            "resources/js/navigation.js",
+            "resources/js/load-components.js",
+            "resources/components/page-header.html",
+            "resources/components/footer-navigation.html",
+            "resources/components/right-drawer.html"
+          ]
+        },
+        "RESOURCE_2": {
+          identifier: "RESOURCE_2",
+          type: "webcontent",
+          href: "resources/methods.html",
+          files: [
+            "resources/methods.html",
+            "resources/styles.css",
+            "resources/js/navigation.js",
+            "resources/js/load-components.js",
+            "resources/components/page-header.html",
+            "resources/components/footer-navigation.html",
+            "resources/components/right-drawer.html"
+          ]
+        },
+        "RESOURCE_3": {
+          identifier: "RESOURCE_3",
+          type: "webcontent",
+          href: "resources/results.html",
+          files: [
+            "resources/results.html",
+            "resources/styles.css",
+            "resources/js/navigation.js",
+            "resources/js/load-components.js",
+            "resources/components/page-header.html",
+            "resources/components/footer-navigation.html",
+            "resources/components/right-drawer.html"
+          ]
+        },
+        "RESOURCE_PDF": {
+          identifier: "RESOURCE_PDF",
+          type: "webcontent",
+          href: "resources/automatisch-nakijken-experiment.01.pdf",
+          files: [
+            "resources/automatisch-nakijken-experiment.01.pdf"
+          ]
+        }
+      }
+    };
+  </script>
+  <script src="js/navigation.js"></script>
+  <script src="js/load-components.js"></script>
+  
+  <!-- Preload all components for faster loading -->
+  <link rel="preload" href="components/page-header.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/footer-navigation.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/right-drawer.html" as="fetch" crossorigin>
+
+</head>
+<body class="flex flex-col w-full sm:mx-auto min-h-screen max-w-7xl">
+  <!-- Header Container -->
+  <div id="header-container"></div>
+  
+  <!-- Main Content -->
+  <main class="flex-1 py-4 px-2 sm:py-6 sm:px-0 shadow">
+    <div class="container max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto">
+        <h1>Automatisch nakijken</h1>
+        <p class="text-lg">Dit document beschrijft een experiment met het automatisch nakijken van tentamens met behulp van Large Language Models (LLMs).</p>
+        
+        <h2 class="mt-8">Introductie</h2>
+        <p>Voor het automatisch nakijken van tentamens zijn Large Language Models (LLMs) een veelbelovende technologie. Deze modellen kunnen tekst begrijpen, interpreteren en beoordelen op een manier die vergelijkbaar is met menselijke beoordelaars. In dit experiment onderzoeken we de mogelijkheden en beperkingen van LLMs bij het nakijken van studentantwoorden.</p>
+        
+        <p>Recente ontwikkelingen in LLMs, zoals de GPT-familie van modellen, hebben aangetoond dat deze technologieën steeds beter worden in het begrijpen van complexe vragen en het evalueren van antwoorden. De modellen kunnen nuances in taal begrijpen, contextuele informatie verwerken, en consistente beoordelingen geven wanneer ze goed zijn afgestemd op de beoordelingscriteria.</p>
+        
+        <p>Echter, er zijn ook uitdagingen bij het inzetten van LLMs voor tentamenbeoordeling, zoals mogelijke vooroordelen in het model, de behoefte aan duidelijke rubrieken, en de noodzaak om de betrouwbaarheid en consistentie van de beoordelingen te waarborgen.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer and TOC Drawer containers -->
+  <div id="footer-container"></div>
+  <div id="toc-drawer-container"></div>
+</body>
+</html>

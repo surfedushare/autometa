@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results: Automatisch Nakijken Experiment</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- MANIFEST definition from imsmanifest.xml -->
+  <script>
+    const MANIFEST = {
+      identifier: "MANIFEST-AUTOMATISCH-NAKIJKEN-EXPERIMENT",
+      metadata: {
+        schema: "IMS Common Cartridge",
+        schemaVersion: "1.1.0",
+        title: "Automatisch Nakijken Experiment",
+        description: "A Common Cartridge created from the Automatisch Nakijken Experiment PDF document"
+      },
+      organizations: [
+        {
+          identifier: "ORG_1",
+          structure: "rooted-hierarchy",
+          items: [
+            {
+              identifier: "ITEM_1",
+              resourceRef: "RESOURCE_1",
+              title: "Introduction",
+              href: "resources/introduction.html",
+              children: [
+                {
+                  identifier: "ITEM_2",
+                  resourceRef: "RESOURCE_2",
+                  title: "Methods",
+                  href: "resources/methods.html",
+                  children: []
+                },
+                {
+                  identifier: "ITEM_3", 
+                  resourceRef: "RESOURCE_3",
+                  title: "Results",
+                  href: "resources/results.html",
+                  children: []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      resources: {
+        "RESOURCE_1": {
+          identifier: "RESOURCE_1",
+          type: "webcontent",
+          href: "resources/introduction.html",
+          files: [
+            "resources/introduction.html",
+            "resources/styles.css",
+            "resources/js/navigation.js",
+            "resources/js/load-components.js",
+            "resources/components/page-header.html",
+            "resources/components/footer-navigation.html",
+            "resources/components/right-drawer.html"
+          ]
+        },
+        "RESOURCE_2": {
+          identifier: "RESOURCE_2",
+          type: "webcontent",
+          href: "resources/methods.html",
+          files: [
+            "resources/methods.html",
+            "resources/styles.css",
+            "resources/js/navigation.js",
+            "resources/js/load-components.js",
+            "resources/components/page-header.html",
+            "resources/components/footer-navigation.html",
+            "resources/components/right-drawer.html"
+          ]
+        },
+        "RESOURCE_3": {
+          identifier: "RESOURCE_3",
+          type: "webcontent",
+          href: "resources/results.html",
+          files: [
+            "resources/results.html",
+            "resources/styles.css",
+            "resources/js/navigation.js",
+            "resources/js/load-components.js",
+            "resources/components/page-header.html",
+            "resources/components/footer-navigation.html",
+            "resources/components/right-drawer.html"
+          ]
+        },
+        "RESOURCE_PDF": {
+          identifier: "RESOURCE_PDF",
+          type: "webcontent",
+          href: "resources/automatisch-nakijken-experiment.01.pdf",
+          files: [
+            "resources/automatisch-nakijken-experiment.01.pdf"
+          ]
+        }
+      }
+    };
+  </script>
+  <script src="js/navigation.js"></script>
+  <script src="js/load-components.js"></script>
+  
+  <!-- Preload all components for faster loading -->
+  <link rel="preload" href="components/page-header.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/footer-navigation.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/right-drawer.html" as="fetch" crossorigin>
+
+</head>
+<body class="flex flex-col w-full sm:mx-auto min-h-screen max-w-7xl">
+  <!-- Header Container -->
+  <div id="header-container"></div>
+  
+  <!-- Main Content -->
+  <main class="flex-1 py-4 px-2 sm:py-6 sm:px-0 shadow">
+    <div class="container max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto">
+        <h2>Resultaten en discussie</h2>
+        
+        <h3 class="mt-6">Nauwkeurigheid van beoordeling</h3>
+        <p>Uit onze analyse bleek dat de LLM-beoordelingen in 82% van de gevallen binnen een half punt (op een 10-puntschaal) van de menselijke beoordeling lagen. Dit suggereert een hoge mate van overeenkomst tussen menselijke en geautomatiseerde beoordeling.</p>
+        
+        <p>Wanneer we kijken naar de verschillende onderdelen van de rubriek, zien we dat het LLM vooral goed presteerde bij het beoordelen van:</p>
+        <ul>
+          <li>Correctheid van conceptuele uitleg (88% overeenkomst)</li>
+          <li>Volledigheid van het antwoord (85% overeenkomst)</li>
+        </ul>
+        
+        <p>Het model had meer moeite met het consistent beoordelen van:</p>
+        <ul>
+          <li>Originaliteit en creativiteit (68% overeenkomst)</li>
+          <li>Diepgang van het antwoord (72% overeenkomst)</li>
+        </ul>
+        
+        <h3 class="mt-6">Tijdefficiëntie</h3>
+        <p>Een significant voordeel van de LLM-beoordeling was de tijdsbesparing. Het model kon alle 50 antwoorden in minder dan 10 minuten beoordelen, terwijl menselijke beoordelaars gemiddeld 4 uur nodig hadden voor dezelfde taak.</p>
+        
+        <h3 class="mt-6">Kwaliteit van feedback</h3>
+        <p>We hebben ook de kwaliteit van de gegeven feedback geanalyseerd. Het LLM gaf gedetailleerde, per-criterium feedback die volgens de studenten die we hebben bevraagd, vaak nuttiger was dan de meer algemene feedback van de menselijke beoordelaars. De feedback was consistent en gericht op specifieke verbeterpunten.</p>
+        
+        <p>Echter, sommige studenten merkten op dat de LLM-feedback soms te 'geformuleerd' aanvoelde en miste de persoonlijke touch die menselijke docenten kunnen bieden.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer and TOC Drawer containers -->
+  <div id="footer-container"></div>
+  <div id="toc-drawer-container"></div>
+</body>
+</html>
