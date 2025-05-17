@@ -1,0 +1,17 @@
+There is a simple Common Cartridge structure with simple example learning content inside examples/simple.
+Next to it I want a more fancy version with TailwindUI.
+
+Inside the tailwindui folder you'll find:
+* a page-header to create the header which contains
+  - the title (left)
+  - download PDF button (right)
+  - TOC button (far right)
+* a right-drawer where the TOC can be hidden. It's shown when the TOC button is pressed in header or footer
+* a footer navigation where with
+  - Links to previous and next pages show on left and right side. Use page names instead of "next" and "previous"
+  - In the center add a button that also opens the TOC drawer
+
+For the TOC use or create an icon that depicts a bullet point list.
+
+The design should be mobile friendly. Use white as background color. Green as primary color and yellow as call to action color.
+No need to generate the final CSS file, but do include some Tailwind configuration files to play with colors and fonts.

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 1: Introduction</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',  // Main primary color (green)
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#052e16',
+            },
+            accent: {
+              50: '#fefce8',
+              100: '#fef9c3',
+              200: '#fef08a',
+              300: '#fde047',
+              400: '#facc15',  // Main accent color (yellow)
+              500: '#eab308',
+              600: '#ca8a04',
+              700: '#a16207',
+              800: '#854d0e',
+              900: '#713f12',
+              950: '#422006',
+            },
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="flex flex-col min-h-screen">
+  <!-- Include Header Component -->
+  <div id="header-container"></div>
+  
+  <!-- Main Content -->
+  <main class="flex-1 py-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="prose prose-lg">
+        <p class="text-lg">This is the introduction to our document, converted from the original PDF.</p>
+        <p>The original PDF can be accessed via the download button in the header.</p>
+        
+        <h2 class="mt-8 text-xl font-semibold">About This Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
+        
+        <p>Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Include Footer Component -->
+  <div id="footer-container"></div>
+  
+  <!-- Include TOC Drawer Component -->
+  <div id="toc-drawer-container"></div>
+
+  <!-- JavaScript to load components and handle interactions -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load components
+      fetch('components/page-header.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('header-container').innerHTML = html;
+          document.getElementById('page-title').textContent = 'Chapter 1: Introduction';
+          
+          // Set PDF link
+          const pdfLink = document.getElementById('download-pdf');
+          if (pdfLink) pdfLink.href = 'original.pdf';
+          
+          // Add event listeners for TOC toggle buttons
+          const tocToggleButtons = document.querySelectorAll('.toc-toggle');
+          tocToggleButtons.forEach(button => {
+            button.addEventListener('click', toggleTOC);
+          });
+        });
+
+      fetch('components/footer-navigation.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('footer-container').innerHTML = html;
+          
+          // Update navigation links
+          const prevPageLink = document.getElementById('prev-page-link');
+          const nextPageLink = document.getElementById('next-page-link');
+          
+          // This is the first page, so hide previous button
+          prevPageLink.classList.add('invisible');
+          
+          // Set next page link
+          nextPageLink.href = 'page2.html';
+          document.getElementById('next-page-title').textContent = 'Section 1.1: Getting Started';
+          
+          // Add event listener for footer TOC toggle
+          const tocToggleFooter = document.getElementById('toc-toggle-footer');
+          if (tocToggleFooter) {
+            tocToggleFooter.addEventListener('click', toggleTOC);
+          }
+        });
+
+      fetch('components/right-drawer.html')
+        .then(response => response.text())
+        .then(html => {
+          document.getElementById('toc-drawer-container').innerHTML = html;
+          
+          // Add event listener for close button
+          const closeButton = document.getElementById('toc-close');
+          if (closeButton) {
+            closeButton.addEventListener('click', closeTOC);
+          }
+          
+          // Add event listener for backdrop
+          const backdrop = document.getElementById('toc-backdrop');
+          if (backdrop) {
+            backdrop.addEventListener('click', closeTOC);
+          }
+          
+          // Highlight current page in TOC
+          highlightCurrentPageInTOC();
+        });
+    });
+
+    // Function to toggle TOC drawer
+    function toggleTOC() {
+      const tocDrawer = document.getElementById('toc-drawer');
+      const tocPanel = document.getElementById('toc-panel');
+      
+      if (tocDrawer.classList.contains('hidden')) {
+        // Show TOC
+        tocDrawer.classList.remove('hidden');
+        setTimeout(() => {
+          tocPanel.classList.remove('translate-x-full');
+        }, 10);
+      } else {
+        // Hide TOC
+        tocPanel.classList.add('translate-x-full');
+        setTimeout(() => {
+          tocDrawer.classList.add('hidden');
+        }, 500);
+      }
+    }
+
+    // Function to close TOC drawer
+    function closeTOC() {
+      const tocDrawer = document.getElementById('toc-drawer');
+      const tocPanel = document.getElementById('toc-panel');
+      
+      tocPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        tocDrawer.classList.add('hidden');
+      }, 500);
+    }
+
+    // Function to highlight current page in TOC
+    function highlightCurrentPageInTOC() {
+      const currentPath = window.location.pathname;
+      const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+      
+      const tocLinks = document.querySelectorAll('.toc-content a');
+      tocLinks.forEach(link => {
+        if (link.getAttribute('href') === filename) {
+          link.classList.add('bg-primary-50', 'text-primary-600', 'current-page');
+        } else {
+          link.classList.remove('bg-primary-50', 'text-primary-600', 'current-page');
+        }
+      });
+    }
+  </script>
+</body>
+</html>
