@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 1.1: Getting Started</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- MANIFEST definition from imsmanifest.xml -->
+  <script>
+    // Global variable to hold manifest data
+    const MANIFEST = (function() {
+      // Create a synchronous XMLHttpRequest
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'manifest.json', false); // false makes the request synchronous
+      xhr.send(null);
+
+      if (xhr.status === 200) {
+        return JSON.parse(xhr.responseText);
+      } else {
+        console.error('Error loading manifest.json:', xhr.status);
+        return {};
+      }
+    })();
+  </script>
+  <script src="js/navigation.js"></script>
+  <script src="js/load-components.js"></script>
+  
+  <!-- Preload all components for faster loading -->
+  <link rel="preload" href="components/page-header.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/footer-navigation.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/right-drawer.html" as="fetch" crossorigin>
+
+</head>
+<body class="flex flex-col w-full sm:mx-auto min-h-screen max-w-7xl">
+  <!-- Header Container -->
+  <div id="header-container"></div>
+  
+  <!-- Main Content -->
+  <main class="flex-1 py-4 px-2 sm:py-6 sm:px-0 shadow">
+    <div class="container max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto">
+        <p class="text-lg">This section covers how to get started with the material.</p>
+        
+        <h2 class="mt-8 text-xl font-semibold">Getting Started Guide</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
+        
+        <h3 class="mt-6 text-lg font-semibold">Prerequisites</h3>
+        <ul class="list-disc pl-6 mt-3">
+          <li>Basic knowledge of the subject</li>
+          <li>Setup of required software</li>
+          <li>Access to necessary resources</li>
+        </ul>
+        
+        <h3 class="mt-6 text-lg font-semibold">First Steps</h3>
+        <p>Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer and TOC Drawer containers -->
+  <div id="footer-container"></div>
+  <div id="toc-drawer-container"></div>
+</body>
+</html>

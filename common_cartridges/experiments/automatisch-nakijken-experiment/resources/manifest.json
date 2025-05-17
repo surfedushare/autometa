@@ -1,0 +1,159 @@
+{
+  "identifier": "MANIFEST-AUTOMATISCH-NAKIJKEN-EXPERIMENT",
+  "metadata": {
+    "schema": "IMS Common Cartridge",
+    "schemaVersion": "1.1.0",
+    "title": "Automatisch Nakijken Experiment",
+    "description": "Een onderzoek naar automatisch nakijken met behulp van Large Language Models"
+  },
+  "organizations": [
+    {
+      "identifier": "ORG_1",
+      "structure": "rooted-hierarchy",
+      "items": [
+        {
+          "identifier": "ITEM_1",
+          "resourceRef": "RESOURCE_1",
+          "title": "Introductie",
+          "href": "resources/introductie.html",
+          "children": []
+        },
+        {
+          "identifier": "ITEM_2",
+          "resourceRef": "RESOURCE_2",
+          "title": "Opzet van het experiment",
+          "href": "resources/opzet.html",
+          "children": []
+        },
+        {
+          "identifier": "ITEM_3", 
+          "resourceRef": "RESOURCE_3",
+          "title": "Resultaten",
+          "href": "resources/resultaten.html",
+          "children": []
+        },
+        {
+          "identifier": "ITEM_4",
+          "resourceRef": "RESOURCE_4",
+          "title": "Discussie en volgende stappen",
+          "href": "resources/discussie.html",
+          "children": []
+        },
+        {
+          "identifier": "ITEM_5",
+          "resourceRef": "RESOURCE_5",
+          "title": "Conclusies",
+          "href": "resources/conclusies.html",
+          "children": []
+        },
+        {
+          "identifier": "ITEM_6",
+          "resourceRef": "RESOURCE_6",
+          "title": "Bronnen en referenties",
+          "href": "resources/bronnen.html",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "resources": {
+    "RESOURCE_1": {
+      "identifier": "RESOURCE_1",
+      "type": "webcontent",
+      "href": "resources/introductie.html",
+      "files": [
+        "resources/introductie.html",
+        "resources/styles.css",
+        "resources/tailwind.css",
+        "resources/js/navigation.js",
+        "resources/js/load-components.js",
+        "resources/components/page-header.html",
+        "resources/components/footer-navigation.html",
+        "resources/components/right-drawer.html"
+      ]
+    },
+    "RESOURCE_2": {
+      "identifier": "RESOURCE_2",
+      "type": "webcontent",
+      "href": "resources/opzet.html",
+      "files": [
+        "resources/opzet.html",
+        "resources/styles.css",
+        "resources/tailwind.css",
+        "resources/js/navigation.js",
+        "resources/js/load-components.js",
+        "resources/components/page-header.html",
+        "resources/components/footer-navigation.html",
+        "resources/components/right-drawer.html"
+      ]
+    },
+    "RESOURCE_3": {
+      "identifier": "RESOURCE_3",
+      "type": "webcontent",
+      "href": "resources/resultaten.html",
+      "files": [
+        "resources/resultaten.html",
+        "resources/styles.css",
+        "resources/tailwind.css",
+        "resources/js/navigation.js",
+        "resources/js/load-components.js",
+        "resources/components/page-header.html",
+        "resources/components/footer-navigation.html",
+        "resources/components/right-drawer.html"
+      ]
+    },
+    "RESOURCE_4": {
+      "identifier": "RESOURCE_4",
+      "type": "webcontent",
+      "href": "resources/discussie.html",
+      "files": [
+        "resources/discussie.html",
+        "resources/styles.css",
+        "resources/tailwind.css",
+        "resources/js/navigation.js",
+        "resources/js/load-components.js",
+        "resources/components/page-header.html",
+        "resources/components/footer-navigation.html",
+        "resources/components/right-drawer.html"
+      ]
+    },
+    "RESOURCE_5": {
+      "identifier": "RESOURCE_5",
+      "type": "webcontent",
+      "href": "resources/conclusies.html",
+      "files": [
+        "resources/conclusies.html",
+        "resources/styles.css",
+        "resources/tailwind.css",
+        "resources/js/navigation.js",
+        "resources/js/load-components.js",
+        "resources/components/page-header.html",
+        "resources/components/footer-navigation.html",
+        "resources/components/right-drawer.html"
+      ]
+    },
+    "RESOURCE_6": {
+      "identifier": "RESOURCE_6",
+      "type": "webcontent",
+      "href": "resources/bronnen.html",
+      "files": [
+        "resources/bronnen.html",
+        "resources/styles.css",
+        "resources/tailwind.css",
+        "resources/js/navigation.js",
+        "resources/js/load-components.js",
+        "resources/components/page-header.html",
+        "resources/components/footer-navigation.html",
+        "resources/components/right-drawer.html"
+      ]
+    },
+    "RESOURCE_PDF": {
+      "identifier": "RESOURCE_PDF",
+      "type": "webcontent",
+      "href": "automatisch-nakijken-experiment.01.pdf",
+      "files": [
+        "automatisch-nakijken-experiment.01.pdf"
+      ]
+    }
+  }
+}

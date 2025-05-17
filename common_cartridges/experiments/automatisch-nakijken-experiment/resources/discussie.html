@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discussie en volgende stappen</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tailwind.css">
+  
+  <!-- Load manifest.json synchronously and create MANIFEST variable -->
+  <script>
+    // Global variable to hold manifest data
+    const MANIFEST = (function() {
+      // Create a synchronous XMLHttpRequest
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'manifest.json', false); // false makes the request synchronous
+      xhr.send(null);
+      
+      if (xhr.status === 200) {
+        return JSON.parse(xhr.responseText);
+      } else {
+        console.error('Error loading manifest.json:', xhr.status);
+        return {};
+      }
+    })();
+  </script>
+  <script src="js/navigation.js"></script>
+  <script src="js/load-components.js"></script>
+  
+  <!-- Preload all components for faster loading -->
+  <link rel="preload" href="components/page-header.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/footer-navigation.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/right-drawer.html" as="fetch" crossorigin>
+
+</head>
+<body class="flex flex-col w-full sm:mx-auto min-h-screen max-w-7xl">
+  <!-- Header Container -->
+  <div id="header-container"></div>
+  
+  <!-- Main Content -->
+  <main class="flex-1 py-4 px-2 sm:py-6 sm:px-0 shadow">
+    <div class="container max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Discussie en volgende stappen</h1>
+        
+        <p>Ik heb voor de verschillende GPT4.1modellen gekeken naar waar mogelijke verbeterpunten liggen.
+Vooral bij vraag 4 valt op dat het model consequent een ander criterium kiest dan de docenten, als
+er niet aan comments review wordt gedaan. Het model zou drastisch verbeteren als het lukt de LLM
+iets vaker mee te laten stemmen met de docent, die deze vraag heeft nagekeken (elke vraag is door
+een enkele docent beoordeeld). Als je kijkt naar de opmerkingen bij toegepaste criteria van vraag 4,
+dan valt op dat de LLM consequent oordeelt dat er "onvoldoende terminologie" wordt gebruikt. Dit
+is typisch het soort fout dat verwacht mag worden van LLM's volgens mij. Puur op basis van syntax
+en semantiek is namelijk geen oordeel te vellen over wat "voldoende" is. Mijn vermoeden is dan
+ook, dat als we het antwoordmodel kunnen aanpassen en explicieter maken, dat de LLM dan beter
+de taak zal uitvoeren en handmatige checks van de opmerkingen minder nodig zullen zijn.</p>
+
+        <p>Een mogelijke richting is om een LLM te laten reflecteren op het gegeven antwoord model en
+verbeteringen voor te stellen. Dit zou eventueel wel een duurder "reasoning" model kunnen zijn,
+waarbij een mens de suggesties naloopt en goedkeurt. Het voordeel van deze methode is dat inladen
+van een antwoordmodel wel nog grotendeels automatisch kan gaan en dat het docenten niet veel
+werk hoeft te kosten. Bovendien is er de mogelijkheid om de vragen zelf specifieker te maken,
+wanneer deze nog niet is voorgelegd aan studenten, en dat kan de kwaliteit van nakijken ten goede
+komen. Een mogelijk nadeel van deze methode is dat docenten met weinig prompt ervaring, toch
+nog fouten kunnen maken, die pas tijdens het nakijken zelf zullen blijken.</p>
+
+        <p>Een andere richting is om docenten te laten reageren op opmerkingen waar de LLM mee komt. De
+opmerkingen kunnen dan gebruikt worden om het antwoordmodel te verbeteren. Vervolgens kunnen
+alle antwoorden opnieuw door de LLM gehaald worden, met gebruik van het verbeterde antwoord
+model. Dit proces kan zich herhalen totdat er geen opmerkingen meer zijn. Deze iteratieve methode
+heeft als voordeel, dat de docent continue betrokken is en goed zicht heeft op de gevolgen van
+aanpassingen aan het antwoordmodel. Een nadeel is dat deze methode relatief duur is. Kosten
+kunnen beperkt worden door opmerkingen eerst te laten clusteren. Dit clusteren is vrij goedkoop en
+kan er toe leiden, dat docenten met relatief weinig opmerkingen doornemen, toch veel
+verbeteringen in één keer kunnen aanbrengen. Hoe minder iteraties er nodig zijn om het
+antwoordmodel te verbeteren hoe goedkoper dit proces wordt.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer and TOC Drawer containers -->
+  <div id="footer-container"></div>
+  <div id="toc-drawer-container"></div>
+</body>
+</html>

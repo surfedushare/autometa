@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Section 1.2: Key Concepts</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- MANIFEST definition from imsmanifest.xml -->
+  <script>
+    // Global variable to hold manifest data
+    const MANIFEST = (function() {
+      // Create a synchronous XMLHttpRequest
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'manifest.json', false); // false makes the request synchronous
+      xhr.send(null);
+
+      if (xhr.status === 200) {
+        return JSON.parse(xhr.responseText);
+      } else {
+        console.error('Error loading manifest.json:', xhr.status);
+        return {};
+      }
+    })();
+  </script>
+  <script src="js/navigation.js"></script>
+  <script src="js/load-components.js"></script>
+  
+  <!-- Preload all components for faster loading -->
+  <link rel="preload" href="components/page-header.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/footer-navigation.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/right-drawer.html" as="fetch" crossorigin>
+
+</head>
+<body class="flex flex-col w-full sm:mx-auto min-h-screen max-w-7xl">
+  <!-- Header Container -->
+  <div id="header-container"></div>
+  
+  <!-- Main Content -->
+  <main class="flex-1 py-4 px-2 sm:py-6 sm:px-0 shadow">
+    <div class="container max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto">
+        <p class="text-lg">In this section, we explore the key concepts that form the foundation of our material.</p>
+        
+        <h2 class="mt-8 text-xl font-semibold">Important Terminology</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
+        
+        <h3 class="mt-6 text-lg font-semibold">Core Principles</h3>
+        <ol class="list-decimal pl-6 mt-3">
+          <li>First principle of the subject matter</li>
+          <li>Second principle with important details</li>
+          <li>Third principle and its applications</li>
+          <li>Fourth overarching concept</li>
+        </ol>
+        
+        <h3 class="mt-6 text-lg font-semibold">Theoretical Framework</h3>
+        <p>Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.</p>
+        
+        <div class="p-4 mt-4 bg-primary-50 rounded-lg border border-primary-200">
+          <h4 class="text-base font-medium text-primary-800">Key Insight</h4>
+          <p class="text-primary-700">Understanding these key concepts will provide a solid foundation for all subsequent material in this course.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer and TOC Drawer containers -->
+  <div id="footer-container"></div>
+  <div id="toc-drawer-container"></div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opzet van het experiment</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tailwind.css">
+  
+  <!-- Load manifest.json synchronously and create MANIFEST variable -->
+  <script>
+    // Global variable to hold manifest data
+    const MANIFEST = (function() {
+      // Create a synchronous XMLHttpRequest
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'manifest.json', false); // false makes the request synchronous
+      xhr.send(null);
+      
+      if (xhr.status === 200) {
+        return JSON.parse(xhr.responseText);
+      } else {
+        console.error('Error loading manifest.json:', xhr.status);
+        return {};
+      }
+    })();
+  </script>
+  <script src="js/navigation.js"></script>
+  <script src="js/load-components.js"></script>
+  
+  <!-- Preload all components for faster loading -->
+  <link rel="preload" href="components/page-header.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/footer-navigation.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/right-drawer.html" as="fetch" crossorigin>
+
+</head>
+<body class="flex flex-col w-full sm:mx-auto min-h-screen max-w-7xl">
+  <!-- Header Container -->
+  <div id="header-container"></div>
+  
+  <!-- Main Content -->
+  <main class="flex-1 py-4 px-2 sm:py-6 sm:px-0 shadow">
+    <div class="container max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Opzet van het experiment</h1>
+        
+        <p>Ik heb van Sonja van Dam een tentamen "sustainable impact" mogen inzien, samen met het
+antwoordmodel en heb de pseudonieme antwoorden en scores gekregen van ongeveer 250
+studenten. In eerste instantie heb ik naar de eerste 5 vragen gekeken. Enerzijds om het handwerk
+aan mijn kant te beperken, want het antwoordmodel was niet gemakkelijk foutloos automatisch in te
+laden in een geschikt data formaat. Anderzijds om de kosten van LLM gebruik te beperken tijdens
+deze verkennende fase.</p>
+
+        <p>Na het inladen in een database van: de vragen, het antwoordmodel voor deze vragen en alle
+antwoorden van studenten op de vragen; heb ik voor elk student antwoord aan verschillende LLM's
+gevraagd in hoeverre dat antwoord voldeed aan de criteria in het antwoord model. Hierbij kregen de
+LLM's de volgende opties:</p>
+        <ul class="list-disc ml-6">
+           <li>Aangeven welke criteria toepasbaar zijn</li>
+           <li>Aangeven welke criteria misschien toepasbaar zijn</li>
+           <li>Op basis van de vraag, antwoordmodel en het antwoord een aantal vrije opmerkingen maken</li>
+        </ul>
+
+        <p>Op basis van de toegekende criteria heeft een computer programma vervolgens scores berekend en
+deze scores zijn vergeleken met de scores, die studenten in werkelijkheid hebben gekregen. Het
+werk van de LLM kan op drie manieren geevalueerd worden:</p>
+        <ul class="list-disc ml-6">
+           <li>De mate waarin het de LLM lukt om (met zekerheid) de gegeven criteria te koppelen aan de
+               antwoorden. Dit geeft aan hoeveel werk een LLM uit handen kan nemen.</li>
+           <li>De mate waarin de LLM afwijkt van de werkelijke toegekende scores door een mens. Ik heb
+               gekozen voor ICC2<sup>4</sup> om de mate van overeenstemming vast te stellen. Verder heb ik de
+               MAE berekent om een indicatie te krijgen hoeveel scores afwijken<sup>5</sup>.</li>
+           <li>De bias van een LLM is simpelweg (LLM-score – docent-toekenning) / maximale punten *
+               100. Dat betekent dat bij een negatieve percentage de docent meer punten toekende en bij
+               een positief percentage de LLM meer punten toekende. Deze bias berekening dient ter
+               indicatie wat er verwacht mag worden aan verandering in de cijfers voor studenten.</li>
+        </ul>
+
+        <p>Een nadeel van deze experiment opzet is dat uit de uiteindelijke student scores moeilijk het
+toegepaste criterium van een docent is af te lezen. Als er bijvoorbeeld twee criteria zijn met twee
+punten, dan is aan een score van 2 punten niet af te lezen welk criterium is toegepast.</p>
+
+        <p>Het is mijn hypothese dat LLM's in staat zijn goed te presenteren op bovenstaande vlakken. Niet
+omdat ze een diep begrip hebben van de inhoud, maar omdat de taak is gereduceerd tot een simpele
+vergelijking van syntax en sematiek patronen tussen twee teksten A) het antwoord van de student en
+B) het opgestelde antwoord model. Merk op dat ik alle berekeningen aan scores uitvoer in software
+en niet overlaat aan LLM's.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer and TOC Drawer containers -->
+  <div id="footer-container"></div>
+  <div id="toc-drawer-container"></div>
+</body>
+</html>

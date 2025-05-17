@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resultaten</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="tailwind.css">
+  
+  <!-- Load manifest.json synchronously and create MANIFEST variable -->
+  <script>
+    // Global variable to hold manifest data
+    const MANIFEST = (function() {
+      // Create a synchronous XMLHttpRequest
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', 'manifest.json', false); // false makes the request synchronous
+      xhr.send(null);
+      
+      if (xhr.status === 200) {
+        return JSON.parse(xhr.responseText);
+      } else {
+        console.error('Error loading manifest.json:', xhr.status);
+        return {};
+      }
+    })();
+  </script>
+  <script src="js/navigation.js"></script>
+  <script src="js/load-components.js"></script>
+  
+  <!-- Preload all components for faster loading -->
+  <link rel="preload" href="components/page-header.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/footer-navigation.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/right-drawer.html" as="fetch" crossorigin>
+
+</head>
+<body class="flex flex-col w-full sm:mx-auto min-h-screen max-w-7xl">
+  <!-- Header Container -->
+  <div id="header-container"></div>
+  
+  <!-- Main Content -->
+  <main class="flex-1 py-4 px-2 sm:py-6 sm:px-0 shadow">
+    <div class="container max-w-4xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="prose prose-lg mx-auto">
+        <h1 class="text-2xl font-bold mb-4">Resultaten</h1>
+        
+        <p>In totaal zijn er drie LLM's met wisselende configuraties getest. De besteede tijd aan het experiment
+is voornamelijk gaan zitten in evaluatie en verbetering van resultaten. Hierdoor ben ik niet
+toegekomen aan verschillende aanbieders proberen. Alle modellen zijn hierdoor van OpenAI. Per
+model geef ik aan hoe goed het model de taak heeft uitgevoerd, hoeveel werk het bespaart zou
+hebben en wat de kosten zijn om de taak uit te voeren.</p>
+
+        <h2 class="text-xl font-semibold mt-6">O1 reasoning</h2>
+        <p>Ten tijde van het experiment was dit het beste "reasoning" model<sup>6</sup>. De resultaten zijn teleurstellend.
+Vanwege de lange interne monoloog, die een model uitvoert als onderdeel van de "reasoning" ligt
+het gebruik van tokens hoog. Er wordt afgerekent per token en slechts na ongeveer 40 studenten
+werd mijn ingestelde limiet van €100 bereikt. Geschatte kosten liggen daarmee op €625 euro per
+tentamen.</p>
+
+        <p>De MAE ligt tussen de 0.4 en 1.4 met een gemiddelde van 0.8. De bias is 0.9%, dus die is te
+verwaarlozen. Er waren helaas onvoldoende observaties om significante ICC2 waardes te
+berekenen. Ik ben snel doorgegaan naar goedkopere alternatieven.</p>
+
+        <h2 class="text-xl font-semibold mt-6">O1-mini (3n voted)</h2>
+        <p>Met O1-mini blijven we bij het "reasoning" paradigma, maar werken we met een model dat
+beperktere capaciteiten heeft. Het wordt voornamelijk gebruikt om mee te programmeren en is heel
+goedkoop. Het is naar mijn weten nog onduidelijk wat precies de effecten zijn van de mengeling
+tussen natuurlijke taal en programmeertaal syntax en semantiek. In het kader van dit experiment
+zijn wel positieve effecten te verwachten, omdat het antwoord uiteindelijk uitgelezen moet worden
+door software en daarbij helpt een voorkeur voor rigoreuze software syntax. Met "3n voted" wordt
+bedoeld dat de vraag 3x is gesteld en het meest gegeven antwoord wordt gekozen als uiteindelijke
+uitkomst.</p>
+
+        <p>Dit model is in staat om ongeveer 39% van de studenten te beoordelen zonder tussenkomst van een
+docent. De kwaliteit van deze oordelen is een stuk beter dan bij O1. De MAE ligt tussen de 0.2 en
+0.9 met een gemiddelde van 0.5. De bias loopt hier iets op naar 4,9%, maar blijft in een redelijke
+marge. Er is helaas slechte correlatie tussen de scores van de LLM en de docenten, die is
+onvoldoende bij alle vragen. Het grote voordeel van dit model zijn de kosten. Zelfs met 3n zijn de
+geschatte kosten voor het tentamen €6,50.</p>
+
+        <h2 class="text-xl font-semibold mt-6">GPT4.1 (3n voted)</h2>
+        <p>Net als met O3-mini wordt met dit model de vraag 3x is gesteld en het meest gegeven antwoord
+wordt gekozen als uiteindelijke uitkomst. Het basis model is echter geen reasoning model, maar is
+speciaal gemaakt voor gebruikers die modellen in combinatie willen gebruiken met andere
+software, zoals bijvoorbeeld in dit experiment om op grote schaal vragen te stellen en te rekenen
+met de uitkomsten.</p>
+
+        <p>Van alle gesteste modellen werkt dit model het beste. Het ontziet de docenten voor ongeveer 2/3
+van de antwoorden. De MAE ligt tussen de 0.3 en 0.7 met een gemiddelde van 0.5. De bias krimpt
+ten opzicht van O3-mini naar 1,2%. Maar belangrijker is dat er voor het eerst een redelijke tot
+goede overeenstemming is met significantie tussen docenten en de LLM voor 3 van de 5 vragen.
+Daarmee is er zeker ruimte voor verbetering, maar het resultaat kan mijns inziens niet worden
+afgedaan als kansloos. De kosten voor een tentamen nakijken zijn ongeveer €30. Een stuk duurder
+dus dan O1-mini, maar nog steeds veel goedkoper dan O1.</p>
+
+        <h2 class="text-xl font-semibold mt-6">GPT4.1 (3n voted, human in the loop)</h2>
+        <p>Hier is het model en manier van prompten niet veranderd ten opzichte van bovenstaande GPT4.1.
+Echter de manier van scores berekenen is anders om te simuleren dat een docent als extra controle
+naar het toegekende criterium heeft gekeken. Elke keer als een model aangeeft dat een criterium
+"misschien toepasbaar" is, dan wordt de score van dit criterium toegepast mits de score
+overeenkomt met dat van de docent. Dit is om resultaten te simuleren waarbij een docent een
+gedeelte van het werk van de LLM nakijkt waar deze "twijfelt", door met een druk op de knop goed
+te keuren.</p>
+
+        <p>Deze methode van human in the loop is levert echter geen significante verbeteringen op. Het is
+daarom beter om geen gebruik te maken van een onderscheid tussen "toepasbaar" en "misschien
+toepasbaar" bij het vragen naar criteria.</p>
+
+        <h2 class="text-xl font-semibold mt-6">GPT4.1 (3n voted, comments review)</h2>
+        <p>Ook hier is het model en manier van prompten niet veranderd ten opzichte van bovenstaande
+GPT4.1. Het toekennen van scores werkt zo, dat wanneer een LLM een comment geeft, dat de
+correcte score van de docent wordt overgenomen. In dit geval simuleren we resultaten waarbij een
+docent de comments van een LLM doorkijkt en waar nodig de toegekende criteria verbetert.</p>
+
+        <p>Deze methode is wel veelbelovend. Ongeveer de helft van alle toegekende criteria komt met een
+opmerking van de LLM. Dus het werk dat blindelinks wordt overgenomen verminderd tot 1/3.
+Echter de overeenstemming tussen docent en LLM neemt drastisch toe. De overeenstemming groeit
+naar goed tot uitstekend in 4 van de 5 vragen. De MAE komt tussen 0.1 en 0.4 te liggen met een
+gemiddelde van 0.3. Alleen de bias neemt in negatieve zin toe naar 2,5%, maar blijft dus redelijk.</p>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer and TOC Drawer containers -->
+  <div id="footer-container"></div>
+  <div id="toc-drawer-container"></div>
+</body>
+</html>
