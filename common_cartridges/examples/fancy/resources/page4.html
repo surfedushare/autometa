@@ -3,9 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chapter 1: Introduction</title>
+  <title>Section 1.3: Summary</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',  // Main primary color (green)
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#052e16',
+            },
+            accent: {
+              50: '#fefce8',
+              100: '#fef9c3',
+              200: '#fef08a',
+              300: '#fde047',
+              400: '#facc15',  // Main accent color (yellow)
+              500: '#eab308',
+              600: '#ca8a04',
+              700: '#a16207',
+              800: '#854d0e',
+              900: '#713f12',
+              950: '#422006',
+            },
+          },
+        }
+      }
+    }
+  </script>
   
   <!-- MANIFEST definition from imsmanifest.xml -->
   <script>
@@ -128,13 +164,45 @@
   <main class="flex-1 py-6">
     <div class="max-w-3xl mx-auto">
       <div class="prose prose-lg">
-        <p class="text-lg">This is the introduction to our document, converted from the original PDF.</p>
-        <p>The original PDF can be accessed via the download button in the header.</p>
+        <p class="text-lg">This section provides a summary of all the key points covered in Chapter 1.</p>
         
-        <h2 class="mt-8 text-xl font-semibold">About This Content</h2>
+        <h2 class="mt-8 text-xl font-semibold">Chapter Summary</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor. Ut in nulla enim.</p>
         
-        <p>Phasellus molestie magna non est bibendum non venenatis nisl tempor. Suspendisse dictum feugiat nisl ut dapibus. Mauris iaculis porttitor posuere. Praesent id metus massa, ut blandit odio.</p>
+        <div class="bg-white shadow overflow-hidden sm:rounded-lg mt-6">
+          <div class="px-4 py-5 sm:px-6 bg-primary-50">
+            <h3 class="text-lg leading-6 font-medium text-primary-900">Key Takeaways</h3>
+            <p class="mt-1 max-w-2xl text-sm text-primary-700">A summary of the most important points</p>
+          </div>
+          <div class="border-t border-gray-200">
+            <dl>
+              <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">Introduction</dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">The opening section introduced the topic and its importance.</dd>
+              </div>
+              <div class="bg-gray-50 px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">Getting Started</dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">The prerequisites and initial steps were outlined for beginners.</dd>
+              </div>
+              <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                <dt class="text-sm font-medium text-gray-500">Key Concepts</dt>
+                <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">Core principles and theoretical framework were established.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        
+        <h3 class="mt-6 text-lg font-semibold">Additional Resources</h3>
+        <ul class="list-disc pl-6 mt-3">
+          <li>Supplementary reading materials</li>
+          <li>Practice exercises</li>
+          <li>External references</li>
+        </ul>
+        
+        <div class="p-4 mt-8 bg-accent-50 rounded-lg border border-accent-200">
+          <h4 class="text-base font-medium text-accent-800">What's Next?</h4>
+          <p class="text-accent-700">In the next chapter, we'll explore advanced topics building on these fundamental concepts.</p>
+        </div>
       </div>
     </div>
   </main>

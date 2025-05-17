@@ -1,176 +1,216 @@
 /**
- * Common Cartridge Navigation and UI Functionality
+ * Navigation utilities for Common Cartridge
+ * Uses the global MANIFEST object defined in each HTML page
  */
-document.addEventListener('DOMContentLoaded', function() {
-  // Load components
-  loadComponent('header-container', 'components/page-header.html', function() {
-    // Set the page title based on the document title
-    document.getElementById('page-title').textContent = document.title;
-    
-    // Set PDF link
-    const pdfLink = document.getElementById('download-pdf');
-    if (pdfLink) pdfLink.href = 'original.pdf';
-    
-    // Add event listeners for TOC toggle buttons
-    const tocToggleButtons = document.querySelectorAll('.toc-toggle');
-    tocToggleButtons.forEach(button => {
-      button.addEventListener('click', toggleTOC);
-    });
-  });
 
-  loadComponent('footer-container', 'components/footer-navigation.html', function() {
-    // Get the current page path
+// Helper functions for navigation based on MANIFEST
+const Navigation = {
+  // Get current page resource from URL
+  getCurrentResource: function() {
     const currentPath = window.location.pathname;
     const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
     
-    // Update navigation links based on page structure
-    updateNavigationLinks(filename);
-    
-    // Add event listener for footer TOC toggle
-    const tocToggleFooter = document.getElementById('toc-toggle-footer');
-    if (tocToggleFooter) {
-      tocToggleFooter.addEventListener('click', toggleTOC);
-    }
-  });
-
-  loadComponent('toc-drawer-container', 'components/right-drawer.html', function() {
-    // Add event listener for close button
-    const closeButton = document.getElementById('toc-close');
-    if (closeButton) {
-      closeButton.addEventListener('click', closeTOC);
-    }
-    
-    // Add event listener for backdrop
-    const backdrop = document.getElementById('toc-backdrop');
-    if (backdrop) {
-      backdrop.addEventListener('click', closeTOC);
-    }
-    
-    // Highlight current page in TOC
-    highlightCurrentPageInTOC();
-  });
-});
-
-/**
- * Load component HTML into a container
- */
-function loadComponent(containerId, componentPath, callback) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-  
-  fetch(componentPath)
-    .then(response => response.text())
-    .then(html => {
-      container.innerHTML = html;
-      if (typeof callback === 'function') {
-        callback();
+    // Find the resource by its href
+    for (const resourceId in MANIFEST.resources) {
+      const resource = MANIFEST.resources[resourceId];
+      const resourceFilename = resource.href.substring(resource.href.lastIndexOf('/') + 1);
+      if (resourceFilename === filename) {
+        return resource;
       }
-    })
-    .catch(error => {
-      console.error(`Error loading component ${componentPath}:`, error);
-    });
-}
+    }
+    return null;
+  },
 
-/**
- * Toggle TOC drawer visibility
- */
-function toggleTOC() {
-  const tocDrawer = document.getElementById('toc-drawer');
-  const tocPanel = document.getElementById('toc-panel');
-  
-  if (tocDrawer.classList.contains('hidden')) {
-    // Show TOC
-    tocDrawer.classList.remove('hidden');
-    setTimeout(() => {
-      tocPanel.classList.remove('translate-x-full');
-    }, 10);
-  } else {
-    // Hide TOC
-    tocPanel.classList.add('translate-x-full');
-    setTimeout(() => {
-      tocDrawer.classList.add('hidden');
-    }, 500);
+  // Find an item based on its associated resource identifier
+  findItemByResourceRef: function(resourceRef, items = null) {
+    // Start from root items if not specified
+    if (!items) {
+      items = MANIFEST.organizations[0].items;
+    }
+    
+    // Check current level
+    for (let i = 0; i < items.length; i++) {
+      const item = items[i];
+      if (item.resourceRef === resourceRef) {
+        return item;
+      }
+      
+      // Check children recursively
+      if (item.children && item.children.length > 0) {
+        const found = this.findItemByResourceRef(resourceRef, item.children);
+        if (found) {
+          return found;
+        }
+      }
+    }
+    
+    return null;
+  },
+
+  // Get next page (if exists)
+  getNextPage: function(currentResourceId) {
+    // Build flat navigation order
+    const navOrder = this.buildFlatNavigation();
+    
+    // Find current position
+    for (let i = 0; i < navOrder.length; i++) {
+      if (navOrder[i].resourceRef === currentResourceId) {
+        // Return next page if exists
+        if (i < navOrder.length - 1) {
+          return navOrder[i + 1];
+        }
+      }
+    }
+    
+    return null;
+  },
+
+  // Get previous page (if exists)
+  getPreviousPage: function(currentResourceId) {
+    // Build flat navigation order
+    const navOrder = this.buildFlatNavigation();
+    
+    // Find current position
+    for (let i = 0; i < navOrder.length; i++) {
+      if (navOrder[i].resourceRef === currentResourceId) {
+        // Return previous page if exists
+        if (i > 0) {
+          return navOrder[i - 1];
+        }
+      }
+    }
+    
+    return null;
+  },
+
+  // Build a flat navigation order array from the hierarchical structure
+  buildFlatNavigation: function() {
+    const navOrder = [];
+    
+    const traverseItems = (items) => {
+      for (const item of items) {
+        navOrder.push(item);
+        if (item.children && item.children.length > 0) {
+          traverseItems(item.children);
+        }
+      }
+    };
+    
+    traverseItems(MANIFEST.organizations[0].items);
+    return navOrder;
+  },
+
+  // Build table of contents HTML for the drawer
+  buildTableOfContents: function() {
+    let html = '<ul class="space-y-1">';
+    
+    const buildItemHtml = (items, level = 0) => {
+      let itemsHtml = '';
+      const padding = level * 0.5;
+      
+      for (const item of items) {
+        const resource = MANIFEST.resources[item.resourceRef];
+        if (!resource) continue;
+        
+        itemsHtml += `<li>
+          <a href="${resource.href.split('/').pop()}" 
+             class="block rounded-md px-3 py-2 text-sm font-medium ${level > 0 ? `pl-${3 + padding}` : ''} 
+             text-gray-700 hover:bg-gray-50 hover:text-gray-900">
+            ${item.title}
+          </a>
+        </li>`;
+        
+        if (item.children && item.children.length > 0) {
+          itemsHtml += buildItemHtml(item.children, level + 1);
+        }
+      }
+      
+      return itemsHtml;
+    };
+    
+    html += buildItemHtml(MANIFEST.organizations[0].items);
+    html += '</ul>';
+    
+    return html;
+  },
+
+  // Initialize navigation based on the current page and MANIFEST
+  initNavigation: function() {
+    // Get current resource
+    const currentResource = this.getCurrentResource();
+    if (!currentResource) return;
+    
+    // Get associated item
+    const currentItem = this.findItemByResourceRef(currentResource.identifier);
+    if (!currentItem) return;
+    
+    // Set page title
+    document.title = currentItem.title;
+    const pageTitle = document.getElementById('page-title');
+    if (pageTitle) pageTitle.textContent = currentItem.title;
+    
+    // Set PDF link if available
+    const pdfResource = MANIFEST.resources.RESOURCE_PDF;
+    if (pdfResource) {
+      const pdfLink = document.getElementById('download-pdf');
+      if (pdfLink) pdfLink.href = pdfResource.href.split('/').pop();
+    }
+    
+    // Setup navigation links
+    const prevPageLink = document.getElementById('prev-page-link');
+    const nextPageLink = document.getElementById('next-page-link');
+    
+    if (prevPageLink) {
+      const prevPage = this.getPreviousPage(currentResource.identifier);
+      if (prevPage) {
+        prevPageLink.href = MANIFEST.resources[prevPage.resourceRef].href.split('/').pop();
+        const prevPageTitle = document.getElementById('prev-page-title');
+        if (prevPageTitle) prevPageTitle.textContent = prevPage.title;
+        prevPageLink.classList.remove('invisible');
+      } else {
+        prevPageLink.classList.add('invisible');
+      }
+    }
+    
+    if (nextPageLink) {
+      const nextPage = this.getNextPage(currentResource.identifier);
+      if (nextPage) {
+        nextPageLink.href = MANIFEST.resources[nextPage.resourceRef].href.split('/').pop();
+        const nextPageTitle = document.getElementById('next-page-title');
+        if (nextPageTitle) nextPageTitle.textContent = nextPage.title;
+        nextPageLink.classList.remove('invisible');
+      } else {
+        nextPageLink.classList.add('invisible');
+      }
+    }
+    
+    // Build table of contents
+    const tocContent = document.querySelector('.toc-content');
+    if (tocContent) {
+      tocContent.innerHTML = this.buildTableOfContents();
+      
+      // Highlight current page
+      setTimeout(() => {
+        const currentPath = window.location.pathname;
+        const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+        
+        const tocLinks = document.querySelectorAll('.toc-content a');
+        tocLinks.forEach(link => {
+          if (link.getAttribute('href') === filename) {
+            link.classList.add('bg-primary-50', 'text-primary-600', 'current-page');
+          } else {
+            link.classList.remove('bg-primary-50', 'text-primary-600', 'current-page');
+          }
+        });
+      }, 100);
+    }
   }
-}
+};
 
-/**
- * Close TOC drawer
- */
-function closeTOC() {
-  const tocDrawer = document.getElementById('toc-drawer');
-  const tocPanel = document.getElementById('toc-panel');
-  
-  tocPanel.classList.add('translate-x-full');
+// Initialize navigation when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // After components are loaded, initialize navigation
   setTimeout(() => {
-    tocDrawer.classList.add('hidden');
+    Navigation.initNavigation();
   }, 500);
-}
-
-/**
- * Highlight current page in TOC
- */
-function highlightCurrentPageInTOC() {
-  const currentPath = window.location.pathname;
-  const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-  
-  const tocLinks = document.querySelectorAll('.toc-content a');
-  tocLinks.forEach(link => {
-    if (link.getAttribute('href') === filename) {
-      link.classList.add('bg-primary-50', 'text-primary-600', 'current-page');
-    } else {
-      link.classList.remove('bg-primary-50', 'text-primary-600', 'current-page');
-    }
-  });
-}
-
-/**
- * Update navigation links based on page structure
- */
-function updateNavigationLinks(currentPage) {
-  // Page structure mapping
-  const pageStructure = {
-    'page1.html': { 
-      prev: null, 
-      next: { url: 'page2.html', title: 'Section 1.1: Getting Started' }
-    },
-    'page2.html': { 
-      prev: { url: 'page1.html', title: 'Chapter 1: Introduction' }, 
-      next: { url: 'page3.html', title: 'Section 1.2: Key Concepts' }
-    },
-    'page3.html': { 
-      prev: { url: 'page2.html', title: 'Section 1.1: Getting Started' }, 
-      next: { url: 'page4.html', title: 'Section 1.3: Summary' }
-    },
-    'page4.html': { 
-      prev: { url: 'page3.html', title: 'Section 1.2: Key Concepts' }, 
-      next: null
-    }
-  };
-  
-  // Get page data
-  const pageData = pageStructure[currentPage];
-  if (!pageData) return;
-  
-  const prevPageLink = document.getElementById('prev-page-link');
-  const prevPageTitle = document.getElementById('prev-page-title');
-  const nextPageLink = document.getElementById('next-page-link');
-  const nextPageTitle = document.getElementById('next-page-title');
-  
-  // Update prev link
-  if (pageData.prev) {
-    prevPageLink.href = pageData.prev.url;
-    prevPageTitle.textContent = pageData.prev.title;
-    prevPageLink.classList.remove('invisible');
-  } else {
-    prevPageLink.classList.add('invisible');
-  }
-  
-  // Update next link
-  if (pageData.next) {
-    nextPageLink.href = pageData.next.url;
-    nextPageTitle.textContent = pageData.next.title;
-    nextPageLink.classList.remove('invisible');
-  } else {
-    nextPageLink.classList.add('invisible');
-  }
-}
+});
