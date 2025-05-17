@@ -143,17 +143,14 @@ const Navigation = {
     // Get associated item
     const currentItem = this.findItemByResourceRef(currentResource.identifier);
     if (!currentItem) return;
-    
-    // Set page title
-    document.title = currentItem.title;
-    const pageTitle = document.getElementById('page-title');
-    if (pageTitle) pageTitle.textContent = currentItem.title;
-    
+
     // Set PDF link if available
     const pdfResource = MANIFEST.resources.RESOURCE_PDF;
     if (pdfResource) {
       const pdfLink = document.getElementById('download-pdf');
-      if (pdfLink) pdfLink.href = pdfResource.href.split('/').pop();
+      if (pdfLink && !pdfLink.getAttribute('href')) {
+        pdfLink.href = pdfResource.href.split('/').pop();
+      }
     }
     
     // Setup navigation links
@@ -190,27 +187,22 @@ const Navigation = {
       tocContent.innerHTML = this.buildTableOfContents();
       
       // Highlight current page
-      setTimeout(() => {
-        const currentPath = window.location.pathname;
-        const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-        
-        const tocLinks = document.querySelectorAll('.toc-content a');
-        tocLinks.forEach(link => {
-          if (link.getAttribute('href') === filename) {
-            link.classList.add('bg-primary-50', 'text-primary-600', 'current-page');
-          } else {
-            link.classList.remove('bg-primary-50', 'text-primary-600', 'current-page');
-          }
-        });
-      }, 100);
+      const currentPath = window.location.pathname;
+      const filename = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+      const tocLinks = document.querySelectorAll('.toc-content a');
+      tocLinks.forEach(link => {
+        if (link.getAttribute('href') === filename) {
+          link.classList.add('bg-primary-50', 'text-primary-600', 'current-page');
+        } else {
+          link.classList.remove('bg-primary-50', 'text-primary-600', 'current-page');
+        }
+      });
     }
   }
 };
 
-// Initialize navigation when the DOM is loaded
+// No timeouts - initialize navigation right after DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // After components are loaded, initialize navigation
-  setTimeout(() => {
-    Navigation.initNavigation();
-  }, 500);
+  // Navigation will be called after components are loaded in the page's script
 });

@@ -118,9 +118,15 @@
     };
   </script>
   <script src="js/navigation.js"></script>
+  
+  <!-- Preload all components for faster loading -->
+  <link rel="preload" href="components/page-header.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/footer-navigation.html" as="fetch" crossorigin>
+  <link rel="preload" href="components/right-drawer.html" as="fetch" crossorigin>
+
 </head>
 <body class="flex flex-col w-full sm:mx-auto min-h-screen max-w-7xl">
-  <!-- Include Header Component -->
+  <!-- Header Container -->
   <div id="header-container"></div>
   
   <!-- Main Content -->
@@ -138,57 +144,60 @@
     </div>
   </main>
 
-  <!-- Include Footer Component -->
+  <!-- Footer and TOC Drawer containers -->
   <div id="footer-container"></div>
-  
-  <!-- Include TOC Drawer Component -->
   <div id="toc-drawer-container"></div>
 
   <!-- JavaScript to load components and handle interactions -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Load components
-      fetch('components/page-header.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('header-container').innerHTML = html;
-          
-          // Add event listeners for TOC toggle buttons
-          const tocToggleButtons = document.querySelectorAll('.toc-toggle');
-          tocToggleButtons.forEach(button => {
-            button.addEventListener('click', toggleTOC);
-          });
+      // Load all components in parallel
+      Promise.all([
+        fetch('components/page-header.html').then(response => response.text()),
+        fetch('components/footer-navigation.html').then(response => response.text()),
+        fetch('components/right-drawer.html').then(response => response.text())
+      ]).then(([headerHtml, footerHtml, tocDrawerHtml]) => {
+        // Insert components
+        document.getElementById('header-container').innerHTML = headerHtml;
+        document.getElementById('footer-container').innerHTML = footerHtml;
+        document.getElementById('toc-drawer-container').innerHTML = tocDrawerHtml;
+        
+        // Set page title in the header immediately after loading
+        const pageTitleElement = document.getElementById('page-title');
+        if (pageTitleElement) {
+          pageTitleElement.textContent = sessionStorage.getItem('currentPageTitle') || "Chapter 1: Introduction";
+        }
+        
+        // Set PDF download link
+        const pdfLinkElement = document.getElementById('download-pdf');
+        if (pdfLinkElement) {
+          pdfLinkElement.href = sessionStorage.getItem('pdfPath') || "original.pdf";
+        }
+        
+        // Initialize event listeners
+        const tocToggleButtons = document.querySelectorAll('.toc-toggle');
+        tocToggleButtons.forEach(button => {
+          button.addEventListener('click', toggleTOC);
         });
-
-      fetch('components/footer-navigation.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('footer-container').innerHTML = html;
-          
-          // Add event listener for footer TOC toggle
-          const tocToggleFooter = document.getElementById('toc-toggle-footer');
-          if (tocToggleFooter) {
-            tocToggleFooter.addEventListener('click', toggleTOC);
-          }
-        });
-
-      fetch('components/right-drawer.html')
-        .then(response => response.text())
-        .then(html => {
-          document.getElementById('toc-drawer-container').innerHTML = html;
-          
-          // Add event listener for close button
-          const closeButton = document.getElementById('toc-close');
-          if (closeButton) {
-            closeButton.addEventListener('click', closeTOC);
-          }
-          
-          // Add event listener for backdrop
-          const backdrop = document.getElementById('toc-backdrop');
-          if (backdrop) {
-            backdrop.addEventListener('click', closeTOC);
-          }
-        });
+        
+        const tocToggleFooter = document.getElementById('toc-toggle-footer');
+        if (tocToggleFooter) {
+          tocToggleFooter.addEventListener('click', toggleTOC);
+        }
+        
+        const closeButton = document.getElementById('toc-close');
+        if (closeButton) {
+          closeButton.addEventListener('click', closeTOC);
+        }
+        
+        const backdrop = document.getElementById('toc-backdrop');
+        if (backdrop) {
+          backdrop.addEventListener('click', closeTOC);
+        }
+        
+        // Initialize navigation
+        Navigation.initNavigation();
+      });
     });
 
     // Function to toggle TOC drawer
