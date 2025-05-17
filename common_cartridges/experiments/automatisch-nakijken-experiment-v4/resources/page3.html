@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultaten</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Resultaten</h1>
+</header>
+<main>
+    <p>In deze sectie presenteren we de resultaten van ons experiment met verschillende LLM-modellen voor het automatisch nakijken van tentamens.</p>
+    
+    <h2>O1 Reasoning</h2>
+    <p>Het O1 Reasoning model toonde een goede basisvaardigheid in het beoordelen van studentantwoorden. Dit model kon de concepten in de antwoorden identificeren en een redelijke beoordeling geven op basis van de rubrieken. Er waren echter inconsistenties in sommige beoordelingen, vooral bij complexere antwoorden die meerdere concepten bevatten.</p>
+    
+    <h2>O1-mini (3n voted)</h2>
+    <p>De kleinere variant van het O1 model, gecombineerd met een drievoudige stemmethode, toonde verbeterde consistentie in vergelijking met het basismodel. Door meerdere beoordelingen te combineren, werden uitschieters in de beoordelingen verminderd. Dit model was efficiënter in termen van computergebruik, maar miste soms nuances in de studentantwoorden.</p>
+    
+    <h2>GPT4.1 (3n voted)</h2>
+    <p>Het GPT4.1 model met drievoudige stemming presteerde het beste in termen van nauwkeurigheid en consistentie. Dit model kon complexe antwoorden goed beoordelen en leverde beoordelingen die nauw overeenkwamen met die van menselijke beoordelaars. De drievoudige stemming hielp om betrouwbare resultaten te garanderen, zelfs bij moeilijke of ambigue antwoorden.</p>
+    
+    <h2>GPT4.1 (3n voted, human in the loop)</h2>
+    <p>Deze configuratie, waarbij een menselijke controleur betrokken was in het beoordelingsproces, toonde de hoogste nauwkeurigheid. De menselijke component hielp om randgevallen te identificeren en te corrigeren waar het model mogelijk moeite mee had. Dit systeem bood een goede balans tussen automatisering en menselijke expertise, maar vereiste meer tijd en middelen.</p>
+    
+    <h2>GPT4.1 (3n voted, comments review)</h2>
+    <p>Bij deze aanpak werd het model gebruikt om niet alleen scores toe te kennen, maar ook gedetailleerde commentaren te geven. Deze commentaren werden vervolgens beoordeeld op kwaliteit en bruikbaarheid. De resultaten toonden aan dat het model in staat was om constructieve en educatieve feedback te geven die vergelijkbaar was met die van menselijke docenten, wat een toegevoegde waarde biedt naast de pure beoordeling.</p>
+
+    <nav class="page-navigation">
+        <div class="prev-page">
+            <a href="page2.html">Vorige: Opzet van het experiment</a>
+        </div>
+        <div class="next-page">
+            <a href="page4.html">Volgende: Discussie en volgende stappen</a>
+        </div>
+    </nav>
+</main>
+<footer>
+    <p>Pagina 3 van 6</p>
+</footer>
+</body>
+</html>

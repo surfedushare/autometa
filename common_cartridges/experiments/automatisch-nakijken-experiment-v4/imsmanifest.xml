@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest xmlns="http://www.imsglobal.org/xsd/imsccv1p1/imscp_v1p1"
+          xmlns:lom="http://ltsc.ieee.org/xsd/imsccv1p1/LOM/resource"
+          xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_v1p2"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          identifier="MANIFEST-AUTOMATISCH-NAKIJKEN"
+          xsi:schemaLocation="http://www.imsglobal.org/xsd/imsccv1p1/imscp_v1p1 http://www.imsglobal.org/xsd/imscp_v1p1.xsd http://ltsc.ieee.org/xsd/imsccv1p1/LOM/resource http://www.imsglobal.org/xsd/imsmd_v1p2p4.xsd">
+    <metadata>
+        <schema>IMS Common Cartridge</schema>
+        <schemaversion>1.1.0</schemaversion>
+        <imsmd:lom>
+            <imsmd:general>
+                <imsmd:title>
+                    <imsmd:langstring xml:lang="nl-NL">Automatisch nakijken experiment</imsmd:langstring>
+                </imsmd:title>
+                <imsmd:description>
+                    <imsmd:langstring xml:lang="nl-NL">Een rapport over het experiment met automatisch nakijken van tentamens met behulp van Large Language Models</imsmd:langstring>
+                </imsmd:description>
+            </imsmd:general>
+        </imsmd:lom>
+    </metadata>
+    <organizations>
+        <organization identifier="ORG_1" structure="rooted-hierarchy">
+            <item identifier="ITEM_1" identifierref="RESOURCE_1">
+                <title>Introductie</title>
+                <item identifier="ITEM_2" identifierref="RESOURCE_2">
+                    <title>Opzet van het experiment</title>
+                </item>
+                <item identifier="ITEM_3" identifierref="RESOURCE_3">
+                    <title>Resultaten</title>
+                </item>
+                <item identifier="ITEM_4" identifierref="RESOURCE_4">
+                    <title>Discussie en volgende stappen</title>
+                </item>
+                <item identifier="ITEM_5" identifierref="RESOURCE_5">
+                    <title>Conclusies</title>
+                </item>
+                <item identifier="ITEM_6" identifierref="RESOURCE_6">
+                    <title>Bronnen en referenties</title>
+                </item>
+            </item>
+        </organization>
+    </organizations>
+    <resources>
+        <resource identifier="RESOURCE_1" type="webcontent" href="resources/page1.html">
+            <file href="resources/page1.html"/>
+            <file href="resources/styles.css"/>
+        </resource>
+        <resource identifier="RESOURCE_2" type="webcontent" href="resources/page2.html">
+            <file href="resources/page2.html"/>
+            <file href="resources/styles.css"/>
+        </resource>
+        <resource identifier="RESOURCE_3" type="webcontent" href="resources/page3.html">
+            <file href="resources/page3.html"/>
+            <file href="resources/styles.css"/>
+        </resource>
+        <resource identifier="RESOURCE_4" type="webcontent" href="resources/page4.html">
+            <file href="resources/page4.html"/>
+            <file href="resources/styles.css"/>
+        </resource>
+        <resource identifier="RESOURCE_5" type="webcontent" href="resources/page5.html">
+            <file href="resources/page5.html"/>
+            <file href="resources/styles.css"/>
+        </resource>
+        <resource identifier="RESOURCE_6" type="webcontent" href="resources/page6.html">
+            <file href="resources/page6.html"/>
+            <file href="resources/styles.css"/>
+        </resource>
+        <resource identifier="RESOURCE_INDEX" type="webcontent" href="resources/index.html">
+            <file href="resources/index.html"/>
+        </resource>
+        <resource identifier="RESOURCE_PDF" type="webcontent" href="resources/automatisch-nakijken-experiment.01.pdf">
+            <file href="resources/automatisch-nakijken-experiment.01.pdf"/>
+        </resource>
+    </resources>
+</manifest>

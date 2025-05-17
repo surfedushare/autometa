@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatisch nakijken - Introductie en Opzet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Automatisch nakijken</h1>
+</header>
+<main>
+    <p>Met behulp van Sonja van Dam heb ik gekeken naar mogelijkheden om met een LLM automatisch na te kijken. De tussentijdse conclusie is dat er potentie is, maar dat het antwoordmodel geschikt voor mensen suboptimaal is als antwoordmodel voor een LLM. Ik doe een voorstel voor een vervolg experiment om antwoordmodellen aan te scherpen met behulp van LLM.</p>
+
+    <h2>Introductie</h2>
+    <p>Een LLM is met name sterk in het herkennen van patronen in syntax en semantiek. Omdat mensen intelligentie vaak afleiden via taal wekt een LLM de indruk intelligent te zijn. In de praktijk valt dat vaak tegen. Zo zijn LLM's tot nu toe slecht in schaken. Vaardigheden zoals basale wiskunde worden wel correct uitgevoerd, maar de methode om tot de uitkomst te komen is twijfelachtig. Ook lopen modellen nog ver achter op gezond verstand, zelfs als deze modellen een PhD denkniveau worden toebedeeld door de makers. In tegenstelling tot velen denk ik niet dat LLM's waardeloos zijn als ze (nog?) niet intelligent zijn. Een uitstekende taal beheersing kan heel nuttig zijn, mits het probleem dat we willen oplossen geformuleerd kan worden als een puur taal probleem. Automatisch examens en testen nakijken is een probleem, dat naar mijn idee geformuleerd kan worden als een taak, waarbij taalbeheersing afdoende is om de taak naar wens af te ronden.</p>
+
+    <h2>Opzet van het experiment</h2>
+    <p>Ik heb van Sonja van Dam een tentamen "sustainable impact" mogen inzien, samen met het antwoordmodel en heb de pseudonieme antwoorden en scores gekregen van ongeveer 250 studenten. In eerste instantie heb ik naar de eerste 5 vragen gekeken. Enerzijds om het handwerk aan mijn kant te beperken, want het antwoordmodel was niet gemakkelijk foutloos automatisch in te laden in een geschikt data formaat. Anderzijds om de kosten van LLM gebruik te beperken tijdens deze verkennende fase.</p>
+    
+    <p>Na het inladen in een database van: de vragen, het antwoordmodel voor deze vragen en alle antwoorden van studenten op de vragen; heb ik voor elk student antwoord aan verschillende LLM's gevraagd in hoeverre dat antwoord voldeed aan de criteria in het antwoord model. Hierbij kregen de LLM's de volgende opties:</p>
+    <ul>
+        <li>Aangeven welke criteria toepasbaar zijn</li>
+        <li>Aangeven welke criteria misschien toepasbaar zijn</li>
+        <li>Op basis van de vraag, antwoordmodel en het antwoord een aantal vrije opmerkingen maken</li>
+    </ul>
+    
+    <p>Op basis van de toegekende criteria heeft een computer programma vervolgens scores berekend en deze scores zijn vergeleken met de scores, die studenten in werkelijkheid hebben gekregen. Het werk van de LLM kan op drie manieren geevalueerd worden:</p>
+    <ul>
+        <li>De mate waarin het de LLM lukt om (met zekerheid) de gegeven criteria te koppelen aan de antwoorden. Dit geeft aan hoeveel werk een LLM uit handen kan nemen.</li>
+        <li>De mate waarin de LLM afwijkt van de werkelijke toegekende scores door een mens. Ik heb gekozen voor ICC2 om de mate van overeenstemming vast te stellen. Verder heb ik de MAE berekent om een indicatie te krijgen hoeveel scores afwijken.</li>
+        <li>De bias van een LLM is simpelweg (LLM-score – docent-toekenning) / maximale punten * 100. Dat betekent dat bij een negatieve percentage de docent meer punten toekende en bij een positief percentage de LLM meer punten toekende. Deze bias berekening dient ter indicatie wat er verwacht mag worden aan verandering in de cijfers voor studenten.</li>
+    </ul>
+    
+    <p>Een nadeel van deze experiment opzet is dat uit de uiteindelijke student scores moeilijk het toegepaste criterium van een docent is af te lezen. Als er bijvoorbeeld twee criteria zijn met twee punten, dan is aan een score van 2 punten niet af te lezen welk criterium is toegepast.</p>
+    
+    <p>Het is mijn hypothese dat LLM's in staat zijn goed te presenteren op bovenstaande vlakken. Niet omdat ze een diep begrip hebben van de inhoud, maar omdat de taak is gereduceerd tot een simpele vergelijking van syntax en sematiek patronen tussen twee teksten A) het antwoord van de student en B) het opgestelde antwoord model. Merk op dat ik alle berekeningen aan scores uitvoer in software en niet overlaat aan LLM's.</p>
+
+    <p>De originele PDF kan <a href="automatisch-nakijken-experiment.01.pdf">hier</a> worden geraadpleegd.</p>
+
+    <nav class="page-navigation">
+        <div class="next-page">
+            <a href="page2.html">Volgende: Resultaten</a>
+        </div>
+    </nav>
+</main>
+<footer>
+    <p>Pagina 1 van 3</p>
+</footer>
+</body>
+</html>

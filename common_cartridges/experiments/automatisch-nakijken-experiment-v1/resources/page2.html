@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatisch nakijken - Opzet van het experiment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Automatisch nakijken</h1>
+    <h2>Opzet van het experiment</h2>
+</header>
+<main>
+    <p>Ik heb van Sonja van Dam een tentamen "sustainable impact" mogen inzien, samen met het
+    antwoordmodel en heb de pseudonieme antwoorden en scores gekregen van ongeveer 250
+    studenten. In eerste instantie heb ik naar de eerste 5 vragen gekeken. Enerzijds om het handwerk
+    aan mijn kant te beperken, want het antwoordmodel was niet gemakkelijk foutloos automatisch in te
+    laden in een geschikt data formaat. Anderzijds om de kosten van LLM gebruik te beperken tijdens
+    deze verkennende fase.</p>
+
+    <p>Na het inladen in een database van: de vragen, het antwoordmodel voor deze vragen en alle
+    antwoorden van studenten op de vragen; heb ik voor elk student antwoord aan verschillende LLM's
+    gevraagd in hoeverre dat antwoord voldeed aan de criteria in het antwoord model. Hierbij kregen de
+    LLM's de volgende opties:</p>
+    <ul>
+        <li>Aangeven welke criteria toepasbaar zijn</li>
+        <li>Aangeven welke criteria misschien toepasbaar zijn</li>
+        <li>Op basis van de vraag, antwoordmodel en het antwoord een aantal vrije opmerkingen maken</li>
+    </ul>
+
+    <p>Op basis van de toegekende criteria heeft een computer programma vervolgens scores berekend en
+    deze scores zijn vergeleken met de scores, die studenten in werkelijkheid hebben gekregen. Het
+    werk van de LLM kan op drie manieren geevalueerd worden:</p>
+    <ul>
+        <li>De mate waarin het de LLM lukt om (met zekerheid) de gegeven criteria te koppelen aan de
+        antwoorden. Dit geeft aan hoeveel werk een LLM uit handen kan nemen.</li>
+        <li>De mate waarin de LLM afwijkt van de werkelijke toegekende scores door een mens. Ik heb
+        gekozen voor ICC2<sup>4</sup> om de mate van overeenstemming vast te stellen. Verder heb ik de
+        MAE berekent om een indicatie te krijgen hoeveel scores afwijken<sup>5</sup>.</li>
+        <li>De bias van een LLM is simpelweg (LLM-score – docent-toekenning) / maximale punten *
+        100. Dat betekent dat bij een negatieve percentage de docent meer punten toekende en bij
+        een positief percentage de LLM meer punten toekende. Deze bias berekening dient ter
+        indicatie wat er verwacht mag worden aan verandering in de cijfers voor studenten.</li>
+    </ul>
+
+    <p>Een nadeel van deze experiment opzet is dat uit de uiteindelijke student scores moeilijk het
+    toegepaste criterium van een docent is af te lezen. Als er bijvoorbeeld twee criteria zijn met twee
+    punten, dan is aan een score van 2 punten niet af te lezen welk criterium is toegepast.</p>
+
+    <p>Het is mijn hypothese dat LLM's in staat zijn goed te presenteren op bovenstaande vlakken. Niet
+    omdat ze een diep begrip hebben van de inhoud, maar omdat de taak is gereduceerd tot een simpele
+    vergelijking van syntax en sematiek patronen tussen twee teksten A) het antwoord van de student en
+    B) het opgestelde antwoord model. Merk op dat ik alle berekeningen aan scores uitvoer in software
+    en niet overlaat aan LLM's.</p>
+
+    <div class="footnote">
+        <p><sup>4</sup> https://en.wikipedia.org/wiki/Intraclass_correlation#Use_in_assessing_conformity_among_observers</p>
+        <p><sup>5</sup> https://en.wikipedia.org/wiki/Mean_absolute_error</p>
+    </div>
+
+    <nav class="page-navigation">
+        <div class="prev-page">
+            <a href="page1.html">Vorige: Introductie</a>
+        </div>
+        <div class="next-page">
+            <a href="page3.html">Volgende: Resultaten</a>
+        </div>
+    </nav>
+</main>
+<footer>
+    <p>Pagina 2 van 4</p>
+</footer>
+</body>
+</html>

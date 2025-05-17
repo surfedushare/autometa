@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatisch nakijken - Meer resultaten</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Meer resultaten</h1>
+</header>
+<main>
+    <h3>GPT4.1 (3n voted, human in the loop)</h3>
+    <p>Hier is het model en manier van prompten niet veranderd ten opzichte van bovenstaande GPT4.1.
+    Echter de manier van scores berekenen is anders om te simuleren dat een docent als extra controle
+    naar het toegekende criterium heeft gekeken. Elke keer als een model aangeeft dat een criterium
+    "misschien toepasbaar" is, dan wordt de score van dit criterium toegepast mits de score
+    overeenkomt met dat van de docent. Dit is om resultaten te simuleren waarbij een docent een
+    gedeelte van het werk van de LLM nakijkt waar deze "twijfelt", door met een druk op de knop goed
+    te keuren.</p>
+
+    <p>Deze methode van human in the loop is levert echter geen significante verbeteringen op. Het is
+    daarom beter om geen gebruik te maken van een onderscheid tussen "toepasbaar" en "misschien
+    toepasbaar" bij het vragen naar criteria.</p>
+
+    <h3>GPT4.1 (3n voted, comments review)</h3>
+    <p>Ook hier is het model en manier van prompten niet veranderd ten opzichte van bovenstaande
+    GPT4.1. Het toekennen van scores werkt zo, dat wanneer een LLM een comment geeft, dat de
+    correcte score van de docent wordt overgenomen. In dit geval simuleren we resultaten waarbij een
+    docent de comments van een LLM doorkijkt en waar nodig de toegekende criteria verbetert.</p>
+
+    <p>Deze methode is wel veelbelovend. Ongeveer de helft van alle toegekende criteria komt met een
+    opmerking van de LLM. Dus het werk dat blindelinks wordt overgenomen verminderd tot 1/3.
+    Echter de overeenstemming tussen docent en LLM neemt drastisch toe. De overeenstemming groeit
+    naar goed tot uitstekend in 4 van de 5 vragen. De MAE komt tussen 0.1 en 0.4 te liggen met een
+    gemiddelde van 0.3. Alleen de bias neemt in negatieve zin toe naar 2,5%, maar blijft dus redelijk.</p>
+
+    <h2>Discussie en volgende stappen</h2>
+
+    <p>Ik heb voor de verschillende GPT4.1 modellen gekeken naar waar mogelijke verbeterpunten liggen.
+    Vooral bij vraag 4 valt op dat het model consequent een ander criterium kiest dan de docenten, als
+    er niet aan comments review wordt gedaan. Het model zou drastisch verbeteren als het lukt de LLM
+    iets vaker mee te laten stemmen met de docent, die deze vraag heeft nagekeken (elke vraag is door
+    een enkele docent beoordeeld). Als je kijkt naar de opmerkingen bij toegepaste criteria van vraag 4,
+    dan valt op dat de LLM consequent oordeelt dat er "onvoldoende terminologie" wordt gebruikt. Dit
+    is typisch het soort fout dat verwacht mag worden van LLM's volgens mij. Puur op basis van syntax
+    en semantiek is namelijk geen oordeel te vellen over wat "voldoende" is. Mijn vermoeden is dan
+    ook, dat als we het antwoordmodel kunnen aanpassen en explicieter maken, dat de LLM dan beter
+    de taak zal uitvoeren en handmatige checks van de opmerkingen minder nodig zullen zijn.</p>
+
+    <nav class="page-navigation">
+        <div class="prev-page">
+            <a href="page3.html">Vorige: Resultaten</a>
+        </div>
+        <div class="next-page">
+            <a href="page5.html">Volgende: Discussie en conclusies</a>
+        </div>
+    </nav>
+</main>
+<footer>
+    <p>Pagina 4 van 5</p>
+</footer>
+</body>
+</html>

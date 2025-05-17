@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automatisch nakijken - Resultaten</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Resultaten</h1>
+</header>
+<main>
+    <p>In totaal zijn er drie LLM's met wisselende configuraties getest. De bestede tijd aan het experiment
+    is voornamelijk gaan zitten in evaluatie en verbetering van resultaten. Hierdoor ben ik niet
+    toegekomen aan verschillende aanbieders proberen. Alle modellen zijn hierdoor van OpenAI. Per
+    model geef ik aan hoe goed het model de taak heeft uitgevoerd, hoeveel werk het bespaart zou
+    hebben en wat de kosten zijn om de taak uit te voeren.</p>
+
+    <h3>O1 reasoning</h3>
+    <p>Ten tijde van het experiment was dit het beste "reasoning" model<sup>6</sup>. De resultaten zijn teleurstellend.
+    Vanwege de lange interne monoloog, die een model uitvoert als onderdeel van de "reasoning" ligt
+    het gebruik van tokens hoog. Er wordt afgerekend per token en slechts na ongeveer 40 studenten
+    werd mijn ingestelde limiet van €100 bereikt. Geschatte kosten liggen daarmee op €625 euro per
+    tentamen.</p>
+
+    <p>De MAE ligt tussen de 0.4 en 1.4 met een gemiddelde van 0.8. De bias is 0.9%, dus die is te
+    verwaarlozen. Er waren helaas onvoldoende observaties om significante ICC2 waardes te
+    berekenen. Ik ben snel doorgegaan naar goedkopere alternatieven.</p>
+
+    <h3>O1-mini (3n voted)</h3>
+    <p>Met O1-mini blijven we bij het "reasoning" paradigma, maar werken we met een model dat
+    beperktere capaciteiten heeft. Het wordt voornamelijk gebruikt om mee te programmeren en is heel
+    goedkoop. Het is naar mijn weten nog onduidelijk wat precies de effecten zijn van de mengeling
+    tussen natuurlijke taal en programmeertaal syntax en semantiek. In het kader van dit experiment
+    bedoelt dat de vraag 3x is gesteld en het meest gegeven antwoord wordt gekozen als uiteindelijke
+    uitkomst.</p>
+
+    <p>Dit model is in staat om ongeveer 39% van de studenten te beoordelen zonder tussenkomst van een
+    docent. De kwaliteit van deze oordelen is een stuk beter dan bij O1. De MAE ligt tussen de 0.2 en
+    0.9 met een gemiddelde van 0.5. De bias loopt hier iets op naar 4,9%, maar blijft in een redelijke
+    marge. Er is helaas slechte correlatie tussen de scores van de LLM en de docenten, die is
+    geschatte kosten voor het tentamen €6,50.</p>
+
+    <h3>GPT4.1 (3n voted)</h3>
+    <p>Net als met O3-mini wordt met dit model de vraag 3x is gesteld en het meest gegeven antwoord
+    wordt gekozen als uiteindelijke uitkomst. Het basis model is echter geen reasoning model, maar is
+    speciaal gemaakt voor gebruikers die modellen in combinatie willen gebruiken met andere
+    software, zoals bijvoorbeeld in dit experiment om op grote schaal vragen te stellen en te rekenen
+    met de uitkomsten.</p>
+
+    <p>Van alle geteste modellen werkt dit model het beste. Het ontziet de docenten voor ongeveer 2/3
+    van de antwoorden. De MAE ligt tussen de 0.3 en 0.7 met een gemiddelde van 0.5. De bias krimpt
+    ten opzicht van O3-mini naar 1,2%. Maar belangrijker is dat er voor het eerst een redelijke tot
+    goede overeenstemming is met significantie tussen docenten en de LLM voor 3 van de 5 vragen.
+    Daarmee is er zeker ruimte voor verbetering, maar het resultaat kan mijns inziens niet worden
+    afgedaan als kansloos. De kosten voor een tentamen nakijken zijn ongeveer €30. Een stuk duurder
+    dus dan O1-mini, maar nog steeds veel goedkoper dan O1.</p>
+
+    <nav class="page-navigation">
+        <div class="prev-page">
+            <a href="page2.html">Vorige: Opzet van het experiment</a>
+        </div>
+        <div class="next-page">
+            <a href="page4.html">Volgende: Meer resultaten</a>
+        </div>
+    </nav>
+</main>
+<footer>
+    <p>Pagina 3 van 5</p>
+    <p class="footnote">6. https://platform.openai.com/docs/guides/reasoning?api-mode=chat</p>
+</footer>
+</body>
+</html>

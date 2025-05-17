@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Course Content</title>
+    <!-- Meta refresh redirect to page1.html -->
+    <meta http-equiv="refresh" content="0; url=page1.html">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Automatisch nakijken</h1>
+    <p>Als u niet automatisch wordt doorgestuurd, klik dan <a href="page1.html">hier</a> om de cursusinhoud te bekijken.</p>
+</div>
+
+<script>
+    // JavaScript redirect as a fallback
+    window.location.href = "page1.html";
+</script>
+</body>
+</html>
