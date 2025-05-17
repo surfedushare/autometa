@@ -144,6 +144,12 @@ const Navigation = {
     const currentItem = this.findItemByResourceRef(currentResource.identifier);
     if (!currentItem) return;
 
+    // Set page title in the header
+    const pageTitleElement = document.getElementById('page-title');
+    if (pageTitleElement && !pageTitleElement.textContent) {
+      pageTitleElement.textContent = currentItem.title;
+    }
+
     // Set PDF link if available
     const pdfResource = MANIFEST.resources.RESOURCE_PDF;
     if (pdfResource) {

@@ -62,6 +62,7 @@
             "resources/page1.html",
             "resources/styles.css",
             "resources/js/navigation.js",
+            "resources/js/load-components.js",
             "resources/components/page-header.html",
             "resources/components/footer-navigation.html",
             "resources/components/right-drawer.html"
@@ -75,6 +76,7 @@
             "resources/page2.html",
             "resources/styles.css",
             "resources/js/navigation.js",
+            "resources/js/load-components.js",
             "resources/components/page-header.html",
             "resources/components/footer-navigation.html",
             "resources/components/right-drawer.html"
@@ -88,6 +90,7 @@
             "resources/page3.html",
             "resources/styles.css",
             "resources/js/navigation.js",
+            "resources/js/load-components.js",
             "resources/components/page-header.html",
             "resources/components/footer-navigation.html",
             "resources/components/right-drawer.html"
@@ -101,6 +104,7 @@
             "resources/page4.html",
             "resources/styles.css",
             "resources/js/navigation.js",
+            "resources/js/load-components.js",
             "resources/components/page-header.html",
             "resources/components/footer-navigation.html",
             "resources/components/right-drawer.html"
@@ -118,6 +122,7 @@
     };
   </script>
   <script src="js/navigation.js"></script>
+  <script src="js/load-components.js"></script>
   
   <!-- Preload all components for faster loading -->
   <link rel="preload" href="components/page-header.html" as="fetch" crossorigin>
@@ -147,89 +152,5 @@
   <!-- Footer and TOC Drawer containers -->
   <div id="footer-container"></div>
   <div id="toc-drawer-container"></div>
-
-  <!-- JavaScript to load components and handle interactions -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Load all components in parallel
-      Promise.all([
-        fetch('components/page-header.html').then(response => response.text()),
-        fetch('components/footer-navigation.html').then(response => response.text()),
-        fetch('components/right-drawer.html').then(response => response.text())
-      ]).then(([headerHtml, footerHtml, tocDrawerHtml]) => {
-        // Insert components
-        document.getElementById('header-container').innerHTML = headerHtml;
-        document.getElementById('footer-container').innerHTML = footerHtml;
-        document.getElementById('toc-drawer-container').innerHTML = tocDrawerHtml;
-        
-        // Set page title in the header immediately after loading
-        const pageTitleElement = document.getElementById('page-title');
-        if (pageTitleElement) {
-          pageTitleElement.textContent = sessionStorage.getItem('currentPageTitle') || "Chapter 1: Introduction";
-        }
-        
-        // Set PDF download link
-        const pdfLinkElement = document.getElementById('download-pdf');
-        if (pdfLinkElement) {
-          pdfLinkElement.href = sessionStorage.getItem('pdfPath') || "original.pdf";
-        }
-        
-        // Initialize event listeners
-        const tocToggleButtons = document.querySelectorAll('.toc-toggle');
-        tocToggleButtons.forEach(button => {
-          button.addEventListener('click', toggleTOC);
-        });
-        
-        const tocToggleFooter = document.getElementById('toc-toggle-footer');
-        if (tocToggleFooter) {
-          tocToggleFooter.addEventListener('click', toggleTOC);
-        }
-        
-        const closeButton = document.getElementById('toc-close');
-        if (closeButton) {
-          closeButton.addEventListener('click', closeTOC);
-        }
-        
-        const backdrop = document.getElementById('toc-backdrop');
-        if (backdrop) {
-          backdrop.addEventListener('click', closeTOC);
-        }
-        
-        // Initialize navigation
-        Navigation.initNavigation();
-      });
-    });
-
-    // Function to toggle TOC drawer
-    function toggleTOC() {
-      const tocDrawer = document.getElementById('toc-drawer');
-      const tocPanel = document.getElementById('toc-panel');
-      
-      if (tocDrawer.classList.contains('hidden')) {
-        // Show TOC
-        tocDrawer.classList.remove('hidden');
-        setTimeout(() => {
-          tocPanel.classList.remove('translate-x-full');
-        }, 10);
-      } else {
-        // Hide TOC
-        tocPanel.classList.add('translate-x-full');
-        setTimeout(() => {
-          tocDrawer.classList.add('hidden');
-        }, 500);
-      }
-    }
-
-    // Function to close TOC drawer
-    function closeTOC() {
-      const tocDrawer = document.getElementById('toc-drawer');
-      const tocPanel = document.getElementById('toc-panel');
-      
-      tocPanel.classList.add('translate-x-full');
-      setTimeout(() => {
-        tocDrawer.classList.add('hidden');
-      }, 500);
-    }
-  </script>
 </body>
 </html>

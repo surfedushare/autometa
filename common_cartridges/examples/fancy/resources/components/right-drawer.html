@@ -32,3 +32,36 @@
     </div>
   </div>
 </div>
+
+<!-- Drawer control script -->
+<script>
+  // These functions will be executed when the component is loaded into the page
+  function toggleTOC() {
+    const tocDrawer = document.getElementById('toc-drawer');
+    const tocPanel = document.getElementById('toc-panel');
+    
+    if (tocDrawer.classList.contains('hidden')) {
+      // Show TOC
+      tocDrawer.classList.remove('hidden');
+      setTimeout(() => {
+        tocPanel.classList.remove('translate-x-full');
+      }, 10);
+    } else {
+      // Hide TOC
+      tocPanel.classList.add('translate-x-full');
+      setTimeout(() => {
+        tocDrawer.classList.add('hidden');
+      }, 500);
+    }
+  }
+
+  function closeTOC() {
+    const tocDrawer = document.getElementById('toc-drawer');
+    const tocPanel = document.getElementById('toc-panel');
+    
+    tocPanel.classList.add('translate-x-full');
+    setTimeout(() => {
+      tocDrawer.classList.add('hidden');
+    }, 500);
+  }
+</script>
